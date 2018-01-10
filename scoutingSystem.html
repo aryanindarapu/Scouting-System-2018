@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src = "scoutingSystem.js"></script>
+		<link rel = "stylesheet" type = "text/css" href = "scoutingSystem.css">
+		<title>Scouting System</title>
+	</head>
+	<body>
+		<div class = "tab">
+			<button class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
+			<button class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
+			<button class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
+			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">Endgame</button>
+			<button class = "tablinks" onclick = "openTab(event, 'Penalties')">Penalties</button>
+			<button class = "tablinks" onclick = "openTab(event, 'Final')">Final</button>
+		</div>
+		<form>
+			<div id = "Info" class = "tabcontent">
+				<h3>Info</h3>
+				<p>Match Number:</p>
+				<input id = "match">
+				<br>
+				<p>Team Number:</p>
+				<input id = "team">
+			</div>
+
+			<div id = "Auton" class = "tabcontent">
+				<h3>Auton</h3>
+				<p>Distance: (divide by time for rate)</p>
+				<input id = "distance">
+				<p>Scale/Switch:</p>
+				<input id="scale">
+				<p>Pick:</p>
+				<input id="pick">
+			</div>
+
+			<div id = "TeleOp" class = "tabcontent">
+				<h3>TeleOp</h3>
+				<p>Number of blocks delivered</p> 
+				<input id = "blocks">
+				<p>Bot Classification</p> 
+				<input id = "bot">
+			</div>
+
+			<div id = "Penalties" class = "tabcontent">
+				<h3>Penalties</h3>
+				<p>Fouls:</p>
+				<input id="fouls">
+				<p>Technicals:</p>
+				<input id="technicals">
+				<p>Yellow Card?</p>
+				<input id="ycard" type="checkbox">
+				<p>Red Card?</p>
+				<input id="rcard" type="checkbox">
+				<p>Ejection?</p>
+				<input id="eject" type="checkbox">
+			</div>
+
+			<div id = "Endgame" class = "tabcontent">
+				<h3>Climb</h3>
+				<p>Attempt</p>
+				<input id="attempt" type="checkbox">
+				<p>Fail</p>
+				<input id="fail" type="checkbox">
+				<p>Park?</p>
+				<input id="park" type="checkbox">
+			</div>
+
+			<div id = "Final" class = "tabcontent">
+				<h3>Final</h3>
+				<p>Match Notes:</p>
+				<input id="notes">
+				<br>
+				<br>
+				<input type="submit">
+				<p>Submitting will enter the form to a server and refresh the page.</p>
+			</div>
+		</form>
+	</body>
+</html>
