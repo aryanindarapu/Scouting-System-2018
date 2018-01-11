@@ -5,7 +5,6 @@
 		<link rel = "stylesheet" type = "text/css" href = "scoutingSystem.css">
 		<title>Scouting System</title>
 		<div class = "tab">
-			<button class = "tablinks" onclick = "openTab(event, 'Team Names')">Add Team</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
 			<button class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Penalties')">Penalties</button>
@@ -15,7 +14,7 @@
 	</head>
 	<body>
 		<center>
-			<div id = "Add Team Name" class = "tabcontent">
+			<div id = "Team Name" class = "tabcontent">
 				<h3>Add Teams</h3>
 				<input id = "teamName" type = "text" value = "Team Name"><br><br>
 				<input id = "teamNo" type = "text" value = "Team Number"><br><br>
@@ -27,9 +26,8 @@
 				<input name = "crossBase" type = "radio"> Yes<br>
 				<input name = "crossBase" type = "radio"> No<br>
 				<p>Placed Block On:</p>
-				<input name = "placeBlockAuton" type = "radio"> Switch<br>
-				<input name = "placeBlockAuton" type = "radio"> Scale<br>
-				<input name = "placeBlockAuton" type = "radio"> Neither<br>
+				<input name = "placeBlockAuton" type = "checkbox"> Switch<br>
+				<input name = "placeBlockAuton" type = "checkbox"> Scale<br>
 			</div>
 
 			<div id = "TeleOp" class = "tabcontent">
@@ -39,20 +37,23 @@
 
 			<div id = "Penalties" class = "tabcontent">
 				<h3>Penalties</h3>
-				<input name = "penalty" type = "checkbox"> Foul<br><br>
-				<input name = "penalty" type = "checkbox"> Technical<br><br>
+				<p>Fouls:</p>
+				<p id = "foul">0</p>
+				<input value = "+" type="button" onclick="add(1, 0)">
+				<input value = "-" type="button" onclick="add(-1, 0)">
+				<p>Technical Fouls:</p>
+				<p id = "tech">0</p>
+				<input value = "+" type="button" onclick="add(1, 1)">
+				<input value = "-" type="button" onclick="add(-1, 1)"><br><br>
 				<input name = "penalty" type = "checkbox"> Yellow Card<br><br>
 				<input name = "penalty" type = "checkbox"> Red Card
 			</div>
 
 			<div id = "Endgame" class = "tabcontent">
 				<h3>Climb</h3>
-				<p>Attempt</p>
-				<input id="attempt" type="checkbox">
-				<p>Fail</p>
-				<input id="fail" type="checkbox">
-				<p>Park?</p>
-				<input id="park" type="checkbox">
+				<input id="attempt" type="checkbox"> Attempt <br><br>
+				<input id="fail" type="checkbox"> Fail <br><br>
+				<input id="park" type="checkbox"> Park <br><br>
 			</div>
 			
 			<div id = "Submit" class = "tabcontent">

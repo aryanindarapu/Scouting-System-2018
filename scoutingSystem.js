@@ -12,6 +12,9 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-function plusOrMinus() {
-	
+var idArray = ["foul", "tech"]
+function add(n, id) {
+	x = parseInt(document.getElementById(fouls[id]).innerHTML);
+	x += n;
+	document.getElementById(fouls[id]).innerHTML = x.toString();
 }
