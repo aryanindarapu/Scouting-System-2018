@@ -12,6 +12,6 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 }
 
-function test() {
+function plusOrMinus() {
 	
 }
