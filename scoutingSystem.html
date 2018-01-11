@@ -5,6 +5,7 @@
 		<link rel = "stylesheet" type = "text/css" href = "scoutingSystem.css">
 		<title>Scouting System</title>
 		<div class = "tab">
+			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
 			<button class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Penalties')">Penalties</button>
@@ -14,20 +15,20 @@
 	</head>
 	<body>
 		<center>
-			<div id = "Team Name" class = "tabcontent">
-				<h3>Add Teams</h3>
-				<input id = "teamName" type = "text" value = "Team Name"><br><br>
-				<input id = "teamNo" type = "text" value = "Team Number"><br><br>
+			<div id = "Info" class = "tabcontent">
+				<h3>Info</h3>
+				<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
+				<input id = "teamNo" type = "text" placeholder = "Team Number"><br><br>
+				<p>INSTRUCTIONS HERE REEEEEEE</p>
 			</div>
 
 			<div id = "Auton" class = "tabcontent">
 				<h3>Auton</h3>
 				<p>Crossed Baseline?</p>
-				<input name = "crossBase" type = "radio"> Yes<br>
-				<input name = "crossBase" type = "radio"> No<br>
+				<input id = "cross" type = "checkbox"><br>
 				<p>Placed Block On:</p>
-				<input name = "placeBlockAuton" type = "checkbox"> Switch<br>
-				<input name = "placeBlockAuton" type = "checkbox"> Scale<br>
+				<input id = "switch" type = "checkbox">Switch<br>
+				<input id = "scale" type = "checkbox">Scale<br>
 			</div>
 
 			<div id = "TeleOp" class = "tabcontent">
@@ -45,8 +46,8 @@
 				<p id = "tech">0</p>
 				<input value = "+" type="button" onclick="add(1, 1)">
 				<input value = "-" type="button" onclick="add(-1, 1)"><br><br>
-				<input name = "penalty" type = "checkbox"> Yellow Card<br><br>
-				<input name = "penalty" type = "checkbox"> Red Card
+				<input id = "yellow" type = "checkbox"> Yellow Card <br><br>
+				<input id = "red" type = "checkbox"> Red Card
 			</div>
 
 			<div id = "Endgame" class = "tabcontent">
@@ -58,9 +59,12 @@
 			
 			<div id = "Submit" class = "tabcontent">
 				<h3>Submit</h3>
-				<textarea rows = "4" cols = "50" name = "comment">Add Comments...</textarea><br>
-				<input type = "submit" value = "Submit Team">
+				<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
+				<input type = "submit" onclick="submit()">
 			</div>
 		</center>
 	</body>
+	
+	<script>document.getElementById("default").click();
+	</script>
 </html>
