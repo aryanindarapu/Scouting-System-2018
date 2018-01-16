@@ -16,8 +16,8 @@ var idArray = ["foul", "tech"]
 function add(n, id) {
 	x = parseInt(document.getElementById(idArray[id]).innerHTML);
 	x += n;
-	if (x<0) {
-		x=0
+	if (x < 0) {
+		x = 0;
 	}
 	document.getElementById(idArray[id]).innerHTML = x.toString();
 }

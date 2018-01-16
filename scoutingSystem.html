@@ -3,6 +3,8 @@
 	<head>
 		<script src = "scoutingSystem.js"></script>
 		<link rel = "stylesheet" type = "text/css" href = "scoutingSystem.css">
+		<link rel = "stylesheet" type = "text/css" href = "EndGame.css">
+		<link href = "https://fonts.googleapis.com/css?family=Press+Start+2P" rel = "stylesheet">
 		<title>Scouting System</title>
 		<div class = "tab">
 			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
@@ -40,29 +42,40 @@
 				<h3>Penalties</h3>
 				<p>Fouls:</p>
 				<p id = "foul">0</p>
-				<input value = "+" type="button" onclick="add(1, 0)">
-				<input value = "-" type="button" onclick="add(-1, 0)">
+				<input value = "+" type = "button" onclick = "add(1, 0)">
+				<input value = "-" type = "button" onclick = "add(-1, 0)">
 				<p>Technical Fouls:</p>
 				<p id = "tech">0</p>
-				<input value = "+" type="button" onclick="add(1, 1)">
-				<input value = "-" type="button" onclick="add(-1, 1)"><br><br>
+				<input value = "+" type = "button" onclick = "add(1, 1)">
+				<input value = "-" type = "button" onclick = "add(-1, 1)"><br><br>
 				<input id = "yellow" type = "checkbox"> Yellow Card <br><br>
 				<input id = "red" type = "checkbox"> Red Card
 			</div>
-
+		</center>
+			
 			<div id = "Endgame" class = "tabcontent">
 				<h3>Climb</h3>
-				<input id="attempt" type="checkbox"> Attempt <br><br>
-				<input id="fail" type="checkbox"> Fail <br><br>
-				<input id="park" type="checkbox"> Park <br><br>
+				<label class = "container">Attempt
+					<input type = "checkbox">
+					<span class = "checkmark"></span>
+				</label>
+				
+				<label class = "container">Fail
+					<input type = "checkbox">
+					<span class = "checkmark"></span>
+				</label>
+				
+				<label class = "container">Park
+					<input type = "checkbox">
+					<span class = "checkmark"></span>
+				</label>
 			</div>
 			
 			<div id = "Submit" class = "tabcontent">
 				<h3>Submit</h3>
 				<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
-				<input type = "submit" onclick="submit()">
+				<input type = "submit" class = "submit" onclick = "submit()">
 			</div>
-		</center>
 	</body>
 	
 	<script>document.getElementById("default").click();
