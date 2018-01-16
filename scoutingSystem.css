@@ -33,12 +33,11 @@ body {font-family: Arial;}
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
     border-top: none;
 }
 
 .submit {
-	font-family: 'Press Start 2P', cursive;
+	font-family: 'Press Start 2P';
 	display: inline-block;
 	padding: 15px 25px;
 	font-size: 24px;
@@ -49,14 +48,13 @@ body {font-family: Arial;}
 	color: #fff;
 	background-color: #4CAF50;
 	border: none;
-	border-radius: 15px;
 	box-shadow: 0 9px #999;
 }
 
 .submit:hover {background-color: #3e8e41}
 
 .submit:active {
-background-color: #3e8e41;
-box-shadow: 0 5px #666;
-transform: translateY(4px);
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }
