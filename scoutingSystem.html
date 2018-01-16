@@ -11,21 +11,21 @@
 			<button class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
 			<button class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Penalties')">Penalties</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">Endgame</button>
+			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
 		</div>
 	</head>
 	<body>
 		<center>
 			<div id = "Info" class = "tabcontent">
-				<h3>Info</h3>
+				<h1>Info</h1>
 				<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
 				<input id = "teamNo" type = "text" placeholder = "Team Number"><br><br>
 				<p>INSTRUCTIONS HERE REEEEEEE</p>
 			</div>
 
 			<div id = "Auton" class = "tabcontent">
-				<h3>Auton</h3>
+				<h1>Auton</h1>
 				<p>Crossed Baseline?</p>
 				<input id = "cross" type = "checkbox"><br>
 				<p>Placed Block On:</p>
@@ -34,12 +34,12 @@
 			</div>
 
 			<div id = "TeleOp" class = "tabcontent">
-				<h3>TeleOp</h3>
+				<h1>TeleOp</h1>
 				<img src = "Map.png" width = "758.75" height = "310"></img>
 			</div>
 
 			<div id = "Penalties" class = "tabcontent">
-				<h3>Penalties</h3>
+				<h1>Penalties</h1>
 				<p>Fouls:</p>
 				<p id = "foul">0</p>
 				<input value = "+" type = "button" onclick = "add(1, 0)">
@@ -51,21 +51,38 @@
 				<input id = "yellow" type = "checkbox"> Yellow Card <br><br>
 				<input id = "red" type = "checkbox"> Red Card
 			</div>
-			
+		</center>
 			<div id = "Endgame" class = "tabcontent">
-				<h3>Climb</h3>
-				<label class = "container">Attempt
-					<input type = "checkbox">
+				<center>
+					<h1>Climb</h1>
+				</center>
+				<label class = "container">Attempt and Success
+					<input type = "radio" name = "endGame">
 					<span class = "checkmark"></span>
 				</label>
-				
-				<label class = "container">Fail
-					<input type = "checkbox">
+				<br>
+				<label class = "container">Attempt and Fail
+					<input type = "radio" name = "endGame">
 					<span class = "checkmark"></span>
 				</label>
-				
-				<label class = "container">Park
-					<input type = "checkbox">
+				<br>
+				<label class = "container">Levitate, Can Climb
+					<input type = "radio" name = "endGame">
+					<span class = "checkmark"></span>
+				</label>
+				<br>
+				<label class = "container">Levitate, Cannot Climb 
+					<input type = "radio" name = "endGame">
+					<span class = "checkmark"></span>
+				</label>
+				<br>
+				<label class = "container">Can Climb 
+					<input type = "radio" name = "endGame">
+					<span class = "checkmark"></span>
+				</label>
+				<br>
+				<label class = "container">Cannot Climb 
+					<input type = "radio" name = "endGame">
 					<span class = "checkmark"></span>
 				</label>
 			</div>
@@ -75,7 +92,7 @@
 				<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
 				<input type = "submit" class = "submit" onclick = "submit()">
 			</div>
-				</center>
+		</center>
 	</body>
 	
 	<script>document.getElementById("default").click();
