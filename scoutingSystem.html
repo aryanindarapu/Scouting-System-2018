@@ -3,62 +3,125 @@
 	<head>
 		<script src = "scoutingSystem.js"></script>
 		<link rel = "stylesheet" type = "text/css" href = "scoutingSystem.css">
+		<link rel = "stylesheet" type = "text/css" href = "EndGame.css">
+		<link href = "https://fonts.googleapis.com/css?family=Press+Start+2P" rel = "stylesheet">
 		<title>Scouting System</title>
 		<div class = "tab">
+			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
 			<button class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Penalties')">Penalties</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">Endgame</button>
+			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Map')">Map</button>
 		</div>
 	</head>
 	<body>
 		<center>
-			<div id = "Team Name" class = "tabcontent">
-				<h3>Add Teams</h3>
-				<input id = "teamName" type = "text" value = "Team Name"><br><br>
-				<input id = "teamNo" type = "text" value = "Team Number"><br><br>
+			<div id = "Info" class = "tabcontent">
+				<h1>Info</h1>
+				<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
+				<input id = "teamNo" type = "text" placeholder = "Team Number"><br><br>
+				<h3>OVERVIEW OF GAME</h3>
+				<p> In the FIRST Robotics Competition, teams are trapped in an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
+					Tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
+					to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
+					which includes autonomous and teleoperated periods, defeats the boss and wins the game.
+				<h3>INSTRUCTIONS</h3>
+				<h3>AUTON</h3>
+				<p> While scouting auton, there are multiple factors one must observe to scout correctly. As soon as the game starts, look at the robot and observe if they crossed the baseline.
+					Next, one must observe if the robot puts a cube is placed on a scale or switch. If so, check the boxes to the left.</p>
+				<h3>PENALTIES</h3>
+				<p> At the end of the game, fouls and technical fouls may be assessed. If any fouls are assessed, please mark how many fouls. 
+					If any yellow fouls are made, check mark the box to the left. If there is a red card assessed, then also check the box to the left.</p>
+				<h3>ENDGAME</h3>
+				<p> During the final 30 seconds of play, robots will have an opportunity to climb and scale the tower.</p>
+				<br></br>
+				<h3>Submit</h3>
+				<br></br>
+
 			</div>
 
 			<div id = "Auton" class = "tabcontent">
-				<h3>Auton</h3>
-				<p>Crossed Baseline?</p>
-				<input name = "crossBase" type = "radio"> Yes<br>
-				<input name = "crossBase" type = "radio"> No<br>
-				<p>Placed Block On:</p>
-				<input name = "placeBlockAuton" type = "radio"> Switch<br>
-				<input name = "placeBlockAuton" type = "radio"> Scale<br>
-				<input name = "placeBlockAuton" type = "radio"> Neither<br>
+				<h1>Auton</h1>
+				<h3>Crossed Baseline?</h3>
+				<label class = "container">Yes
+					<input id = "crossY" type = "radio">
+					<span class = "checkmark"></span>
+				</label>
+				<label class = "container">No
+					<input id = "crossN" type = "radio">
+					<span class = "checkmark"></span>
+				</label>
+				<h3>Placed Block On:</h3>
+				<label class = "container">Switch
+					<input id = "switch" type = "radio">
+					<span class = "checkmark"></span>
+				</label>
+				<label class = "container">Scale
+					<input id = "scale" type = "radio">
+					<span class = "checkmark"></span>
+				</label>
 			</div>
 
 			<div id = "TeleOp" class = "tabcontent">
-				<h3>TeleOp</h3>
+				<h1>TeleOp</h1>
 				<img src = "Map.png" width = "758.75" height = "310"></img>
 			</div>
 
 			<div id = "Penalties" class = "tabcontent">
-				<h3>Penalties</h3>
-				<input name = "penalty" type = "checkbox"> Foul<br><br>
-				<input name = "penalty" type = "checkbox"> Technical<br><br>
-				<input name = "penalty" type = "checkbox"> Yellow Card<br><br>
-				<input name = "penalty" type = "checkbox"> Red Card
+				<h1>Penalties</h1>
+				<h3>Fouls:</h3>
+				<input value = "-" type = "button" onclick = "add(-1, 0)">
+				<p id = "foul" style="display: inline">0</p>
+				<input value = "+" type = "button" onclick = "add(1, 0)">
+				<h3>Technical Fouls:</h3>
+				<input value = "-" type = "button" onclick = "add(-1, 1)">
+				<p id = "tech" style="display: inline">0</p>
+				<input value = "+" type = "button" onclick = "add(1, 1)"><br><br><br>
+				<input id = "yellow" type = "checkbox"> Yellow Card <br><br>
+				<input id = "red" type = "checkbox"> Red Card
 			</div>
-
+		</center>
 			<div id = "Endgame" class = "tabcontent">
-				<h3>Climb</h3>
-				<p>Attempt</p>
-				<input id="attempt" type="checkbox">
-				<p>Fail</p>
-				<input id="fail" type="checkbox">
-				<p>Park?</p>
-				<input id="park" type="checkbox">
+				<center>
+					<h1>Climb</h1>
+				</center>
+				<label class = "container">Attempt and Success
+					<input type = "radio" name = "endGame">
+					<span class = "checkmark"></span>
+				</label>
+				<br>
+				<label class = "container">Attempt and Fail
+					<input type = "radio" name = "endGame">
+					<span class = "checkmark"></span>
+				</label>
+				<br>
+				<label class = "container">Levitate, Can Climb
+					<input type = "radio" name = "endGame">
+					<span class = "checkmark"></span>
+				</label>
+				<br>
+				<label class = "container">Levitate, Cannot Climb 
+					<input type = "radio" name = "endGame">
+					<span class = "checkmark"></span>
+				</label>
+				<br>
+				<label class = "container">Can Climb 
+					<input type = "radio" name = "endGame">
+					<span class = "checkmark"></span>
+				</label>
+				<br>
+				<label class = "container">Cannot Climb 
+					<input type = "radio" name = "endGame">
+					<span class = "checkmark"></span>
+				</label>
 			</div>
 			
 			<div id = "Submit" class = "tabcontent">
-				<h3>Submit</h3>
-				<textarea rows = "4" cols = "50" name = "comment">Add Comments...</textarea><br>
-				<input type = "submit" value = "Submit Team">
+				<h1>Submit</h1>
+				<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
+				<input type = "button" class = "submit" onclick = "submit()" value = "Submit">
 			</div>
 			<div id = "Map" class = "tabcontent">
 				<h3>Map</h3>
@@ -72,4 +135,7 @@
 			</div>
 		</center>
 	</body>
+	
+	<script>document.getElementById("default").click();
+	</script>
 </html>
