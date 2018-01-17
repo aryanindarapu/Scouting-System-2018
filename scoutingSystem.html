@@ -10,6 +10,7 @@
 			<button class = "tablinks" onclick = "openTab(event, 'Penalties')">Penalties</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">Endgame</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
+			<button class = "tablinks" onclick = "openTab(event, 'Map')">Map</button>
 		</div>
 	</head>
 	<body>
@@ -58,6 +59,16 @@
 				<h3>Submit</h3>
 				<textarea rows = "4" cols = "50" name = "comment">Add Comments...</textarea><br>
 				<input type = "submit" value = "Submit Team">
+			</div>
+			<div id = "Map" class = "tabcontent">
+				<h3>Map</h3>
+				<div style = "margin-left: 0px; padding-left: 10px;">
+					<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; position: relative;" src = "Map.png"><div style = "display: inline-block" id = "fieldPicDiv"></div>
+					<div id = "shotTab" style = "display: inline-block; vertical-align:top; width: 20px;">
+						<button type = 'button' style = "visibility: hidden; height:28px; border-radius: 2px;">1</button>
+						<br>
+					</div>
+				</div>
 			</div>
 		</center>
 	</body>
