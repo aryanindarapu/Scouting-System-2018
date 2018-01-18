@@ -4,12 +4,19 @@ if(k&&j[k]&&(e||j[k].data)||void 0!==d||"string"!=typeof b)return k||(k=i?a[h]=c
 //# sourceMappingURL=jquery.min.map
 
 confirmClick = function(){
-	var txt;
-    if (confirm("Did the robot pick up a block in this location") == true) {
-        txt = "You pressed OK!";
-    } else {
-        txt = "You pressed Cancel!";
-    }
+	document.getElementById("confirm").style.display = "block";
+}
+confirmYes = function(){
+	document.getElementById("confirm").style.display = "none";
+	x=0;
+	y=0;
+	hello();
+}
+confirmNo = function(){
+	document.getElementById("confirm").style.display = "none";
+	x=0;
+	y=0;
+	hello();
 }
 
 window.onload = hello;
@@ -170,6 +177,25 @@ function hello(){
 			ctx.beginPath();
 			ctx.clearRect(60,80,55,40);
 			ctx.rect(60,80,55,40);
+			ctx.clip();
+			ctx.drawImage(img,0,0,cw,ch);
+			ctx.restore();
+		}
+		if(x>=490 && x<=540 && y >=130 && y<=170){
+			// darken the image with a 50% black fill
+			ctx.save();
+			ctx.globalAlpha=.50;
+			ctx.fillStyle="black";
+			ctx.fillRect(0,0,cw,ch);
+			ctx.restore();
+
+			// ctx.clip() the area to highlight
+			// and redraw the whole image
+			// (the image will draw only in the clipping region)
+			ctx.save();
+			ctx.beginPath();
+			ctx.clearRect(490,130,50,40);
+			ctx.rect(490,130,50,40);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();

@@ -72,7 +72,12 @@
 
 			<div id = "TeleOp" class = "tabcontent">
 				<h1>TeleOp</h1>
-				<canvas id="canvas" width=300 height=300 onclick="showCoords(event);"></canvas>
+				<canvas id="canvas" style="display: inline-block"width=300 height=300 onclick="showCoords(event);"></canvas>
+				<div id = "confirm" style="display:none">
+					<P>Did the robot pick up a block at the highlighted location?</p>
+					<button onclick = "confirmYes()">yes</button>
+					<button onclick = "confirmNo()">no</button>
+				</div>
 				<p id="demo"></p>
 			</div>
 
