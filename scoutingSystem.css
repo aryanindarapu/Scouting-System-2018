@@ -111,7 +111,8 @@ input[value="-"] {
 
 div.Penalties {
 	display: inline;
-	margin-top: -10px;	
+	margin-left: 80px;
+	height: 200px;
 }
 	
 
@@ -120,7 +121,7 @@ h4 {
 	display: inline;
 	margin-right: 25px;
 	margin-left: 25px;
-	padding-top: 100px;
+	padding-top: 15px;
 }
 
 h3 {

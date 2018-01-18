@@ -121,31 +121,32 @@
 			
 			<div class = "footer" >
 				<br><br>
-				<div class = "Penalties" style = "display: inline">
+				<div class = "Penalties" style = "display: inline-block; margin-left: 0px">
 					<h4>Fouls</h4>
 					<br>
 					<input value = "-" type = "button" onclick = "add(-1, 0)">
 					<p id = "foul" style = "display: inline; font-family: 'Press Start 2P'">0</p>
 					<input value = "+" type = "button" onclick = "add(1, 0)">
 				</div>
-				<div class = "Penalties" style = "display: inline">
-					<h4 style = "maar">Technical Fouls</h4>
+				<div class = "Penalties" style = "display: inline-block">
+					<h4>Technical Fouls</h4>
 					<br>
-					<input value = "-" type = "button" onclick = "add(-1, 0)">
-					<p id = "foul" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-					<input value = "+" type = "button" onclick = "add(1, 0)">
+					<input value = "-" type = "button" onclick = "add(-1, 1)">
+					<p id = "tech" style = "display: inline; font-family: 'Press Start 2P'">0</p>
+					<input value = "+" type = "button" onclick = "add(1, 1)">
 				</div>
-				<div class = "Penalties"style = "display: inline">
-					<h4>Yellow Card</h4>
-					<br>
-					<label class = "container" style = "display: inline; margin-left: 50px; margin-right: 50px;">
-						<input type = "checkbox" name = "yellowCard">
-						<span class = "checkmarkYel"></span>
-					</label>
+				<div class = "Penalties" style = "display: inline-block;">
+						<h4>Yellow Card</h4>
+						<br>
+						<label class = "container">
+							<input type = "checkbox" name = "yellowCard">
+							<span class = "checkmarkYel"></span>
+						</label>
 				</div>
-				<div class = "Penalties" style = "display: inline">
+				<div class = "Penalties" style = "display: inline-block">
 					<h4>Red Card</h4>
-					<label class = "container" style = "display: inline">
+					<br>
+					<label class = "container">
 						<input type = "checkbox" name = "redCard">
 						<span class = "checkmarkRed"></span>
 					</label>
