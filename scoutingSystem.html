@@ -52,20 +52,20 @@
 				<h1>Auton</h1>
 				<h3>Crossed Baseline?</h3>
 				<label class = "container">Yes
-					<input id = "crossY" type = "radio">
+					<input id = "crossY" type = "radio" name = "baseline">
 					<span class = "checkmark"></span>
 				</label>
 				<label class = "container">No
-					<input id = "crossN" type = "radio">
+					<input id = "crossN" type = "radio" name = "baseline">
 					<span class = "checkmark"></span>
 				</label>
 				<h3>Placed Block On:</h3>
 				<label class = "container">Switch
-					<input id = "switch" type = "radio">
+					<input id = "switch" type = "checkbox">
 					<span class = "checkmark"></span>
 				</label>
 				<label class = "container">Scale
-					<input id = "scale" type = "radio">
+					<input id = "scale" type = "checkbox">
 					<span class = "checkmark"></span>
 				</label>
 			</div>
@@ -135,19 +135,5 @@
 				<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
 				<input type = "button" class = "submit" onclick = "submit()" value = "Submit">
 			</div>
-			<div id = "Map" class = "tabcontent">
-				<h3>Map</h3>
-				<div style = "margin-left: 0px; padding-left: 10px;">
-					<img class = "redPic clickGrid" id = "fieldpic" onclick="showCoords(event, this)" style = "display: inline-block; height: 400px; position: relative;" src = "Map.png"><div style = "display: inline-block" id = "fieldPicDiv"></div>
-					<div id = "shotTab" style = "display: inline-block; vertical-align:top; width: 20px;">
-						<button type = 'button' style = "visibility: hidden; height:28px; border-radius: 2px;">1</button>
-						<br>
-					</div>
-				</div>
-			</div>
-		</center>
 	</body>
-	
-	<script>document.getElementById("default").click();
-	</script>
 </html>
