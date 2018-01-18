@@ -54,7 +54,7 @@ input[value="+"] {
 	border: none;
 	box-shadow: 0 9px #999;
 	margin-left: 30px;
-	margin-right: 280px;
+	margin-right: 5px;
 }
 
 
@@ -108,6 +108,12 @@ input[value="-"] {
 	color: white;
 	text-align: center;
 }
+
+div.Penalties {
+	display: inline;
+	margin-top: -10px;	
+}
+	
 
 h4 {
 	font-family: "Press Start 2P";
