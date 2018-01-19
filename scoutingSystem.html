@@ -5,7 +5,7 @@
 		<link rel = "stylesheet" type = "text/css" href = "scoutingSystem.css">
 		<link rel = "stylesheet" type = "text/css" href = "buttons.css">
 		<link rel = "stylesheet" type = "text/css" href = "buttonsFooter.css">
-		<link href = "https://fonts.googleapis.com/css?family=Press+Start+2P" rel = "stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 		<title>Scouting System</title>
 		<div class = "tab">
 			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
@@ -115,41 +115,40 @@
 			</div>
 			
 			<div id = "Submit" class = "tabcontent">
-				<h1>Submit</h1>
-				<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
+				<h3>Submit</h3>
+				<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..." style = "height: 200px; width: 700px;"></textarea><br>
 				<input type = "button" class = "submit" onclick = "submit()" value = "Submit">
 			</div>
 			
 			<div class = "footer" >
 				<br><br>
-				<div class = "Penalties" style = "display: inline">
+				<div class = "Penalties" style = "display: inline-block; margin-left: 0px">
 					<h4>Fouls</h4>
 					<br>
-					<input value = "-" type = "button" onclick = "add(-1, 0)">
-					<p id = "foul" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-					<input value = "+" type = "button" onclick = "add(1, 0)">
-				</div>
-				<div class = "Penalties" style = "display: inline">
-					<h4 style = "maar">Technical Fouls</h4>
 					<br>
 					<input value = "-" type = "button" onclick = "add(-1, 0)">
 					<p id = "foul" style = "display: inline; font-family: 'Press Start 2P'">0</p>
 					<input value = "+" type = "button" onclick = "add(1, 0)">
 				</div>
-				<div class = "Penalties"style = "display: inline">
+				<div class = "Penalties" style = "display: inline-block">
+					<h4>Technical Fouls</h4>
+					<br>
+					<br>
+					<input value = "-" type = "button" onclick = "add(-1, 1)">
+					<p id = "tech" style = "display: inline; font-family: 'Press Start 2P'">0</p>
+					<input value = "+" type = "button" onclick = "add(1, 1)">
+				</div>
+				<div class = "Penalties" style = "display: inline-block;">
 					<h4>Yellow Card</h4>
 					<br>
-					<label class = "container" style = "display: inline; margin-left: 50px; margin-right: 50px;">
-						<input type = "checkbox" name = "yellowCard">
-						<span class = "checkmarkYel"></span>
-					</label>
+					<br>
+					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px;">
 				</div>
-				<div class = "Penalties" style = "display: inline">
+				<div class = "Penalties" style = "display: inline-block">
 					<h4>Red Card</h4>
-					<label class = "container" style = "display: inline">
-						<input type = "checkbox" name = "redCard">
-						<span class = "checkmarkRed"></span>
-					</label>
+					<br>
+					<br>
+					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px;">
 				</div>
 			</div>
 	</body>
