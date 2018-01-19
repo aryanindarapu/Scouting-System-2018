@@ -115,8 +115,9 @@ div.Penalties {
 }
 	
 
-h4 {
+.footerHeaders {
 	font-family: "Press Start 2P";
+	-webkit-font-smoothing: antialiased;
 	display: inline;
 	margin-right: 25px;
 	margin-left: 25px;

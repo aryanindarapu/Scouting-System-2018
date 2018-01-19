@@ -22,6 +22,7 @@ confirmNo = function(){
 window.onload = hello;
 var x = 0;
 var y = 0;
+var duringClick = false;
 function showCoords(event) {
     x = event.clientX - $('#canvas').offset().left;
     y = event.clientY - $('#canvas').offset().top;
@@ -42,315 +43,333 @@ function hello(){
     img.onload=start;
     img.src="Map.png";
     function start(){
-        canvas.width=cw;
-        canvas.height=ch;
+		if(duringClick == false){
+			canvas.width=cw;
+			canvas.height=ch;
 
-        // draw the image on the canvas
-        ctx.drawImage(img,0,0,cw,ch);
-
-        if(x>=182 && x<=215 && y >=73 && y<=103){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
-
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(182,73,37,30);
-			ctx.rect(182,73,37,30);
-			ctx.clip();
+			// draw the image on the canvas
 			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=180 && x<=220 && y >=146 && y<=178){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(182,146,37,30);
-			ctx.rect(182,146,37,30);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=285 && x<=325 && y >=60 && y<=95){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+			if(x>=182 && x<=215 && y >=73 && y<=103){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(285,60,38,32);
-			ctx.rect(285,60,38,32);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=285 && x<=325 && y >=155 && y<=190){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(182,73,37,30);
+				ctx.rect(182,73,37,30);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=180 && x<=220 && y >=146 && y<=178){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(285,155,38,35);
-			ctx.rect(285,155,38,35);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=390 && x<=425 && y >=75 && y<=105){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(182,146,37,30);
+				ctx.rect(182,146,37,30);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=285 && x<=325 && y >=60 && y<=95){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(390,75,35,30);
-			ctx.rect(390,75,35,30);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=390 && x<=425 && y >=146 && y<=178){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(285,60,38,32);
+				ctx.rect(285,60,38,32);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=285 && x<=325 && y >=155 && y<=190){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(390,146,35,32);
-			ctx.rect(390,146,35,32);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=60 && x<=115 && y >=80 && y<=120){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(285,155,38,35);
+				ctx.rect(285,155,38,35);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=390 && x<=425 && y >=75 && y<=105){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(60,80,55,40);
-			ctx.rect(60,80,55,40);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=490 && x<=540 && y >=130 && y<=170){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(390,75,35,30);
+				ctx.rect(390,75,35,30);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=390 && x<=425 && y >=146 && y<=178){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(490,130,50,40);
-			ctx.rect(490,130,50,40);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=150 && x<=185 && y >=110 && y<=140){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(390,146,35,32);
+				ctx.rect(390,146,35,32);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=60 && x<=115 && y >=80 && y<=120){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(150,110,35,30);
-			ctx.rect(150,110,35,30);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=420 && x<=455 && y >=110 && y<=140){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(60,80,55,40);
+				ctx.rect(60,80,55,40);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=490 && x<=540 && y >=130 && y<=170){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(420,110,35,30);
-			ctx.rect(420,110,35,30);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=220 && x<=240 && y >=70 && y<=180){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(490,130,50,40);
+				ctx.rect(490,130,50,40);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=150 && x<=185 && y >=110 && y<=140){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(215,70,20,110);
-			ctx.rect(215,70,20,110);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=375 && x<=390 && y >=70 && y<=180){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(150,110,35,30);
+				ctx.rect(150,110,35,30);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=420 && x<=455 && y >=110 && y<=140){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(375,70,20,110);
-			ctx.rect(375,70,20,110);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=80 && x<=115 && y >=5 && y<=40){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(420,110,35,30);
+				ctx.rect(420,110,35,30);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=220 && x<=240 && y >=70 && y<=180){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(80,5,35,35);
-			ctx.rect(80,5,35,35);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=80 && x<=115 && y >=210 && y<=245){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(215,70,20,110);
+				ctx.rect(215,70,20,110);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=375 && x<=390 && y >=70 && y<=180){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(80,210,35,35);
-			ctx.rect(80,210,35,35);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=495 && x<=530 && y >=210 && y<=245){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(375,70,20,110);
+				ctx.rect(375,70,20,110);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=80 && x<=115 && y >=5 && y<=40){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(495,210,35,35);
-			ctx.rect(495,210,35,35);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-		}
-		if(x>=495 && x<=530 && y >=5 && y<=40){
-			// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(80,5,35,35);
+				ctx.rect(80,5,35,35);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=80 && x<=115 && y >=210 && y<=245){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
 
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(495,5,35,35);
-			ctx.rect(495,5,35,35);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(80,210,35,35);
+				ctx.rect(80,210,35,35);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=495 && x<=530 && y >=210 && y<=245){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
+
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(495,210,35,35);
+				ctx.rect(495,210,35,35);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
+			if(x>=495 && x<=530 && y >=5 && y<=40){
+				// darken the image with a 50% black fill
+				ctx.save();
+				ctx.globalAlpha=.50;
+				ctx.fillStyle="black";
+				ctx.fillRect(0,0,cw,ch);
+				ctx.restore();
+
+				// ctx.clip() the area to highlight
+				// and redraw the whole image
+				// (the image will draw only in the clipping region)
+				ctx.save();
+				ctx.beginPath();
+				ctx.clearRect(495,5,35,35);
+				ctx.rect(495,5,35,35);
+				ctx.clip();
+				ctx.drawImage(img,0,0,cw,ch);
+				ctx.restore();
+				duringClick = true;
+			}
 		}
     }
 
