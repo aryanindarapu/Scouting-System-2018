@@ -45,46 +45,8 @@ function hello(){
         canvas.width=cw;
         canvas.height=ch;
 
-        // darken the image with a 50% black fill
-			ctx.save();
-			//ctx.globalAlpha=.50;
-			//ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
-
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(182,73,37,30);
-			ctx.rect(182,73,37,30);
-			ctx.lineWidth = 2;
-			ctx.strokeStyle = 'black';
-			ctx.stroke();
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
-			
-			
-		
-		// darken the image with a 50% black fill
-			ctx.save();
-			ctx.globalAlpha=.50;
-			ctx.fillStyle="black";
-			ctx.fillRect(0,0,cw,ch);
-			ctx.restore();
-
-			// ctx.clip() the area to highlight
-			// and redraw the whole image
-			// (the image will draw only in the clipping region)
-			ctx.save();
-			ctx.beginPath();
-			ctx.clearRect(182,73,37,30);
-			ctx.rect(182,73,37,30);
-			ctx.clip();
-			ctx.drawImage(img,0,0,cw,ch);
-			ctx.restore();
+        // draw the image on the canvas
+        ctx.drawImage(img,0,0,cw,ch);
 
         if(x>=182 && x<=215 && y >=73 && y<=103){
 			// darken the image with a 50% black fill
