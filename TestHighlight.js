@@ -118,8 +118,8 @@ function hello(){
 			// (the image will draw only in the clipping region)
 			ctx.save();
 			ctx.beginPath();
-			ctx.clearRect(285,155,38,35);
-			ctx.rect(285,155,38,35);
+			ctx.clearRect(285,158,38,32);
+			ctx.rect(285,158,38,32);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();
@@ -156,8 +156,8 @@ function hello(){
 			// (the image will draw only in the clipping region)
 			ctx.save();
 			ctx.beginPath();
-			ctx.clearRect(390,146,35,32);
-			ctx.rect(390,146,35,32);
+			ctx.clearRect(390,146,35,30);
+			ctx.rect(390,146,35,30);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();
@@ -175,8 +175,8 @@ function hello(){
 			// (the image will draw only in the clipping region)
 			ctx.save();
 			ctx.beginPath();
-			ctx.clearRect(60,80,55,40);
-			ctx.rect(60,80,55,40);
+			ctx.clearRect(58,80,58,42);
+			ctx.rect(58,80,58,42);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();
@@ -194,8 +194,8 @@ function hello(){
 			// (the image will draw only in the clipping region)
 			ctx.save();
 			ctx.beginPath();
-			ctx.clearRect(490,130,50,40);
-			ctx.rect(490,130,50,40);
+			ctx.clearRect(490,130,60,40);
+			ctx.rect(490,130,60,40);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();
@@ -251,8 +251,8 @@ function hello(){
 			// (the image will draw only in the clipping region)
 			ctx.save();
 			ctx.beginPath();
-			ctx.clearRect(215,70,20,110);
-			ctx.rect(215,70,20,110);
+			ctx.clearRect(215,70,18,108);
+			ctx.rect(215,70,18,108);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();
@@ -270,13 +270,13 @@ function hello(){
 			// (the image will draw only in the clipping region)
 			ctx.save();
 			ctx.beginPath();
-			ctx.clearRect(375,70,20,110);
-			ctx.rect(375,70,20,110);
+			ctx.clearRect(373,72,20,105);
+			ctx.rect(373,72,20,105);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();
 		}
-		if(x>=80 && x<=115 && y >=5 && y<=40){
+		if(x>=60 && x<=120 && y >=5 && y<=40){
 			// darken the image with a 50% black fill
 			ctx.save();
 			ctx.globalAlpha=.50;
@@ -289,13 +289,13 @@ function hello(){
 			// (the image will draw only in the clipping region)
 			ctx.save();
 			ctx.beginPath();
-			ctx.clearRect(80,5,35,35);
-			ctx.rect(80,5,35,35);
+			ctx.clearRect(62,5,60,35);
+			ctx.rect(62,5,60,35);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();
 		}
-		if(x>=80 && x<=115 && y >=210 && y<=245){
+		if(x>=60 && x<=119 && y >=208 && y<=245){
 			// darken the image with a 50% black fill
 			ctx.save();
 			ctx.globalAlpha=.50;
@@ -308,13 +308,13 @@ function hello(){
 			// (the image will draw only in the clipping region)
 			ctx.save();
 			ctx.beginPath();
-			ctx.clearRect(80,210,35,35);
-			ctx.rect(80,210,35,35);
+			ctx.clearRect(60,208,59,37);
+			ctx.rect(60,208,59,37);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();
 		}
-		if(x>=495 && x<=530 && y >=210 && y<=245){
+		if(x>=491 && x<=550 && y >=205 && y<=247){
 			// darken the image with a 50% black fill
 			ctx.save();
 			ctx.globalAlpha=.50;
@@ -327,13 +327,13 @@ function hello(){
 			// (the image will draw only in the clipping region)
 			ctx.save();
 			ctx.beginPath();
-			ctx.clearRect(495,210,35,35);
-			ctx.rect(495,210,35,35);
+			ctx.clearRect(491,205,59,42);
+			ctx.rect(491,205,59,42);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();
 		}
-		if(x>=495 && x<=530 && y >=5 && y<=40){
+		if(x>=490 && x<=545 && y >=5 && y<=40){
 			// darken the image with a 50% black fill
 			ctx.save();
 			ctx.globalAlpha=.50;
@@ -346,8 +346,8 @@ function hello(){
 			// (the image will draw only in the clipping region)
 			ctx.save();
 			ctx.beginPath();
-			ctx.clearRect(495,5,35,35);
-			ctx.rect(495,5,35,35);
+			ctx.clearRect(490,5,55,35);
+			ctx.rect(490,5,55,35);
 			ctx.clip();
 			ctx.drawImage(img,0,0,cw,ch);
 			ctx.restore();

@@ -104,9 +104,11 @@ input[value="-"] {
 	bottom: 0;
 	width: 100%;
 	height: 150px;
-	background: rgba(205,92,92,1);
+	background: #ff8080;
 	color: white;
 	text-align: center;
+	background-image: url("grass.png");
+	background-color: #cccccc;
 }
 
 div.Penalties {
@@ -115,8 +117,9 @@ div.Penalties {
 }
 	
 
-h4 {
+.footerHeaders {
 	font-family: "Press Start 2P";
+	-webkit-font-smoothing: antialiased;
 	display: inline;
 	margin-right: 25px;
 	margin-left: 25px;
