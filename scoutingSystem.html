@@ -79,11 +79,6 @@
 			<div id = "TeleOp" class = "tabcontent">
 				<h1>TeleOp</h1>
 				    <canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo"></p>
-					<div id = "confirm" style = "display:none">
-						<P>Did the robot pick up a block at the highlighted location?</p>
-						<button onclick = "confirmYes()">yes</button>
-						<button onclick = "confirmNo()">no</button>
-					</div>
 				</div>
 		</center>
 		
@@ -121,7 +116,40 @@
 				<h3>Submit</h3>
 				<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..." style = "height: 200px; width: 700px;"></textarea><br>
 				<input type = "button" class = "submit" onclick = "submit()" value = "Submit">
+				
+				<!-- Trigger/Open The Modal -->
+				<button id = "myBtn">Open Modal</button>
+
+				<!-- The Modal -->
+				<div id = "myModal" class = "modal">
+
+					<!-- Modal content -->
+					<div class = "modal-content">
+						<h4 style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
+						<button class = "modalButtonYes" onclick = "closeModal()">Yes</button>
+						<button class = "modalButtonNo" onclick = "closeModal()">No</button> 
+					</div>
+
+				</div>
 			</div>
+			
+			<script>
+				// Get the modal
+				var modal = document.getElementById('myModal');
+
+				// Get the button that opens the modal
+				var btn = document.getElementById("myBtn");
+
+				// When the user clicks the button, open the modal 
+				btn.onclick = function() {
+					modal.style.display = "block";
+				}
+
+				// When the user clicks on <span> (x), close the modal
+				closeModal = function() {
+					modal.style.display = "none";
+				}
+			</script>
 			
 			<div class = "footer" id = "footer">
 				<br><br>
