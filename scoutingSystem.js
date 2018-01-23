@@ -16,6 +16,10 @@ confirmYes = function(){
 	hasBeenClick = true;
 	if(blockAcquired==false){
 		blockAcquired=true;
+		document.getElementById("blockImg").style.filter = "grayscale(0%)";
+		document.getElementById("blockImg").style.opacity = 1;
+		document.getElementById("pHasNoBlock").style.display = "none";
+		document.getElementById("pHasBlock").style.display = "block";
 		if(x>=182 && x<=215 && y >=73 && y<=103){
 			pickedUpBlockArray.push("Switch 1");
 			console.log(pickedUpBlockArray);
@@ -83,6 +87,10 @@ confirmYes = function(){
 	}
 	else{
 		blockAcquired=false;
+		document.getElementById("blockImg").style.filter = "grayscale(100%)";
+		document.getElementById("blockImg").style.opacity = 0.5;
+		document.getElementById("pHasNoBlock").style.display = "block";
+		document.getElementById("pHasBlock").style.display = "none";
 		if(x>=182 && x<=215 && y >=73 && y<=103){
 			deliveredBlockArray.push("Switch 1");
 			console.log(deliveredBlockArray);

@@ -106,9 +106,12 @@
 		<center>
 			<div id = "TeleOp" class = "tabcontent">
 				<h1>TeleOp</h1>
-				    <canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo"></p>
+				    <canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
+					<p>Block in hand:</p>
+					<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
 					<div id = "confirm" style="display:none">
- 					<P>Did the robot pick up a block at the highlighted location?</p>
+ 					<P id = "pHasNoBlock">Did the robot pick up a block at the highlighted location?</p>
+					<P id = "pHasBlock" style = "display:none">Did the robot deliver a block at the highlighted location?</p>
  					<button onclick = "confirmYes()">yes</button>
  					<button onclick = "confirmNo()">no</button>
  				</div>
