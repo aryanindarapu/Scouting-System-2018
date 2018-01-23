@@ -23,6 +23,7 @@ confirmNo = function(){
 	hasBeenClick = false;
 }
 
+
 window.onload = hello;
 var x = 0;
 var y = 0;
@@ -641,3 +642,11 @@ function submit() {
 	comment = document.getElementById("comment").value;
 	console.log(comment);
 }
+
+    $(function(){
+        var x = 0;
+        setInterval(function(){
+            x-=1;
+            $('.tab').css('background-position', x + 'px 0');
+        }, 10);
+    })
