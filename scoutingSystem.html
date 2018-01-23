@@ -14,6 +14,7 @@
 			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
 		</div>
+
 		<script type="text/javascript" src="scoutingSystem.js"></script>
 		<style>
 			canvas{border:1px solid red;}
@@ -50,40 +51,40 @@
 			</div>
 		</center>
 		
-			<div id = "Auton" class = "tabcontent">
-				<center>
-					<h1>Auton</h1>
-				</center>
-				<h3>Crossed Baseline?</h3><br>
-				<label class = "container">Yes
-					<input id = "crossY" type = "radio" name = "baseline">
-					<span class = "radio"></span>
-				</label><br>
-				<label class = "container">No
-					<input id = "crossN" type = "radio" name = "baseline">
-					<span class = "radio"></span>
-				</label><br>
-				<h3>Placed Block On:</h3><br>
-				<label class = "container">Switch
-					<input id = "switch" type = "checkbox">
-					<span class = "checkmark"></span>
-				</label><br>
-				<label class = "container">Scale
-					<input id = "scale" type = "checkbox">
-					<span class = "checkmark"></span>
-				</label>
-			</div>
+		<div id = "Auton" class = "tabcontent">
+			<center>
+				<h1>Auton</h1>
+			</center>
+			<h3>Crossed Baseline?</h3><br>
+			<label class = "container">Yes
+				<input id = "crossY" type = "radio" name = "baseline">
+				<span class = "radio"></span>
+			</label><br>
+			<label class = "container">No
+				<input id = "crossN" type = "radio" name = "baseline">
+				<span class = "radio"></span>
+			</label><br>
+			<h3>Placed Block On:</h3><br>
+			<label class = "container">Switch
+				<input id = "switch" type = "checkbox">
+				<span class = "checkmark"></span>
+			</label><br>
+			<label class = "container">Scale
+				<input id = "scale" type = "checkbox">
+				<span class = "checkmark"></span>
+			</label>
+		</div>
+			
 		<center>
 			<div id = "TeleOp" class = "tabcontent">
 				<h1>TeleOp</h1>
-				<canvas id="canvas" style="display: inline-block"width=300 height=300 onclick="showCoords(event);"></canvas>
-				<div id = "confirm" style="display:none">
-					<P>Did the robot pick up a block at the highlighted location?</p>
-					<button onclick = "confirmYes()">yes</button>
-					<button onclick = "confirmNo()">no</button>
+				    <canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo"></p>
+					<div id = "confirm" style = "display:none">
+						<P>Did the robot pick up a block at the highlighted location?</p>
+						<button onclick = "confirmYes()">yes</button>
+						<button onclick = "confirmNo()">no</button>
+					</div>
 				</div>
-				<p id="demo"></p>
-			</div>
 		</center>
 		
 			<div id = "Endgame" class = "tabcontent">
