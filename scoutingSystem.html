@@ -14,6 +14,8 @@
 			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
 		</div>
+
+		<script type="text/javascript" src="scoutingSystem.js"></script>
 		<style>
 			canvas{border:1px solid red;}
 		</style>
@@ -76,7 +78,7 @@
 		<center>
 			<div id = "TeleOp" class = "tabcontent">
 				<h1>TeleOp</h1>
-				    <canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas>
+				    <canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo"></p>
 					<div id = "confirm" style = "display:none">
 						<P>Did the robot pick up a block at the highlighted location?</p>
 						<button onclick = "confirmYes()">yes</button>
