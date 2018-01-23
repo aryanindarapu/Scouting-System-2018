@@ -14,6 +14,63 @@ confirmClick = function(){
 confirmYes = function(){
 	document.getElementById("confirm").style.display = "none";
 	hasBeenClick = true;
+}
+confirmNo = function(){
+	document.getElementById("confirm").style.display = "none";
+	x=0;
+	y=0;
+	hello();
+	hasBeenClick = false;
+}
+
+window.onload = hello;
+var x = 0;
+var y = 0;
+function showCoords(event) {
+    x = event.clientX - $('#canvas').offset().left;
+    y = event.clientY - $('#canvas').offset().top;
+    var coords = "X coords: " + x + ", Y coords: " + y;
+    document.getElementById("demo").innerHTML = coords;
+	hello();
+	setTimeout(confirmClick, 100);
+}
+function hello(){
+
+    var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
+
+    var cw=607;
+    var ch=248;
+
+    var img=new Image();
+    img.onload=start;
+    img.src="Map.png";
+    function start(){
+        canvas.width=cw;
+        canvas.height=ch;
+
+        // draw the image on the canvas
+        ctx.drawImage(img,0,0,cw,ch);
+
+        if(x>=182 && x<=215 && y >=73 && y<=103){
+			// darken the image with a 50% black fill
+			ctx.save();
+			ctx.globalAlpha=.50;
+			ctx.fillStyle="black";
+			ctx.fillRect(0,0,cw,ch);
+			ctx.restore();
+
+			// ctx.clip() the area to highlight
+			// and redraw the whole image
+			// (the image will draw only in the clipping region)
+			ctx.save();
+			ctx.beginPath();
+			ctx.clearRect(182,73,37,30);
+			ctx.rect(182,73,37,30);
+			ctx.clip();
+			ctx.drawImage(img,0,0,cw,ch);
+			ctx.restore();
+			console.log("hello");
 	if(blockAcquired==false){
 		blockAcquired=true;
 		if(x>=182 && x<=215 && y >=73 && y<=103){

@@ -4,3 +4,4 @@ Auton cnetered and bigger/better looking
 How fast auton blocks on switch/scale
 What climbing mechanisms do they offer
 Possibly different blue in background
+search for team stats
