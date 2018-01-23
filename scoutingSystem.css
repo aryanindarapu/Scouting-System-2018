@@ -47,6 +47,52 @@ div.infoTab {
 	margin-left: 150px;
 }
 
+.modalButtonYes {
+	font-family: 'Press Start 2P';
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+	box-shadow: 0 9px #999;
+}
+
+.modalButtonYes:hover {filter: brightness(80%)}
+
+.modalButtonYes:active {
+	filter: brightness(80%)
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.modalButtonNo {
+	font-family: 'Press Start 2P';
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #DC143C;
+	border: none;
+	box-shadow: 0 9px #999;
+}
+
+.modalButtonNo:hover {filter: brightness(80%)}
+
+.modalButtonNo:active {
+	filter: brightness(80%)
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
 input[type=text] {
     background-color: white;
 	border: 3px solid #555;
@@ -85,8 +131,6 @@ input[value="+"] {
 	margin-left: 30px;
 	margin-right: 5px;
 }
-
-
 
 input[type="button"]:hover {filter: brightness(80%)}
 
@@ -163,6 +207,9 @@ h1 {
 	font-size: 50px;
 }
 
+
+
+/* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
