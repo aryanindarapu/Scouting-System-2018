@@ -8,6 +8,8 @@ body {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #ffffff ;
+	background-image: url("output_FKsPkq.gif");
+    background-repeat: repeat-x;
 }
 
 /* Style the buttons inside the tab */
@@ -44,6 +46,27 @@ div.infoTab {
 	margin-right: 150px;
 	margin-left: 150px;
 }
+
+input[type=text] {
+    background-color: white;
+	border: 3px solid #555;
+    padding: 6px 10px;
+	transition: all .2s ease-out;
+	}
+	
+input[type=text]:focus {
+	transition: all .2s ease-in;
+	transform: scale(1.5);
+	transition: all .2s ease-out;
+}
+
+/* input[type=text]:focus {
+    background-color: lightblue;
+	border: 3px solid #555;
+	height: 75px;
+	width: 250px;
+	font-size: 200%;
+} */
 
 input[value="+"] {
 	margin-top: 8px;
@@ -177,3 +200,4 @@ h1 {
     text-decoration: none;
     cursor: pointer;
 }
+
