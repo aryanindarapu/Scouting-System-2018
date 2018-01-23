@@ -45,6 +45,27 @@ div.infoTab {
 	margin-left: 150px;
 }
 
+input[type=text] {
+    background-color: white;
+	border: 3px solid #555;
+    padding: 6px 10px;
+	transition: all .2s ease-out;
+	}
+	
+input[type=text]:focus {
+	transition: all .2s ease-in;
+	transform: scale(1.5);
+	transition: all .2s ease-out;
+}
+
+/* input[type=text]:focus {
+    background-color: lightblue;
+	border: 3px solid #555;
+	height: 75px;
+	width: 250px;
+	font-size: 200%;
+} */
+
 input[value="+"] {
 	margin-top: 8px;
 	font-weight: bold;
