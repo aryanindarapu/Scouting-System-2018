@@ -8,6 +8,8 @@ body {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #ffffff ;
+	background-image: url("output_FKsPkq.gif");
+    background-repeat: repeat-x;
 }
 
 /* Style the buttons inside the tab */
@@ -198,3 +200,4 @@ h1 {
     text-decoration: none;
     cursor: pointer;
 }
+
