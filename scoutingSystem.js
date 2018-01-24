@@ -9,6 +9,12 @@ var blockAcquired = false;
 var Aryan=false;
 confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
+	var modal = document.getElementById("myModal");
+	modal.style.display = "block";
+	closeModal = function() {
+		modal.style.display = "none";
+	}
+	$("#myModal").modal();
 }
 
 confirmYes = function(){
