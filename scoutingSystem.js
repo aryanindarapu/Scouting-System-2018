@@ -7,6 +7,20 @@ var pickedUpBlockArray = [];
 var deliveredBlockArray = [];
 var blockAcquired = false;
 
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
 /* confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
 }
@@ -14,7 +28,6 @@ var blockAcquired = false;
 confirmYes = function(){
 	document.getElementById("confirm").style.display = "none";
 	hasBeenClick = true;
-<<<<<<< HEAD
 }
 confirmNo = function(){
 	document.getElementById("confirm").style.display = "none";
@@ -589,20 +602,6 @@ function hello(){
 		}
 	}
 }; // end $(function(){});
-
-function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
 
 var idArray = ["foul", "tech"]
 function add(n, id) {
