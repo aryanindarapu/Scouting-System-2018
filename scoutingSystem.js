@@ -6,22 +6,15 @@ var clickedMap = false;
 var pickedUpBlockArray = [];
 var deliveredBlockArray = [];
 var blockAcquired = false;
-
+var Aryan=false;
 confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
-	// Get the modal
-	var modal = document.getElementById('myModal');
-	
+	var modal = document.getElementById("myModal");
 	modal.style.display = "block";
-	
-
-	// When the user clicks on <span> (x), close the modal
 	closeModal = function() {
 		modal.style.display = "none";
 	}
-
-        $("#myModal").modal();
-;
+	$("#myModal").modal();
 }
 
 confirmYes = function(){
@@ -588,12 +581,22 @@ $(function(){
 function changeValue() {
 	document.getElementById("timer").innerHTML = --value;
 	console.log(value);
+	value = value-1;
+	document.getElementById("timer").innerHTML = "0:" + value;
+	if(value==0){
+		stop();
+	}
 }
 
 var timerInterval = null;
+var autonTimeScale = [];
+var autonTimeSwitch = [];
 function start() {
+	autonTimeScale = [];
+	autonTimeSwitch = [];
 	stop();
 	value = 15;
+	document.getElementById("timer").innerHTML = "0:" + value;
 	timerInterval = setInterval(changeValue, 1000);
 	if (value.value === 0) {
 		console.log("test");
@@ -605,6 +608,14 @@ var stop = function() {
 	clearInterval(timerInterval);
 }
 
+var recordTimeAutonScale = function(){
+	autonTimeScale.push(value);
+	console.log(autonTimeScale);
+}
+var recordTimeAutonSwitch = function() {
+	autonTimeSwitch.push(value);
+	console.log(autonTimeSwitch);
+}
 
 /*function submit() {
 	teamName = document.getElementById("teamName").value;
@@ -634,4 +645,3 @@ var stop = function() {
 	comment = document.getElementById("comment").value;
 	console.log(comment);
 };*/
-
