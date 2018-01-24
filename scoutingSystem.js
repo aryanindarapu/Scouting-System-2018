@@ -585,6 +585,24 @@ $(function(){
     }, 10);
 }) 
 
+function changeValue() {
+	document.getElementById("timer").innerHTML = ++value;
+}
+
+var timerInterval = null;
+function start() {
+	stop();
+	value = 0;
+	timerInterval = setInterval(changeValue, 1000);
+	if (value === 3) {
+		console.log("test");
+	}
+}
+var stop = function() {
+	clearInterval(timerInterval);
+}
+
+
 /*function submit() {
 	teamName = document.getElementById("teamName").value;
 	console.log(teamName);

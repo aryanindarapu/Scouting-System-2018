@@ -54,29 +54,34 @@
 		<div id = "Auton" class = "tabcontent">
 			<center>
 				<h1>Auton</h1>
-				</center>
-				<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
-				<div class = "autonButtons">
-					<label class = "container">Yes
-						<input id = "crossY" type = "radio" name = "baseline">
-						<span class = "radio"></span>
-					</label><br>
-					<label class = "container">No
-						<input id = "crossN" type = "radio" name = "baseline">
-						<span class = "radio"></span>
-					</label><br>
-				</div>
-				<h3 style = "text-align: center;">Placed Block On:</h3><br>
-				<div class = "autonButtons">
-					<label class = "container">Switch
-						<input id = "switch" type = "checkbox">
-						<span class = "checkmark"></span>
-					</label><br>
-					<label class = "container">Scale
-						<input id = "scale" type = "checkbox">
-						<span class = "checkmark"></span>
-					</label>
-				</div>
+			</center>
+			<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
+			<div class = "autonButtons">
+				<label class = "container">Yes
+					<input id = "crossY" type = "radio" name = "baseline">
+					<span class = "radio"></span>
+				</label><br>
+				<label class = "container">No
+					<input id = "crossN" type = "radio" name = "baseline">
+					<span class = "radio"></span>
+				</label><br>
+			</div>
+			<h3 style = "text-align: center;">Placed Block On:</h3><br>
+			<div class = "autonButtons">
+				<label class = "container">Switch
+					<input id = "switch" type = "checkbox">
+					<span class = "checkmark"></span>
+				</label><br>
+				<label class = "container">Scale
+					<input id = "scale" type = "checkbox">
+					<span class = "checkmark"></span>
+				</label>
+			</div>
+
+			<p id = "timer">0</p>
+
+			<button onclick="start()">Start time</button>
+			<button onclick="stop()">Stop time</button>
 		</div>			
 		<center>
 			<div id = "TeleOp" class = "tabcontent">
