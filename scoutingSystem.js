@@ -567,7 +567,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 };
 
-var idArray = ["foul", "tech"];
+var idArray = ["foul", "tech","autonScale","autonSwitch"];
  function add(n, id) {
  	x = parseInt(document.getElementById(idArray[id]).innerHTML);
  	x += n;
