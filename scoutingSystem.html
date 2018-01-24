@@ -34,10 +34,10 @@
 						<span class="slider"></span>
 					</label>
 					<h3>OVERVIEW OF GAME</h3>
-					<p> In the FIRST Robotics Competition, teams are trapped in an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
+					<p> In FIRST Power Up, teams are trapped in an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
 						Tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
 						to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
-						which includes autonomous and teleoperated periods, defeats the boss and wins the game.
+						including autonomous and teleoperated periods, defeats the boss and wins the game.
 					<h3>INSTRUCTIONS</h3>
 					<h3>AUTON</h3>
 					<p> While scouting auton, there are multiple factors one must observe to scout correctly. As soon as the game starts, look at the robot and observe if they crossed the baseline.
@@ -54,31 +54,67 @@
 		<div id = "Auton" class = "tabcontent">
 			<center>
 				<h1>Auton</h1>
+				</center>
+				<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
+				<div class = "autonButtons">
+					<label class = "container">Yes
+						<input id = "crossY" type = "radio" name = "baseline">
+						<span class = "radio"></span>
+					</label><br>
+					<label class = "container">No
+						<input id = "crossN" type = "radio" name = "baseline">
+						<span class = "radio"></span>
+					</label><br>
+				</div>
+				<h3 style = "text-align: center;">Placed Block On:</h3><br>
+				<div class = "autonButtons">
+					<label class = "container">Switch
+						<input id = "switch" type = "checkbox">
+						<span class = "checkmark"></span>
+					</label><br>
+					<label class = "container">Scale
+						<input id = "scale" type = "checkbox">
+						<span class = "checkmark"></span>
+					</label>
+				</div>
+		</div>
+		
+<!-- 		<div id = "Auton" class = "tabcontent">
+			<center>
+				<h1>Auton</h1>
 			</center>
 			<h3>Crossed Baseline?</h3><br>
-			<label class = "container">Yes
-				<input id = "crossY" type = "radio" name = "baseline">
+			<label  class = "autonContainer" style="padding-left: 300px;">Yes
+				<input id = "crossY" type = "radio" name = "baseline" class = "AutonBody">
 				<span class = "radio"></span>
 			</label><br>
-			<label class = "container">No
+			<label class = "autonContainer">No
 				<input id = "crossN" type = "radio" name = "baseline">
-				<span class = "radio"></span>
+				<span class = "Autonradio"></span>
 			</label><br>
 			<h3>Placed Block On:</h3><br>
-			<label class = "container">Switch
+			<label class = "autonContainer">Switch
 				<input id = "switch" type = "checkbox">
 				<span class = "checkmark"></span>
 			</label><br>
-			<label class = "container">Scale
+			<label class = "autonContainer">Scale
 				<input id = "scale" type = "checkbox">
 				<span class = "checkmark"></span>
 			</label>
-		</div>
+		</div> -->
 			
 		<center>
 			<div id = "TeleOp" class = "tabcontent">
 				<h1>TeleOp</h1>
-				    <canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo"></p>
+				    <canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
+					<p>Block in hand:</p>
+					<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
+					<div id = "confirm" style="display:none">
+ 					<P id = "pHasNoBlock">Did the robot pick up a block at the highlighted location?</p>
+					<P id = "pHasBlock" style = "display:none">Did the robot deliver a block at the highlighted location?</p>
+ 					<button onclick = "confirmYes()">yes</button>
+ 					<button onclick = "confirmNo()">no</button>
+ 				</div>
 				</div>
 		</center>
 		
