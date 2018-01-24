@@ -54,6 +54,34 @@
 		<div id = "Auton" class = "tabcontent">
 			<center>
 				<h1>Auton</h1>
+			</center>
+			<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
+			<div class = "autonButtons">
+				<label class = "container">Yes
+					<input id = "crossY" type = "radio" name = "baseline">
+					<span class = "radio"></span>
+				</label><br>
+				<label class = "container">No
+					<input id = "crossN" type = "radio" name = "baseline">
+					<span class = "radio"></span>
+				</label><br>
+			</div>
+			<h3 style = "text-align: center;">Placed Block On:</h3><br>
+			<div class = "autonButtons">
+				<label class = "container">Switch
+					<input id = "switch" type = "checkbox">
+					<span class = "checkmark"></span>
+				</label><br>
+				<label class = "container">Scale
+					<input id = "scale" type = "checkbox">
+					<span class = "checkmark"></span>
+				</label>
+			</div>
+
+			<p id = "timer">0</p>
+
+			<button onclick="start()">Start time</button>
+			<button onclick="stop()">Stop time</button>
 				</center>
 				<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
 				<div class = "autonButtons">
@@ -90,9 +118,9 @@
 						<p id = "autonSwitch" style = "display: inline; font-family: 'Press Start 2P'">0</p>
 						<input value = "+" type = "button" onclick = "add(1, 3)">
 						</label> -->
-				</div>
-				
-		</div>			
+				</div>	
+		</div>
+		
 		<center>
 			<div id = "TeleOp" class = "tabcontent">
 				<h1>TeleOp</h1>
@@ -100,13 +128,22 @@
 					<p>Block in hand:</p>
 					<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
 					<div id = "confirm" style="display:none">
- 					<P id = "pHasNoBlock">Did the robot pick up a block at the highlighted location?</p>
-					<P id = "pHasBlock" style = "display:none">Did the robot deliver a block at the highlighted location?</p>
- 					<button onclick = "confirmYes()">yes</button>
- 					<button onclick = "confirmNo()">no</button>
- 				</div>
+						<!-- The Modal -->
+						<div id = "myModal" class = "modal">
+
+							<!-- Modal content -->
+							<div class = "modal-content">
+								<h4 id = "pHasNoBlock" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
+								<h4 id = "pHasBlock" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
+								<button class = "modalButtonYes" onclick = "confirmYes(), closeModal()">Yes</button>
+								<button class = "modalButtonNo" onclick = "confirmNo(), closeModal()">No</button> 
+							</div>
+
+						</div>
+					</div>
 				</div>
-		</center>
+
+				</center>
 		
 			<div id = "Endgame" class = "tabcontent">
 				<center>
@@ -145,37 +182,7 @@
 				
 				<!-- Trigger/Open The Modal -->
 				<button id = "myBtn">Open Modal</button>
-
-				<!-- The Modal -->
-				<div id = "myModal" class = "modal">
-
-					<!-- Modal content -->
-					<div class = "modal-content">
-						<h4 style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
-						<button class = "modalButtonYes" onclick = "closeModal()">Yes</button>
-						<button class = "modalButtonNo" onclick = "closeModal()">No</button> 
-					</div>
-
-				</div>
 			</div>
-			
-			<script>
-				// Get the modal
-				var modal = document.getElementById('myModal');
-
-				// Get the button that opens the modal
-				var btn = document.getElementById("myBtn");
-
-				// When the user clicks the button, open the modal 
-				btn.onclick = function() {
-					modal.style.display = "block";
-				}
-
-				// When the user clicks on <span> (x), close the modal
-				closeModal = function() {
-					modal.style.display = "none";
-				}
-			</script>
 			
 			<div class = "footer" id = "footer">
 				<br><br>
