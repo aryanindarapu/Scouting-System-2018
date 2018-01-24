@@ -6,22 +6,9 @@ var clickedMap = false;
 var pickedUpBlockArray = [];
 var deliveredBlockArray = [];
 var blockAcquired = false;
-
+var Aryan=false;
 confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
-	// Get the modal
-	var modal = document.getElementById('myModal');
-	
-	modal.style.display = "block";
-	
-
-	// When the user clicks on <span> (x), close the modal
-	closeModal = function() {
-		modal.style.display = "none";
-	}
-
-        $("#myModal").modal();
-;
 }
 
 confirmYes = function(){
@@ -585,24 +572,6 @@ $(function(){
     }, 10);
 }) 
 
-function changeValue() {
-	document.getElementById("timer").innerHTML = ++value;
-}
-
-var timerInterval = null;
-function start() {
-	stop();
-	value = 0;
-	timerInterval = setInterval(changeValue, 1000);
-	if (value === 3) {
-		console.log("test");
-	}
-}
-var stop = function() {
-	clearInterval(timerInterval);
-}
-
-
 /*function submit() {
 	teamName = document.getElementById("teamName").value;
 	console.log(teamName);
@@ -631,4 +600,3 @@ var stop = function() {
 	comment = document.getElementById("comment").value;
 	console.log(comment);
 };*/
-
