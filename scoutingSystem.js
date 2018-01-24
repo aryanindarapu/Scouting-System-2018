@@ -586,13 +586,22 @@ $(function(){
 }) 
 
 function changeValue() {
-	document.getElementById("timer").innerHTML = ++value;
+	value = value-1;
+	document.getElementById("timer").innerHTML = "0:" + value;
+	if(value==0){
+		stop();
+	}
 }
 
 var timerInterval = null;
+var autonTimeScale = [];
+var autonTimeSwitch = [];
 function start() {
+	autonTimeScale = [];
+	autonTimeSwitch = [];
 	stop();
-	value = 0;
+	value = 15;
+	document.getElementById("timer").innerHTML = "0:" + value;
 	timerInterval = setInterval(changeValue, 1000);
 	if (value === 3) {
 		console.log("test");
@@ -600,6 +609,15 @@ function start() {
 }
 var stop = function() {
 	clearInterval(timerInterval);
+}
+
+var recordTimeAutonScale = function(){
+	autonTimeScale.push(value);
+	console.log(autonTimeScale);
+}
+var recordTimeAutonSwitch = function() {
+	autonTimeSwitch.push(value);
+	console.log(autonTimeSwitch);
 }
 
 

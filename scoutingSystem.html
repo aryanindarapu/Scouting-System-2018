@@ -67,7 +67,7 @@
 				</label><br>
 			</div>
 
-			<p id = "timer">0</p>
+			<p id = "timer">0:15</p>
 
 			<button onclick="start()">Start time</button>
 			<button onclick="stop()">Stop time</button>
@@ -79,14 +79,14 @@
 						<br>
 						<input value = "-" type = "button" onclick = "add(-1, 3)">
 						<p id = "autonSwitch" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-						<input value = "+" type = "button" onclick = "add(1, 3)">
+						<input value = "+" type = "button" onclick = "add(1, 3); recordTimeAutonScale()">
 					</div>
 					<div class = "Penalties" style = "display: inline-block">
 						<h3 class = "autonHeader">Switch</h3>
 						<br>
 						<input value = "-" type = "button" onclick = "add(-1, 2)">
 						<p id = "autonScale" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-						<input value = "+" type = "button" onclick = "add(1, 2)">
+						<input value = "+" type = "button" onclick = "add(1, 2); recordTimeAutonSwitch()">
 					</div>
 						<!-- <input value = "-" type = "button" onclick = "add(-1, 2)">
 						<p id = "autonScale" style = "display: inline; font-family: 'Press Start 2P'">0</p>
