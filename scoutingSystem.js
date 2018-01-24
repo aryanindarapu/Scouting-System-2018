@@ -579,10 +579,10 @@ $(function(){
 }) 
 
 function changeValue() {
-	document.getElementById("timer").innerHTML = --value;
 	console.log(value);
 	value = value-1;
-	document.getElementById("timer").innerHTML = "0:" + value;
+	if(value>=10){document.getElementById("timer").innerHTML = "0:" + value;}
+	if(value<10){document.getElementById("timer").innerHTML = "0:0" + value;}
 	if(value==0){
 		stop();
 	}
@@ -596,7 +596,8 @@ function start() {
 	autonTimeSwitch = [];
 	stop();
 	value = 15;
-	document.getElementById("timer").innerHTML = "0:" + value;
+	if(value>=10){document.getElementById("timer").innerHTML = "0:" + value;}
+	if(value<10){document.getElementById("timer").innerHTML = "0:0" + value;}
 	timerInterval = setInterval(changeValue, 1000);
 	if (value.value === 0) {
 		console.log("test");
