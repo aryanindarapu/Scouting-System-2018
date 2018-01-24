@@ -136,7 +136,7 @@ confirmYes = function(){
 			console.log(deliveredBlockArray);
 		}
 		if(x>=375 && x<=390 && y >=70 && y<=180){
-			deliveredBlockArray.push("Blue six Blocks");
+			deliveredBlockArray.push("Blue 6 Blocks");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=60 && x<=120 && y >=5 && y<=40){
@@ -201,7 +201,7 @@ function hello(){
 			// draw the image on the canvas
 			ctx.drawImage(img,0,0,cw,ch);
 
-			if(x>=182 && x<=215 && y >=73 && y<=103){
+			if(x>=182 && x<=215 && y >=73 && y<=103 && blockAcquired){ //Switch 1
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -221,7 +221,7 @@ function hello(){
 				ctx.restore();
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=180 && x<=220 && y >=146 && y<=178){
+			if(x>=180 && x<=220 && y >=146 && y<=178 && blockAcquired){ //Switch 2
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -242,7 +242,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=285 && x<=325 && y >=60 && y<=95){
+			if(x>=285 && x<=325 && y >=60 && y<=95 && blockAcquired){ //Scale 1
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -263,7 +263,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=285 && x<=325 && y >=155 && y<=190){
+			if(x>=285 && x<=325 && y >=155 && y<=190 && blockAcquired){ //Scale 2
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -284,7 +284,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=390 && x<=425 && y >=75 && y<=105){
+			if(x>=390 && x<=425 && y >=75 && y<=105 && blockAcquired){ //Switch 3
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -305,7 +305,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=390 && x<=425 && y >=146 && y<=178){
+			if(x>=390 && x<=425 && y >=146 && y<=178 && blockAcquired){ //Switch 4
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -326,7 +326,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=60 && x<=115 && y >=80 && y<=120){
+			if(x>=60 && x<=115 && y >=80 && y<=120){ //Red Station
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -347,7 +347,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=490 && x<=540 && y >=130 && y<=170){
+			if(x>=490 && x<=540 && y >=130 && y<=170){ //Blue Station
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -368,7 +368,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=150 && x<=185 && y >=110 && y<=140){
+			if(x>=150 && x<=185 && y >=110 && y<=140){ //Red Block Pile
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -389,7 +389,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=420 && x<=455 && y >=110 && y<=140){
+			if(x>=420 && x<=455 && y >=110 && y<=140){ //Blue Block Pile
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -410,7 +410,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=220 && x<=240 && y >=70 && y<=180){
+			if(x>=220 && x<=240 && y >=70 && y<=180){ //Red 6 Blocks
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -431,7 +431,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=375 && x<=390 && y >=70 && y<=180){
+			if(x>=375 && x<=390 && y >=70 && y<=180){ //Blue 6 Blocks
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -452,7 +452,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=60 && x<=120 && y >=5 && y<=40){
+			if(x>=60 && x<=120 && y >=5 && y<=40){ //Blue Portal Top
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -473,7 +473,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=60 && x<=119 && y >=208 && y<=245){
+			if(x>=60 && x<=119 && y >=208 && y<=245){ //Blue Portal Bottom
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -494,7 +494,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=491 && x<=550 && y >=205 && y<=247){
+			if(x>=491 && x<=550 && y >=205 && y<=247){//Red Portal Top
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -515,7 +515,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=490 && x<=545 && y >=5 && y<=40){
+			if(x>=490 && x<=545 && y >=5 && y<=40){//Red Portal Bottom
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
