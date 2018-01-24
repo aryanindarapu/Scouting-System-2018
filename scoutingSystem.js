@@ -586,18 +586,21 @@ $(function(){
 }) 
 
 function changeValue() {
-	document.getElementById("timer").innerHTML = ++value;
+	document.getElementById("timer").innerHTML = --value;
+	console.log(value);
 }
 
 var timerInterval = null;
 function start() {
 	stop();
-	value = 0;
+	value = 15;
 	timerInterval = setInterval(changeValue, 1000);
-	if (value === 3) {
+	if (value.value === 0) {
 		console.log("test");
+		stop();
 	}
 }
+
 var stop = function() {
 	clearInterval(timerInterval);
 }
