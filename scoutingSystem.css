@@ -268,3 +268,12 @@ h1 {
 	padding-top:10%;
 	text-align: center;
 }
+
+textarea{
+	height: 200px;
+	width: 700px;
+	max-height: 400px;
+	max-width: 900px;
+	min-height: 100px;
+	min-width: 500px;
+}
