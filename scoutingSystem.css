@@ -173,6 +173,8 @@ input[value="-"] {
 
 .footer {
 	position: fixed;
+	display: flex;
+	align-items: start;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -186,7 +188,8 @@ input[value="-"] {
 
 div.Penalties {
 	display: inline;
-	margin-top: -10px;	
+	margin-top: 10px;
+	padding-right: 50px;
 }
 	
 
