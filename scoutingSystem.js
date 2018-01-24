@@ -6,7 +6,7 @@ var clickedMap = false;
 var pickedUpBlockArray = [];
 var deliveredBlockArray = [];
 var blockAcquired = false;
-
+var Aryan=false;
 confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
 }
