@@ -275,11 +275,20 @@ h1 {
 	padding-top:10%;
 	text-align: center;
 }
+<<<<<<< HEAD
+
+textarea{
+=======
 textarea {
+>>>>>>> 33092bede4bad499948b0bdbc3c7b9d93e4570ed
 	height: 200px;
 	width: 700px;
 	max-height: 200px;
 	max-width: 700px;
+<<<<<<< HEAD
+	min-height:200px;
+=======
 	min-height: 200px;
+>>>>>>> 33092bede4bad499948b0bdbc3c7b9d93e4570ed
 	min-width: 700px;
 }
