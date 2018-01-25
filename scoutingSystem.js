@@ -601,7 +601,8 @@ function changeValue() {
 	if(value<10){document.getElementById("timer").innerHTML = "0:0" + value;}
 	if(value==0){
 		stop();
-		document.getElementById("timer").style.outline = "#000 dotted thick";
+		document.getElementById("timer").style.outline = "#ff0000 dotted thick";
+		setTimeout(colorChange, 500);
 	}
 }
 
