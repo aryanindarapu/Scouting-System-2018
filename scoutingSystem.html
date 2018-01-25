@@ -29,7 +29,7 @@
 					<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
 					<input id = "teamNo" type = "text" placeholder = "Team Number"><br><br>
 					<h3 style = "display: inline">Team Color:</h3>
-					<label class="switch">
+					<label class="switch" onclick = "teamColor()">
 						<input type="checkbox">
 						<span class="slider"></span>
 					</label>
@@ -55,6 +55,11 @@
 			<center>
 				<h1>Auton</h1>
 			</center>
+			<center>
+				<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
+				<button id = "startButton" onclick="start()">Start Time</button>
+				<button id = "resetButton" onclick="reset()" style = "display: none">Reset Time</button>
+			</center>
 			<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
 			<div class = "autonButtons">
 				<label class = "container">Yes
@@ -66,9 +71,6 @@
 					<span class = "radio"></span>
 				</label><br>
 			</div>
-			<p id = "timer">0:15</p>
-			<button onclick="start()">Start time</button>
-			<button onclick="stop()">Stop time</button>
 				</center>
 				<h3 style = "text-align: center;">Placed Block On:</h3><br>
 				<div class = "autonButtons">
