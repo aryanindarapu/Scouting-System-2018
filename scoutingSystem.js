@@ -7,6 +7,7 @@ var pickedUpBlockArray = [];
 var deliveredBlockArray = [];
 var blockAcquired = false;
 var teamColor="Red";
+var test;
 
 var teamColor = function(){
 	if(teamColor == "Red"){
