@@ -6,7 +6,7 @@ body {
 /* Style the tab */
 .tab {
     overflow: hidden;
-	background-image:url("Webp.net-gifmaker.gif");
+	background-image:url("output_FKsPkq.gif");
     background-repeat: repeat-x;
 }
 
@@ -213,6 +213,10 @@ h3 {
 h1 {
 	font-family: "Press Start 2P";
 	font-size: 45px;
+}
+h2 {
+	font-family: "Press Start 2P";
+	font-size: 30px;
 }
 
 
