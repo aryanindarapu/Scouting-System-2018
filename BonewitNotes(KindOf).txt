@@ -1,4 +1,4 @@
-
+map for starting positions in auton
 Multiple block auton
 Auton cnetered and bigger/better looking
 How fast auton blocks on switch/scale

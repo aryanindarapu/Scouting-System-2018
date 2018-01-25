@@ -205,6 +205,13 @@ input[value="-"] {
 	background-color: #cccccc;
 }
 
+#timer{
+	width: 160px;
+	height: 40px;
+	padding-top: 15px;
+	outline: #000 dotted thick;
+}
+
 div.Penalties {
 	display: inline;
 	margin-top: 10px;
