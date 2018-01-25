@@ -6,7 +6,16 @@ var clickedMap = false;
 var pickedUpBlockArray = [];
 var deliveredBlockArray = [];
 var blockAcquired = false;
-var Aryan=false;
+var teamColor="Red";
+
+var teamColor = function(){
+	if(teamColor == "Red"){
+		teamColor = "Blue"
+	}
+	if(teamColor == "Blue"){
+		teamColor = "Red"
+	}
+}
 confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
 	var modal = document.getElementById("myModal");
@@ -569,6 +578,14 @@ var idArray = ["foul", "tech","autonScale","autonSwitch"];
  	}
  	document.getElementById(idArray[id]).innerHTML = x.toString();
  }
+ function subtract(n, id) {
+ 	x = parseInt(document.getElementById(idArray[id]).innerHTML);
+ 	x -= n;
+ 	if (x<0) {
+ 		x=0;
+ 	}
+ 	document.getElementById(idArray[id]).innerHTML = x.toString();
+ }
  
 $(function(){
     var x = 0;
@@ -579,43 +596,66 @@ $(function(){
 }) 
 
 function changeValue() {
-	console.log(value);
 	value = value-1;
 	if(value>=10){document.getElementById("timer").innerHTML = "0:" + value;}
 	if(value<10){document.getElementById("timer").innerHTML = "0:0" + value;}
 	if(value==0){
 		stop();
+		document.getElementById("timer").style.outline = "#000 dotted thick";
 	}
 }
 
 var timerInterval = null;
 var autonTimeScale = [];
 var autonTimeSwitch = [];
+var timerStarted = false;
 function start() {
+	timerStarted = true;
 	autonTimeScale = [];
 	autonTimeSwitch = [];
+	document.getElementById("startButton").style.display = "none";
+	document.getElementById("resetButton").style.display = "block";
+	document.getElementById("timer").style.outline = "#00FF00 dotted thick";
 	stop();
 	value = 15;
 	if(value>=10){document.getElementById("timer").innerHTML = "0:" + value;}
 	if(value<10){document.getElementById("timer").innerHTML = "0:0" + value;}
 	timerInterval = setInterval(changeValue, 1000);
-	if (value.value === 0) {
-		console.log("test");
-		stop();
-	}
 }
 
+var reset = function(){
+	document.getElementById("startButton").style.display = "block";
+	document.getElementById("resetButton").style.display = "none";
+	stop();
+	value = 15;
+	document.getElementById("timer").style.outline = "#ff0000 dotted thick";
+	setTimeout(colorChange, 500);
+	if(value>=10){document.getElementById("timer").innerHTML = "0:" + value;}
+	if(value<10){document.getElementById("timer").innerHTML = "0:0" + value;}
+}
+var colorChange = function(){
+	document.getElementById("timer").style.outline = "#000 dotted thick"
+}
 var stop = function() {
 	clearInterval(timerInterval);
+	timerStarted = false;
 }
 
 var recordTimeAutonScale = function(){
-	autonTimeScale.push(value);
-	console.log(autonTimeScale);
+	if(timerStarted){
+		autonTimeScale.push(value);
+		console.log(autonTimeScale);
+	}else{
+		subtract(1,3);
+	}
 }
 var recordTimeAutonSwitch = function() {
-	autonTimeSwitch.push(value);
-	console.log(autonTimeSwitch);
+	if(timerStarted){
+		autonTimeSwitch.push(value);
+		console.log(autonTimeSwitch);
+	}else{
+		subtract(1,3);
+	}
 }
 
 /*function submit() {
