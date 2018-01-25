@@ -34,10 +34,6 @@
 					<span class="slider"></span>
 					</label>
 					<h3>OVERVIEW OF GAME</h3>
-					<p> In FIRST Power Up, teams are memed into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
-						Tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
-						to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
-						including autonomous and teleoperated periods, defeats the boss and wins the game.
 					<p> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
 					Tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
 					to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
@@ -76,16 +72,6 @@
 				<span class = "radio"></span>
 				</label><br>
 			</div>
-				</center>
-				<h3 style = "text-align: center;">Placed Block On:</h3><br>
-				<div class = "autonButtons">
-					<div class = "Penalties" style = "display: inline-block">
-						<h3 class = "autonHeader">Scale</h3>
-						<br>
-						<input value = "-" type = "button" onclick = "add(-1, 'autonSwitch')">
-						<p id = "autonSwitch" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-						<input value = "+" type = "button" onclick = "add(1, 'autonSwitch'); recordTimeAutonScale()">
-					</div>
 			</center>
 			<h3 style = "text-align: center;">Placed Block On:</h3><br>
 			<div class = "autonButtons">
@@ -99,9 +85,9 @@
 					<div class = "Penalties" style = "display: inline-block">
 						<h3 class = "autonHeader">Switch</h3>
 						<br>
-						<input value = "-" type = "button" onclick = "add(-1, 'autonScale')">
+						<input value = "-" type = "button" onclick = "add(-1, 2)">
 						<p id = "autonScale" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-						<input value = "+" type = "button" onclick = "add(1, 'autonScale'); recordTimeAutonSwitch()">
+						<input value = "+" type = "button" onclick = "add(1, 2); recordTimeAutonSwitch()">
 					</div>
 					<!-- <input value = "-" type = "button" onclick = "add(-1, 2)">
 					<p id = "autonScale" style = "display: inline; font-family: 'Press Start 2P'">0</p>
@@ -176,37 +162,6 @@
 			<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
 			<input type = "button" class = "submit" onclick = "submit()" value = "Submit">
 			</div>
-			
-			<div class = "footer" id = "footer">
-				<br><br>
-				<div class = "Penalties" style = "display: inline-block; margin-left: 55px">
-					<h3 class = "footerHeaders" >Fouls</h3>
-					<br>
-					<br>
-					<input value = "-" type = "button" onclick = "add(-1, 'foul')">
-					<p id = "foul" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-					<input value = "+" type = "button" onclick = "add(1, 'foul')">
-				</div>
-				<div class = "Penalties" style = "display: inline-block">
-					<h3 class = "footerHeaders">Technical Fouls</h3>
-					<br>
-					<br>
-					<input value = "-" type = "button" onclick = "add(-1, 'tech')">
-					<p id = "tech" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-					<input value = "+" type = "button" onclick = "add(1, 'tech')">
-				</div>
-				<div class = "Penalties" style = "display: inline-block;">
-					<h3 class = "footerHeaders">Yellow Card</h3>
-					<br>
-					<br>
-					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px;">
-				</div>
-				<div class = "Penalties" style = "display: inline-block">
-					<h3 class = "footerHeaders">Red Card</h3>
-					<br>
-					<br>
-					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px;">
-				</div>
 		</div>
 
 		<div class = "footer" id = "footer">

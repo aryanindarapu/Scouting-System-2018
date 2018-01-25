@@ -7,7 +7,6 @@ var pickedUpBlockArray = [];
 var deliveredBlockArray = [];
 var blockAcquired = false;
 var teamColor="Red";
-var test;
 
 var teamColor = function(){
 	if(teamColor == "Red"){
@@ -570,15 +569,24 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 };
 
+var idArray = ["foul", "tech","autonScale","autonSwitch"];
  function add(n, id) {
- 	x = parseInt(document.getElementById(id).innerHTML);
+ 	x = parseInt(document.getElementById(idArray[id]).innerHTML);
  	x += n;
  	if (x<0) {
  		x=0;
  	}
- 	document.getElementById(id).innerHTML = x.toString();
+ 	document.getElementById(idArray[id]).innerHTML = x.toString();
  }
-
+ function subtract(n, id) {
+ 	x = parseInt(document.getElementById(idArray[id]).innerHTML);
+ 	x -= n;
+ 	if (x<0) {
+ 		x=0;
+ 	}
+ 	document.getElementById(idArray[id]).innerHTML = x.toString();
+ }
+ 
 $(function(){
     var x = 0;
     setInterval(function(){
