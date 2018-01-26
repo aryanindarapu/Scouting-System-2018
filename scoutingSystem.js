@@ -6,8 +6,7 @@ var clickedMap = false;
 var pickedUpBlockArray = [];
 var deliveredBlockArray = [];
 var blockAcquired = false;
-
-var teamColor = "Red";
+var teamColor="Red";
 
 var teamColor = function(){
 	if(teamColor == "Red"){
@@ -17,7 +16,6 @@ var teamColor = function(){
 		teamColor = "Red"
 	}
 }
-
 confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
 	var modal = document.getElementById("myModal");
@@ -25,6 +23,7 @@ confirmClick = function(){
 	closeModal = function() {
 		modal.style.display = "none";
 	}
+	$("#myModal").modal();
 }
 
 confirmYes = function(){
@@ -172,16 +171,15 @@ confirmYes = function(){
 			console.log(deliveredBlockArray);
 		}
 	}
-	x = 0;
-	y = 0;
+	x=0;
+	y=0;
 	clickedMap = false;
 	hello();
 }
-
 confirmNo = function(){
 	document.getElementById("confirm").style.display = "none";
-	x = 0;
-	y = 0;
+	x=0;
+	y=0;
 	clickedMap = false;
 	hello();
 	hasBeenClick = false;
@@ -191,7 +189,7 @@ window.onload = hello;
 var x = 0;
 var y = 0;
 function showCoords(event) {
-	if(clickedMap == false){
+	if(clickedMap==false){
 		x = event.clientX - $('#canvas').offset().left;
 		y = event.clientY - $('#canvas').offset().top;
 		var coords = "X coords: " + x + ", Y coords: " + y;
@@ -199,20 +197,19 @@ function showCoords(event) {
 		hello();
 	}
 }
-
 function hello(){
 
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
+    var canvas=document.getElementById("canvas");
+    var ctx=canvas.getContext("2d");
 
-    var cw = 607;
-    var ch = 248;
+    var cw=607;
+    var ch=248;
 
-    var img = new Image();
-    img.onload = start;
-    img.src = "Map.png";
+    var img=new Image();
+    img.onload=start;
+    img.src="Map.png";
     function start(){
-		if(clickedMap == false){
+		if(clickedMap==false){
 			canvas.width=cw;
 			canvas.height=ch;
 
@@ -558,34 +555,33 @@ function hello(){
 	}
 }; // end $(function(){});
 
-window.onload = helloAuton;
-var a = 0;
-var b = 0;
-function showCoords1(event) {
-	if(clickedMap == false){
-		a = event.clientX - $('#canvasAuton').offset().left;
-		b = event.clientY - $('#canvasAuton').offset().top;
-		var coords = "X coords: " + a + ", Y coords: " + b;
+window.onload = hello;
+var x = 0;
+var y = 0;
+function showCoordsA(event) {
+	if(clickedMap==false){
+		x = event.clientX - $('#canvas1').offset().left;
+		y = event.clientY - $('#canvas1').offset().top;
+		var coords = "X coords: " + x + ", Y coords: " + y;
 		document.getElementById("demo1").innerHTML = coords;
 		helloAuton();
 	}
 }
-
 function helloAuton(){
 
-    var canvas1 = document.getElementById("canvasAuton");
-    var ctx = canvas1.getContext("2d");
+    var canvas=document.getElementById("canvas1");
+    var ctx=canvas.getContext("2d");
 
-    var cw = 607;
-    var ch = 248;
+    var cw=607;
+    var ch=248;
 
-    var img = new Image();
-    img.onload = start;
-    img.src = "Map.png";
+    var img=new Image();
+    img.onload=start;
+    img.src="Map.png";
     function start(){
-		if(clickedMap == false){
-			canvas1.width = cw;
-			canvas1.height = ch;
+		if(clickedMap==false){
+			canvas.width=cw;
+			canvas.height=ch;
 
 			// draw the image on the canvas
 			ctx.drawImage(img,0,0,cw,ch);
