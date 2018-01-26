@@ -6,15 +6,13 @@ body {
 /* Style the tab */
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #ffffff ;
-	background-image: url("output_FKsPkq.gif");
+	background-image:url("output_FKsPkq.gif");
     background-repeat: repeat-x;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-    background-color: inherit;
+    background-color: #ffffff ;
     float: left;
     border: none;
     outline: none;
@@ -234,6 +232,10 @@ h3 {
 h1 {
 	font-family: "Press Start 2P";
 	font-size: 45px;
+}
+h2 {
+	font-family: "Press Start 2P";
+	font-size: 30px;
 }
 
 

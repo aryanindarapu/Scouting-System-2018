@@ -237,9 +237,11 @@
 			<br><br>
 			<div class = "Penalties" style = "display: inline-block; margin-left: 55px">
 				<h3 class = "footerHeaders" >Fouls</h3>
+				<div style="padding-left: 12%; padding-top: 8%; display: inline-block;">
+				<h2>Performance</h2>
 				<label class = "container">Success
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
+					<input type = "radio" name = "endGame">
+					<span class = "radio"></span>
 				</label>
 				<br>
 				<br>
@@ -250,6 +252,20 @@
 			<div class = "Penalties" style = "display: inline-block">
 				<h3 class = "footerHeaders">Technical Fouls</h3>
 				<br>
+				<label class = "container">Fail
+					<input type = "radio" name = "endGame">
+					<span class = "radio"></span>
+				</label>
+				<br>
+				<label class = "container">Levitate
+					<input type = "radio" name = "endGame">
+					<span class = "radio"></span>
+				</label>
+				<br>
+				<label class = "container">Cooperate
+					<input type = "radio" name = "endGame">
+					<span class = "radio"></span>
+				</label>
 				<br>
 				<input value = "-" type = "button" onclick = "add(-1, 1)">
 				<p id = "tech" style = "display: inline; font-family: 'Press Start 2P'">0</p>
@@ -272,8 +288,35 @@
 <script>document.getElementById("default").click();
 </script>
 				<label class = "container">Did Not Attempt
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
+					<input type = "radio" name = "endGame">
+					<span class = "radio"></span>
+				</label>
+			</div>
+			<div style="padding-left: 13%; display: inline-block">
+				<h2>Abilities</h2>
+				<label class = "container">Can't Climb
+					<input type = "radio" name = "endGame">
+					<span class = "radio"></span>
+				</label>
+				<br>
+				<label class = "container">Single Climb
+					<input type = "radio" name = "endGame">
+					<span class = "radio"></span>
+				</label>
+				<br>
+				<label class = "container">Dual Climb
+					<input type = "radio" name = "endGame">
+					<span class = "radio"></span>
+				</label>
+				<br>
+				<label class = "container">Triple Climb
+					<input type = "radio" name = "endGame">
+					<span class = "radio"></span>
+				</label>
+				<br>
+				<label class = "container">I have no clue
+					<input type = "radio" name = "endGame">
+					<span class = "radio"></span>
 				</label>
 			</div>
 		</div>
