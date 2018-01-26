@@ -569,22 +569,22 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 };
 
-var idArray = ["foul", "tech","autonScale","autonSwitch"];
+
  function add(n, id) {
- 	x = parseInt(document.getElementById(idArray[id]).innerHTML);
+ 	x = parseInt(document.getElementById(id).innerHTML);
  	x += n;
  	if (x<0) {
  		x=0;
  	}
- 	document.getElementById(idArray[id]).innerHTML = x.toString();
+ 	document.getElementById(id).innerHTML = x.toString();
  }
  function subtract(n, id) {
- 	x = parseInt(document.getElementById(idArray[id]).innerHTML);
+ 	x = parseInt(document.getElementById(id).innerHTML);
  	x -= n;
  	if (x<0) {
  		x=0;
  	}
- 	document.getElementById(idArray[id]).innerHTML = x.toString();
+ 	document.getElementById(id).innerHTML = x.toString();
  }
  
 $(function(){
@@ -601,7 +601,8 @@ function changeValue() {
 	if(value<10){document.getElementById("timer").innerHTML = "0:0" + value;}
 	if(value==0){
 		stop();
-		document.getElementById("timer").style.outline = "#000 dotted thick";
+		document.getElementById("timer").style.outline = "#ff0000 dotted thick";
+		setTimeout(colorChange, 500);
 	}
 }
 
@@ -626,6 +627,9 @@ function start() {
 var reset = function(){
 	document.getElementById("startButton").style.display = "block";
 	document.getElementById("resetButton").style.display = "none";
+	timerStarted = false;
+	document.getElementById("autonScale").innerHTML = 0;
+	document.getElementById("autonSwitch").innerHTML = 0;
 	stop();
 	value = 15;
 	document.getElementById("timer").style.outline = "#ff0000 dotted thick";
@@ -638,7 +642,6 @@ var colorChange = function(){
 }
 var stop = function() {
 	clearInterval(timerInterval);
-	timerStarted = false;
 }
 
 var recordTimeAutonScale = function(){
@@ -646,15 +649,16 @@ var recordTimeAutonScale = function(){
 		autonTimeScale.push(value);
 		console.log(autonTimeScale);
 	}else{
-		subtract(1,3);
+		subtract(1,'autonScale');
 	}
 }
 var recordTimeAutonSwitch = function() {
+	console.log("hello");
 	if(timerStarted){
 		autonTimeSwitch.push(value);
 		console.log(autonTimeSwitch);
 	}else{
-		subtract(1,3);
+		subtract(1,'autonSwitch');
 	}
 }
 
