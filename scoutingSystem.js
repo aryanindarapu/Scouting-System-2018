@@ -556,374 +556,562 @@ function hello(){
 	console.log("ran hello");
 }; // end $(function(){});
 
-window.onload = hello;
-var x = 0;
-var y = 0;
-function showCoordsA(event) {
-	if(clickedMap==false){
-		x = event.clientX - $('#canvas1').offset().left;
-		y = event.clientY - $('#canvas1').offset().top;
-		var coords = "X coords: " + x + ", Y coords: " + y;
-		document.getElementById("demo1").innerHTML = coords;
-		helloAuton();
+
+
+
+var clickedMap1 = false;
+var pickedUpBlockArray11 = [];
+var deliveredBlockArray11 = [];
+var blockAcquired1 = false;
+var teamColor1 ="Red";
+
+var teamColor1 = function(){
+	if(teamColor1 == "Red"){
+		teamColor1 = "Blue"
+	}
+	if(teamColor1 == "Blue"){
+		teamColor1 = "Red"
 	}
 }
-function helloAuton(){
+confirmClick11 = function(){
+	document.getElementById("confirm1").style.display = "block";
+	var modal1 = document.getElementById("myModal1");
+	modal1.style.display = "block";
+	closeModal1 = function() {
+		modal1.style.display = "none";
+	}
+	$("#myModal1").modal();
+}
 
-    var canvas=document.getElementById("canvas1");
-    var ctx=canvas.getContext("2d");
+confirmYes1 = function(){
+	document.getElementById("confirm1").style.display = "none";
+	hasBeenClick1 = true;
+	if(blockAcquired1==false){
+		blockAcquired1=true;
+		document.getElementById("blockImg1").style.filter = "grayscale(0%)";
+		document.getElementById("blockImg1").style.opacity = 1;
+		document.getElementById("pHasNoBlock1").style.display = "none";
+		document.getElementById("pHasBlock1").style.display = "block";
+		if(x>=182 && x<=215 && y >=73 && y<=103){
+			pickedUpBlockArray1.push("Switch 1");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=180 && x<=220 && y >=146 && y<=178){
+			pickedUpBlockArray1.push("Switch 2");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=285 && x<=325 && y >=60 && y<=95){
+			pickedUpBlockArray1.push("Scale 1");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=285 && x<=325 && y >=155 && y<=190){
+			pickedUpBlockArray1.push("Scale 2");
+			console.log(pickedUpBlockArray1);		
+		}
+		if(x>=390 && x<=425 && y >=75 && y<=105){
+			pickedUpBlockArray1.push("Switch 3");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=390 && x<=425 && y >=146 && y<=178){
+			pickedUpBlockArray1.push("Switch 4");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=60 && x<=115 && y >=80 && y<=120){
+			pickedUpBlockArray1.push("Red Station");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=490 && x<=540 && y >=130 && y<=170){
+			pickedUpBlockArray1.push("Blue Station");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=150 && x<=185 && y >=110 && y<=140){
+			pickedUpBlockArray1.push("Red Block Pile");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=420 && x<=455 && y >=110 && y<=140){
+			pickedUpBlockArray1.push("Blue Block Pile");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=220 && x<=240 && y >=70 && y<=180){
+			pickedUpBlockArray1.push("Red 6 Blocks");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=375 && x<=390 && y >=70 && y<=180){
+			pickedUpBlockArray1.push("Blue six Blocks");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=60 && x<=120 && y >=5 && y<=40){
+			pickedUpBlockArray1.push("Blue Portal Top");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=60 && x<=119 && y >=208 && y<=245){
+			pickedUpBlockArray1.push("Blue Portal Bottom");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=491 && x<=550 && y >=205 && y<=247){
+			pickedUpBlockArray1.push("Red Portal Bottom");
+			console.log(pickedUpBlockArray1);
+		}
+		if(x>=490 && x<=545 && y >=5 && y<=40){
+			pickedUpBlockArray1.push("Red Portal Top");
+			console.log(pickedUpBlockArray1);
+		}
+	}
+	else{
+		blockAcquired1=false;
+		document.getElementById("blockImg1").style.filter = "grayscale(100%)";
+		document.getElementById("blockImg1").style.opacity = 0.5;
+		document.getElementById("pHasNoBlock1").style.display = "block";
+		document.getElementById("pHasBlock1").style.display = "none";
+		if(x>=182 && x<=215 && y >=73 && y<=103){
+			deliveredBlockArray1.push("Switch 1");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=180 && x<=220 && y >=146 && y<=178){
+			deliveredBlockArray1.push("Switch 2");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=285 && x<=325 && y >=60 && y<=95){
+			deliveredBlockArray1.push("Scale 1");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=285 && x<=325 && y >=155 && y<=190){
+			deliveredBlockArray1.push("Scale 2");
+			console.log(deliveredBlockArray1);		
+		}
+		if(x>=390 && x<=425 && y >=75 && y<=105){
+			deliveredBlockArray1.push("Switch 3");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=390 && x<=425 && y >=146 && y<=178){
+			deliveredBlockArray1.push("Switch 4");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=60 && x<=115 && y >=80 && y<=120){
+			deliveredBlockArray1.push("Red Station");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=490 && x<=540 && y >=130 && y<=170){
+			deliveredBlockArray1.push("Blue Station");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=150 && x<=185 && y >=110 && y<=140){
+			deliveredBlockArray1.push("Red Block Pile");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=420 && x<=455 && y >=110 && y<=140){
+			deliveredBlockArray1.push("Blue Block Pile");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=220 && x<=240 && y >=70 && y<=180){
+			deliveredBlockArray1.push("Red 6 Blocks");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=375 && x<=390 && y >=70 && y<=180){
+			deliveredBlockArray1.push("Blue 6 Blocks");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=60 && x<=120 && y >=5 && y<=40){
+			deliveredBlockArray1.push("Blue Portal Top");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=60 && x<=119 && y >=208 && y<=245){
+			deliveredBlockArray1.push("Blue Portal Bottom");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=491 && x<=550 && y >=205 && y<=247){
+			deliveredBlockArray1.push("Red Portal Bottom");
+			console.log(deliveredBlockArray1);
+		}
+		if(x>=490 && x<=545 && y >=5 && y<=40){
+			deliveredBlockArray1.push("Red Portal Top");
+			console.log(deliveredBlockArray1);
+		}
+	}
+	x1=0;
+	y1=0;
+	clickedMap1 = false;
+	hello1();
+}
+confirmNo1 = function(){
+	document.getElementById("confirm1").style.display = "none";
+	x1=0;
+	y1=0;
+	clickedMap1 = false;
+	hello1();
+	hasBeenClick1 = false;
+}
 
-    var cw=607;
-    var ch=248;
+window.onload = hello1;
+var x1 = 0;
+var y1 = 0;
+function showCoords1(event) {
+	if(clickedMap1==false){
+		x1 = event.clientX - $('#canvas1').offset().left;
+		y1 = event.clientY - $('#canvas1').offset().top;
+		var coords1 = "X coords: " + x + ", Y coords: " + y;
+		document.getElementById("demo1").innerHTML = coords1;
+		hello1();
+	}
+}
+function hello1(){
 
-    var img=new Image();
-    img.onload=start;
-    img.src="Map.png";
-    function start(){
-		if(clickedMap==false){
-			canvas.width=cw;
-			canvas.height=ch;
+    var canvas1=document.getElementById("canvas1");
+    var ctx1=canvas1.getContext("2d");
+
+    var cw1=607;
+    var ch1=248;
+
+    var img1=new Image();
+    img1.onload=start;
+    img1.src="Map.png";
+    function start1(){
+		if(clickedMap1==false){
+			canvas1.width=cw11;
+			canvas1.height=ch11;
 
 			// draw the image on the canvas
-			ctx.drawImage(img,0,0,cw,ch);
+			ctx1.drawImage(img,0,0,cw1,ch1);
 
-			if(x>=182 && x<=215 && y >=73 && y<=103 && blockAcquired){ //Switch 1
+			if(x>=182 && x<=215 && y >=73 && y<=103 && blockAcquired){ //Switch1 1
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(182,73,37,30);
-				ctx.rect(182,73,37,30);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(182,73,37,30);
+				ctx1.rect(182,73,37,30);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
-			if(x>=180 && x<=220 && y >=146 && y<=178 && blockAcquired){ //Switch 2
+			if(x>=180 && x<=220 && y >=146 && y<=178 && blockAcquired){ //Switch1 2
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(182,146,37,30);
-				ctx.rect(182,146,37,30);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(182,146,37,30);
+				ctx1.rect(182,146,37,30);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=285 && x<=325 && y >=60 && y<=95 && blockAcquired){ //Scale 1
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(285,60,38,32);
-				ctx.rect(285,60,38,32);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(285,60,38,32);
+				ctx1.rect(285,60,38,32);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=285 && x<=325 && y >=155 && y<=190 && blockAcquired){ //Scale 2
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(285,158,38,32);
-				ctx.rect(285,158,38,32);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(285,158,38,32);
+				ctx1.rect(285,158,38,32);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
-			if(x>=390 && x<=425 && y >=75 && y<=105 && blockAcquired){ //Switch 3
+			if(x>=390 && x<=425 && y >=75 && y<=105 && blockAcquired){ //Switch1 3
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(390,75,35,30);
-				ctx.rect(390,75,35,30);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(390,75,35,30);
+				ctx1.rect(390,75,35,30);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
-			if(x>=390 && x<=425 && y >=146 && y<=178 && blockAcquired){ //Switch 4
+			if(x>=390 && x<=425 && y >=146 && y<=178 && blockAcquired){ //Switch1 4
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(390,146,35,30);
-				ctx.rect(390,146,35,30);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(390,146,35,30);
+				ctx1.rect(390,146,35,30);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=60 && x<=115 && y >=80 && y<=120){ //Red Station
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(58,80,58,42);
-				ctx.rect(58,80,58,42);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(58,80,58,42);
+				ctx1.rect(58,80,58,42);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=490 && x<=540 && y >=130 && y<=170){ //Blue Station
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(490,130,60,40);
-				ctx.rect(490,130,60,40);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(490,130,60,40);
+				ctx1.rect(490,130,60,40);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=150 && x<=185 && y >=110 && y<=140){ //Red Block Pile
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(150,110,35,30);
-				ctx.rect(150,110,35,30);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(150,110,35,30);
+				ctx1.rect(150,110,35,30);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=420 && x<=455 && y >=110 && y<=140){ //Blue Block Pile
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(420,110,35,30);
-				ctx.rect(420,110,35,30);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(420,110,35,30);
+				ctx1.rect(420,110,35,30);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=220 && x<=240 && y >=70 && y<=180){ //Red 6 Blocks
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(215,70,18,108);
-				ctx.rect(215,70,18,108);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(215,70,18,108);
+				ctx1.rect(215,70,18,108);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=375 && x<=390 && y >=70 && y<=180){ //Blue 6 Blocks
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(373,72,20,105);
-				ctx.rect(373,72,20,105);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(373,72,20,105);
+				ctx1.rect(373,72,20,105);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=60 && x<=120 && y >=5 && y<=40){ //Blue Portal Top
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(62,5,60,35);
-				ctx.rect(62,5,60,35);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(62,5,60,35);
+				ctx1.rect(62,5,60,35);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=60 && x<=119 && y >=208 && y<=245){ //Blue Portal Bottom
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(60,208,59,37);
-				ctx.rect(60,208,59,37);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(60,208,59,37);
+				ctx1.rect(60,208,59,37);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=491 && x<=550 && y >=205 && y<=247){//Red Portal Top
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(491,205,59,42);
-				ctx.rect(491,205,59,42);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(491,205,59,42);
+				ctx1.rect(491,205,59,42);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 			if(x>=490 && x<=545 && y >=5 && y<=40){//Red Portal Bottom
 				// darken the image with a 50% black fill
-				ctx.save();
-				ctx.globalAlpha=.50;
-				ctx.fillStyle="black";
-				ctx.fillRect(0,0,cw,ch);
-				ctx.restore();
+				ctx1.save();
+				ctx1.globalAlpha=.50;
+				ctx1.fillStyle="black";
+				ctx1.fillRect(0,0,cw1,ch1);
+				ctx1.restore();
 
-				// ctx.clip() the area to highlight
+				// ctx1.clip() the area to highlight
 				// and redraw the whole image
 				// (the image will draw only in the clipping region)
-				ctx.save();
-				ctx.beginPath();
-				ctx.clearRect(490,5,55,35);
-				ctx.rect(490,5,55,35);
-				ctx.clip();
-				ctx.drawImage(img,0,0,cw,ch);
-				ctx.restore();
-				clickedMap = true;
-				setTimeout(confirmClick, 100);
+				ctx1.save();
+				ctx1.beginPath();
+				ctx1.clearRect(490,5,55,35);
+				ctx1.rect(490,5,55,35);
+				ctx1.clip();
+				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.restore();
+				clickedMap1 = true;
+				setTimeout(confirmClick1, 100);
 			}
 		}
 	}
+	console.log("hello1 ran");
 }; // end $(function(){});
 
 function openTab(evt, tabName) {
