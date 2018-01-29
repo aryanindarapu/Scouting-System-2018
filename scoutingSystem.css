@@ -265,6 +265,9 @@ h2 {
     cursor: pointer;
 }
 
+#canvas1{
+	background-image: url('Map.png');
+}
 .autonButtons {
 	padding-left: 32%;
 }

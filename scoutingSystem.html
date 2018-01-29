@@ -15,13 +15,13 @@
 			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
 		</div>
 
-		<script type="text/javascript" src="scoutingSystem.js"></script>
+		<script type="text/javascript" src="autonScoutingSystem.js"></script>
 		<style>
 			canvas{border:1px solid red;}
 		</style>
 
 	</head>
-	<body onload = "hello(); helloAuton();">
+	<body onload = "hello(); hello1();">
 		<center>
 			<div id = "Info" class = "tabcontent">
 				<div class = "infoTab">
@@ -71,13 +71,27 @@
 				<h6 style = "display: inline; margin-left: 15px;">No</h6>
 			</center>
 			<br><br>
-			<canvas id = "canvas1" width=300 height=300 onclick = "showCoordsA(event)"></canvas><p id = "demo1" style = "display: none"></p>
+			<canvas id = "canvas1" onclick = "showCoordsA1(event)"></canvas><p id = "demo1" style = "display: none"></p>
+			<div id = "confirm1" style="display:none">
+				<!-- The Modal -->
+				<div id = "myModal1" style = "padding-top: 430px;" class = "modal">
+
+					<!-- Modal content -->
+					<div class = "modal-content">
+						<h4 id = "pHasNoBlock1" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
+						<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
+						<button class = "modalButtonYes1" onclick = "confirmYes1(), closeModal1()">Yes</button>
+						<button class = "modalButtonNo1" onclick = "confirmNo1(), closeModal(1)">No</button> 
+					</div>
+
+				</div>
+			</div>
 		</div>
 
 		<center>
 			<div id = "TeleOp" class = "tabcontent">
 				<h1>TeleOp</h1>
-				<canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
+				<canvas id="canvas" onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
 				<p>Block in hand:</p>
 				<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
 				<div id = "confirm" style="display:none">

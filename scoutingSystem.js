@@ -553,6 +553,7 @@ function hello(){
 			}
 		}
 	}
+	console.log("ran hello");
 }; // end $(function(){});
 
 window.onload = hello;
