@@ -23,7 +23,6 @@ confirmClick = function(){
 	closeModal = function() {
 		modal.style.display = "none";
 	}
-	$("#myModal").modal();
 }
 
 confirmYes = function(){
@@ -553,15 +552,14 @@ function hello(){
 			}
 		}
 	}
-	console.log("ran hello");
 }; // end $(function(){});
 
 
 
 
 var clickedMap1 = false;
-var pickedUpBlockArray11 = [];
-var deliveredBlockArray11 = [];
+var pickedUpBlockArray1 = [];
+var deliveredBlockArray1 = [];
 var blockAcquired1 = false;
 var teamColor1 ="Red";
 
@@ -573,14 +571,13 @@ var teamColor1 = function(){
 		teamColor1 = "Red"
 	}
 }
-confirmClick11 = function(){
+confirmClick1 = function(){
 	document.getElementById("confirm1").style.display = "block";
 	var modal1 = document.getElementById("myModal1");
 	modal1.style.display = "block";
 	closeModal1 = function() {
 		modal1.style.display = "none";
 	}
-	$("#myModal1").modal();
 }
 
 confirmYes1 = function(){
@@ -588,142 +585,138 @@ confirmYes1 = function(){
 	hasBeenClick1 = true;
 	if(blockAcquired1==false){
 		blockAcquired1=true;
-		document.getElementById("blockImg1").style.filter = "grayscale(0%)";
-		document.getElementById("blockImg1").style.opacity = 1;
 		document.getElementById("pHasNoBlock1").style.display = "none";
 		document.getElementById("pHasBlock1").style.display = "block";
-		if(x>=182 && x<=215 && y >=73 && y<=103){
+		if(x1>=182 && x1<=215 && y1 >=73 && y1<=103){
 			pickedUpBlockArray1.push("Switch 1");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=180 && x<=220 && y >=146 && y<=178){
+		if(x1>=180 && x1<=220 && y1 >=146 && y1<=178){
 			pickedUpBlockArray1.push("Switch 2");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=285 && x<=325 && y >=60 && y<=95){
+		if(x1>=285 && x1<=325 && y1 >=60 && y1<=95){
 			pickedUpBlockArray1.push("Scale 1");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=285 && x<=325 && y >=155 && y<=190){
+		if(x1>=285 && x1<=325 && y1 >=155 && y1<=190){
 			pickedUpBlockArray1.push("Scale 2");
 			console.log(pickedUpBlockArray1);		
 		}
-		if(x>=390 && x<=425 && y >=75 && y<=105){
+		if(x1>=390 && x1<=425 && y1 >=75 && y1<=105){
 			pickedUpBlockArray1.push("Switch 3");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=390 && x<=425 && y >=146 && y<=178){
+		if(x1>=390 && x1<=425 && y1 >=146 && y1<=178){
 			pickedUpBlockArray1.push("Switch 4");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=60 && x<=115 && y >=80 && y<=120){
+		if(x1>=60 && x1<=115 && y1 >=80 && y1<=120){
 			pickedUpBlockArray1.push("Red Station");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=490 && x<=540 && y >=130 && y<=170){
+		if(x1>=490 && x1<=540 && y1 >=130 && y1<=170){
 			pickedUpBlockArray1.push("Blue Station");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=150 && x<=185 && y >=110 && y<=140){
+		if(x1>=150 && x1<=185 && y1 >=110 && y1<=140){
 			pickedUpBlockArray1.push("Red Block Pile");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=420 && x<=455 && y >=110 && y<=140){
+		if(x1>=420 && x1<=455 && y1 >=110 && y1<=140){
 			pickedUpBlockArray1.push("Blue Block Pile");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=220 && x<=240 && y >=70 && y<=180){
+		if(x1>=220 && x1<=240 && y1 >=70 && y1<=180){
 			pickedUpBlockArray1.push("Red 6 Blocks");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=375 && x<=390 && y >=70 && y<=180){
+		if(x1>=375 && x1<=390 && y1 >=70 && y1<=180){
 			pickedUpBlockArray1.push("Blue six Blocks");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=60 && x<=120 && y >=5 && y<=40){
+		if(x1>=60 && x1<=120 && y1 >=5 && y1<=40){
 			pickedUpBlockArray1.push("Blue Portal Top");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=60 && x<=119 && y >=208 && y<=245){
+		if(x1>=60 && x1<=119 && y1 >=208 && y1<=245){
 			pickedUpBlockArray1.push("Blue Portal Bottom");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=491 && x<=550 && y >=205 && y<=247){
+		if(x1>=491 && x1<=550 && y1 >=205 && y1<=247){
 			pickedUpBlockArray1.push("Red Portal Bottom");
 			console.log(pickedUpBlockArray1);
 		}
-		if(x>=490 && x<=545 && y >=5 && y<=40){
+		if(x1>=490 && x1<=545 && y1 >=5 && y1<=40){
 			pickedUpBlockArray1.push("Red Portal Top");
 			console.log(pickedUpBlockArray1);
 		}
 	}
 	else{
 		blockAcquired1=false;
-		document.getElementById("blockImg1").style.filter = "grayscale(100%)";
-		document.getElementById("blockImg1").style.opacity = 0.5;
 		document.getElementById("pHasNoBlock1").style.display = "block";
 		document.getElementById("pHasBlock1").style.display = "none";
-		if(x>=182 && x<=215 && y >=73 && y<=103){
+		if(x1>=182 && x1<=215 && y1 >=73 && y1<=103){
 			deliveredBlockArray1.push("Switch 1");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=180 && x<=220 && y >=146 && y<=178){
+		if(x1>=180 && x1<=220 && y1 >=146 && y1<=178){
 			deliveredBlockArray1.push("Switch 2");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=285 && x<=325 && y >=60 && y<=95){
+		if(x1>=285 && x1<=325 && y1 >=60 && y1<=95){
 			deliveredBlockArray1.push("Scale 1");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=285 && x<=325 && y >=155 && y<=190){
+		if(x1>=285 && x1<=325 && y1 >=155 && y1<=190){
 			deliveredBlockArray1.push("Scale 2");
 			console.log(deliveredBlockArray1);		
 		}
-		if(x>=390 && x<=425 && y >=75 && y<=105){
+		if(x1>=390 && x1<=425 && y1 >=75 && y1<=105){
 			deliveredBlockArray1.push("Switch 3");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=390 && x<=425 && y >=146 && y<=178){
+		if(x1>=390 && x1<=425 && y1 >=146 && y1<=178){
 			deliveredBlockArray1.push("Switch 4");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=60 && x<=115 && y >=80 && y<=120){
+		if(x1>=60 && x1<=115 && y1 >=80 && y1<=120){
 			deliveredBlockArray1.push("Red Station");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=490 && x<=540 && y >=130 && y<=170){
+		if(x1>=490 && x1<=540 && y1 >=130 && y1<=170){
 			deliveredBlockArray1.push("Blue Station");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=150 && x<=185 && y >=110 && y<=140){
+		if(x1>=150 && x1<=185 && y1 >=110 && y1<=140){
 			deliveredBlockArray1.push("Red Block Pile");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=420 && x<=455 && y >=110 && y<=140){
+		if(x1>=420 && x1<=455 && y1 >=110 && y1<=140){
 			deliveredBlockArray1.push("Blue Block Pile");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=220 && x<=240 && y >=70 && y<=180){
+		if(x1>=220 && x1<=240 && y1 >=70 && y1<=180){
 			deliveredBlockArray1.push("Red 6 Blocks");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=375 && x<=390 && y >=70 && y<=180){
+		if(x1>=375 && x1<=390 && y1 >=70 && y1<=180){
 			deliveredBlockArray1.push("Blue 6 Blocks");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=60 && x<=120 && y >=5 && y<=40){
+		if(x1>=60 && x1<=120 && y1 >=5 && y1<=40){
 			deliveredBlockArray1.push("Blue Portal Top");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=60 && x<=119 && y >=208 && y<=245){
+		if(x1>=60 && x1<=119 && y1 >=208 && y1<=245){
 			deliveredBlockArray1.push("Blue Portal Bottom");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=491 && x<=550 && y >=205 && y<=247){
+		if(x1>=491 && x1<=550 && y1 >=205 && y1<=247){
 			deliveredBlockArray1.push("Red Portal Bottom");
 			console.log(deliveredBlockArray1);
 		}
-		if(x>=490 && x<=545 && y >=5 && y<=40){
+		if(x1>=490 && x1<=545 && y1 >=5 && y1<=40){
 			deliveredBlockArray1.push("Red Portal Top");
 			console.log(deliveredBlockArray1);
 		}
@@ -749,7 +742,7 @@ function showCoords1(event) {
 	if(clickedMap1==false){
 		x1 = event.clientX - $('#canvas1').offset().left;
 		y1 = event.clientY - $('#canvas1').offset().top;
-		var coords1 = "X coords: " + x + ", Y coords: " + y;
+		var coords1 = "X coords: " + x1 + ", Y coords: " + y1;
 		document.getElementById("demo1").innerHTML = coords1;
 		hello1();
 	}
@@ -763,17 +756,21 @@ function hello1(){
     var ch1=248;
 
     var img1=new Image();
-    img1.onload=start;
+    img1.onload=start1;
     img1.src="Map.png";
     function start1(){
 		if(clickedMap1==false){
-			canvas1.width=cw11;
-			canvas1.height=ch11;
+			canvas1.width=cw1;
+			canvas1.height=ch1;
 
 			// draw the image on the canvas
-			ctx1.drawImage(img,0,0,cw1,ch1);
+			ctx1.drawImage(img1,0,0,cw1,ch1);
 
-			if(x>=182 && x<=215 && y >=73 && y<=103 && blockAcquired){ //Switch1 1
+			if(x1>=182 && x1<=215 && y1>=73 && y1<=103 && blockAcquired1){ //Switch1 1
+				document.getElementById("modalButtonScaleYes").style.display = "none";
+				document.getElementById("modalButtonScaleNo").style.display = "none";
+				document.getElementById("modalButtonSwitchYes").style.display = "inline-block";
+				document.getElementById("modalButtonSwitchNo").style.display = "inline-block";
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -789,12 +786,16 @@ function hello1(){
 				ctx1.clearRect(182,73,37,30);
 				ctx1.rect(182,73,37,30);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=180 && x<=220 && y >=146 && y<=178 && blockAcquired){ //Switch1 2
+			if(x1>=180 && x1<=220 && y1>=146 && y1<=178 && blockAcquired1){ //Switch1 2
+				document.getElementById("modalButtonScaleYes").style.display = "none";
+				document.getElementById("modalButtonScaleNo").style.display = "none";
+				document.getElementById("modalButtonSwitchYes").style.display = "inline-block";
+				document.getElementById("modalButtonSwitchNo").style.display = "inline-block";
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -810,12 +811,16 @@ function hello1(){
 				ctx1.clearRect(182,146,37,30);
 				ctx1.rect(182,146,37,30);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=285 && x<=325 && y >=60 && y<=95 && blockAcquired){ //Scale 1
+			if(x1>=285 && x1<=325 && y1>=60 && y1<=95 && blockAcquired1){ //Scale 1
+				document.getElementById("modalButtonScaleYes").style.display = "inline-block";
+				document.getElementById("modalButtonScaleNo").style.display = "inline-block";
+				document.getElementById("modalButtonSwitchYes").style.display = "none";
+				document.getElementById("modalButtonSwitchNo").style.display = "none";
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -831,12 +836,16 @@ function hello1(){
 				ctx1.clearRect(285,60,38,32);
 				ctx1.rect(285,60,38,32);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=285 && x<=325 && y >=155 && y<=190 && blockAcquired){ //Scale 2
+			if(x1>=285 && x1<=325 && y1>=155 && y1<=190 && blockAcquired1){ //Scale 2
+				document.getElementById("modalButtonScaleYes").style.display = "inline-block";
+				document.getElementById("modalButtonScaleNo").style.display = "inline-block";
+				document.getElementById("modalButtonSwitchYes").style.display = "none";
+				document.getElementById("modalButtonSwitchNo").style.display = "none";
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -852,12 +861,16 @@ function hello1(){
 				ctx1.clearRect(285,158,38,32);
 				ctx1.rect(285,158,38,32);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=390 && x<=425 && y >=75 && y<=105 && blockAcquired){ //Switch1 3
+			if(x1>=390 && x1<=425 && y1>=75 && y1<=105 && blockAcquired1){ //Switch1 3
+				document.getElementById("modalButtonScaleYes").style.display = "none";
+				document.getElementById("modalButtonScaleNo").style.display = "none";
+				document.getElementById("modalButtonSwitchYes").style.display = "block";
+				document.getElementById("modalButtonSwitchNo").style.display = "block";
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -873,12 +886,16 @@ function hello1(){
 				ctx1.clearRect(390,75,35,30);
 				ctx1.rect(390,75,35,30);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=390 && x<=425 && y >=146 && y<=178 && blockAcquired){ //Switch1 4
+			if(x1>=390 && x1<=425 && y1>=146 && y1<=178 && blockAcquired1){ //Switch1 4
+				document.getElementById("modalButtonScaleYes").style.display = "none";
+				document.getElementById("modalButtonScaleNo").style.display = "none";
+				document.getElementById("modalButtonSwitchYes").style.display = "block";
+				document.getElementById("modalButtonSwitchNo").style.display = "block";
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -894,12 +911,12 @@ function hello1(){
 				ctx1.clearRect(390,146,35,30);
 				ctx1.rect(390,146,35,30);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=60 && x<=115 && y >=80 && y<=120){ //Red Station
+			if(x1>=60 && x1<=115 && y1>=80 && y1<=120){ //Red Station
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -915,12 +932,12 @@ function hello1(){
 				ctx1.clearRect(58,80,58,42);
 				ctx1.rect(58,80,58,42);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=490 && x<=540 && y >=130 && y<=170){ //Blue Station
+			if(x1>=490 && x1<=540 && y1>=130 && y1<=170){ //Blue Station
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -936,12 +953,12 @@ function hello1(){
 				ctx1.clearRect(490,130,60,40);
 				ctx1.rect(490,130,60,40);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=150 && x<=185 && y >=110 && y<=140){ //Red Block Pile
+			if(x1>=150 && x1<=185 && y1>=110 && y1<=140){ //Red Block Pile
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -957,12 +974,12 @@ function hello1(){
 				ctx1.clearRect(150,110,35,30);
 				ctx1.rect(150,110,35,30);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=420 && x<=455 && y >=110 && y<=140){ //Blue Block Pile
+			if(x1>=420 && x1<=455 && y1>=110 && y1<=140){ //Blue Block Pile
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -978,12 +995,12 @@ function hello1(){
 				ctx1.clearRect(420,110,35,30);
 				ctx1.rect(420,110,35,30);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=220 && x<=240 && y >=70 && y<=180){ //Red 6 Blocks
+			if(x1>=220 && x1<=240 && y1>=70 && y1<=180){ //Red 6 Blocks
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -999,12 +1016,12 @@ function hello1(){
 				ctx1.clearRect(215,70,18,108);
 				ctx1.rect(215,70,18,108);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=375 && x<=390 && y >=70 && y<=180){ //Blue 6 Blocks
+			if(x1>=375 && x1<=390 && y1>=70 && y1<=180){ //Blue 6 Blocks
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -1020,12 +1037,12 @@ function hello1(){
 				ctx1.clearRect(373,72,20,105);
 				ctx1.rect(373,72,20,105);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=60 && x<=120 && y >=5 && y<=40){ //Blue Portal Top
+			if(x1>=60 && x1<=120 && y1>=5 && y1<=40){ //Blue Portal Top
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -1041,12 +1058,12 @@ function hello1(){
 				ctx1.clearRect(62,5,60,35);
 				ctx1.rect(62,5,60,35);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=60 && x<=119 && y >=208 && y<=245){ //Blue Portal Bottom
+			if(x1>=60 && x1<=119 && y1>=208 && y1<=245){ //Blue Portal Bottom
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -1062,12 +1079,12 @@ function hello1(){
 				ctx1.clearRect(60,208,59,37);
 				ctx1.rect(60,208,59,37);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=491 && x<=550 && y >=205 && y<=247){//Red Portal Top
+			if(x1>=491 && x1<=550 && y1>=205 && y1<=247){//Red Portal Top
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -1083,12 +1100,12 @@ function hello1(){
 				ctx1.clearRect(491,205,59,42);
 				ctx1.rect(491,205,59,42);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x>=490 && x<=545 && y >=5 && y<=40){//Red Portal Bottom
+			if(x1>=490 && x1<=545 && y1>=5 && y1<=40){//Red Portal Bottom
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -1104,14 +1121,13 @@ function hello1(){
 				ctx1.clearRect(490,5,55,35);
 				ctx1.rect(490,5,55,35);
 				ctx1.clip();
-				ctx1.drawImage(img,0,0,cw1,ch1);
+				ctx1.drawImage(img1,0,0,cw1,ch1);
 				ctx1.restore();
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
 		}
 	}
-	console.log("hello1 ran");
 }; // end $(function(){});
 
 function openTab(evt, tabName) {
@@ -1128,22 +1144,36 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
 };
 
-
+autonScoreScale = 0;
+autonScoreSwitch = 0;
+autonScoreSwitch = 0;
  function add(n, id) {
- 	x = parseInt(document.getElementById(id).innerHTML);
- 	x += n;
- 	if (x<0) {
- 		x=0;
- 	}
- 	document.getElementById(id).innerHTML = x.toString();
+ 	if(id=="autonScoreScale"){
+		autonScoreScale += n;
+		if(autonScoreScale <= 0){
+			autonScoreScale = 0;
+		}
+	}
+	if(id=="autonScoreSwitch"){
+		autonScoreSwitch += n;
+		if(autonScoreScale <= 0){
+			autonScoreSwitch = 0;
+		}
+	}
  }
  function subtract(n, id) {
- 	x = parseInt(document.getElementById(id).innerHTML);
- 	x -= n;
- 	if (x<0) {
- 		x=0;
- 	}
- 	document.getElementById(id).innerHTML = x.toString();
+ 	if(id=="autonScoreScale"){
+		autonScoreScale -= n;
+		if(autonScoreScale <= 0){
+			autonScoreScale = 0;
+		}
+	}
+	if(id=="autonScoreSwitch"){
+		autonScoreSwitch -= n;
+		if(autonScoreScale <= 0){
+			autonScoreSwitch = 0;
+		}
+	}
  }
  
 $(function(){
@@ -1169,7 +1199,7 @@ var timerInterval = null;
 var autonTimeScale = [];
 var autonTimeSwitch = [];
 var timerStarted = false;
-function start() {
+function startTimer() {
 	timerStarted = true;
 	autonTimeScale = [];
 	autonTimeSwitch = [];
@@ -1187,8 +1217,6 @@ var reset = function(){
 	document.getElementById("startButton").style.display = "block";
 	document.getElementById("resetButton").style.display = "none";
 	timerStarted = false;
-	document.getElementById("autonScale").innerHTML = 0;
-	document.getElementById("autonSwitch").innerHTML = 0;
 	stop();
 	value = 15;
 	document.getElementById("timer").style.outline = "#ff0000 dotted thick";
@@ -1208,16 +1236,15 @@ var recordTimeAutonScale = function(){
 		autonTimeScale.push(value);
 		console.log(autonTimeScale);
 	}else{
-		subtract(1,'autonScale');
+		subtract(1,'autonScoreScale');
 	}
 }
 var recordTimeAutonSwitch = function() {
-	console.log("hello");
 	if(timerStarted){
 		autonTimeSwitch.push(value);
 		console.log(autonTimeSwitch);
 	}else{
-		subtract(1,'autonSwitch');
+		subtract(1,'autonScoreSwitch');
 	}
 }
 
