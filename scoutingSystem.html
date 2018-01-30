@@ -24,7 +24,7 @@
 			<div id = "Info" class = "tabcontent">
 				<div class = "infoTab">
 					<h1>Info</h1>
-					<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
+					<input id = "teamName" type = "text" placeholder = "Match Number"><br><br>
 					<input id = "teamNo" type = "text" placeholder = "Team Number"><br><br>
 					<h3 style = "display: inline">Team Color:</h3>
 					<label class = "switch" onclick = "teamColor()">
@@ -69,25 +69,40 @@
 				<h6 style = "display: inline; margin-left: 15px;">Yes</h6>
 			</center>
 			<br><br>
-			<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 320px"></canvas><p id = "demo1" style = "display: none"></p>
-			<div id = "confirm1" style="display:none">
-				<!-- The Modal -->
-				<div id = "myModal1" style = "padding-top: 430px;" class = "modal">
+			<div style = "display: flex; flex-direction: row">
+				<div>
+					<button>Position Left</button><br>
+					<button>Position Middle</button><br>
+					<button>Position Right</button>
+				</div>
+				<div>
+					<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 20px"></canvas><p id = "demo1" style = "display: none"></p>
+					<div id = "confirm1" style="display:none">
+						<!-- The Modal -->
+						<div id = "myModal1" style = "padding-top: 430px;" class = "modal">
 
-					<!-- Modal content -->
-					<div class = "modal-content">
-						<h4 id = "pHasNoBlock1" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
-						<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
-						
-						<button id = "modalButtonScaleYes" class = "modalButtonYes" style = "display: inline-block" onclick = "confirmYes1(), closeModal1(), recordTimeAutonScale()">Yes</button>
-						<button id = "modalButtonScaleNo" class = "modalButtonNo" style = "display: inline-block" onclick = "confirmNo1(), closeModal1()">No</button>
-						
-						<button id = "modalButtonSwitchYes" class = "modalButtonYes" style = "display: none" onclick = "confirmYes1(), closeModal1(), recordTimeAutonSwitch()">Yes</button>
-						<button id = "modalButtonSwitchNo" class = "modalButtonNo" style = "display: none" onclick = "confirmNo1(), closeModal1()">No</button>
+							<!-- Modal content -->
+							<div class = "modal-content">
+								<h4 id = "pHasNoBlock1" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
+								<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
+								
+								<button id = "modalButtonScaleYes" class = "modalButtonYes" style = "display: inline-block" onclick = "confirmYes1(), closeModal1(), recordTimeAutonScale()">Yes</button>
+								<button id = "modalButtonScaleNo" class = "modalButtonNo" style = "display: inline-block" onclick = "confirmNo1(), closeModal1()">No</button>
+								
+								<button id = "modalButtonSwitchYes" class = "modalButtonYes" style = "display: none" onclick = "confirmYes1(), closeModal1(), recordTimeAutonSwitch()">Yes</button>
+								<button id = "modalButtonSwitchNo" class = "modalButtonNo" style = "display: none" onclick = "confirmNo1(), closeModal1()">No</button>
+							</div>
+
+						</div>
 					</div>
-
+				</div>
+				<div>
+					<button>Position Right</button><br>
+					<button>Position Middle</button><br>
+					<button>Position Left</button>
 				</div>
 			</div>
+			
 		</div>
 
 		<center>

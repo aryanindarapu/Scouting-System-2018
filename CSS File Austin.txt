@@ -214,11 +214,16 @@ h1 {
 	font-family: "Press Start 2P";
 	font-size: 45px;
 }
+
+h6 {
+	font-family: "Press Start 2P";
+	font-size: 20px;
+}
+
 h2 {
 	font-family: "Press Start 2P";
 	font-size: 30px;
 }
-
 
 
 /* The Modal (background) */
@@ -262,8 +267,8 @@ h2 {
 
 .autonButtons {
 	padding-left: 32%;
-	
 }
+
 .blackLine {
 	color: black;
 	font-size: 400%;
