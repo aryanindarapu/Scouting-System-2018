@@ -17,6 +17,7 @@
 		<style>
 			canvas{border:1px solid red;}
 		</style>
+		<script src="jquery-3.2.1.min.js"></script>
 
 	</head>
 	<body onload = "hello(); hello1();">
@@ -84,8 +85,7 @@
 
 							<!-- Modal content -->
 							<div class = "modal-content">
-								<h4 id = "pHasNoBlock1" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
-								<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
+								<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: block">Did the robot deliver a block at the highlighted location?</h4>
 								
 								<button id = "modalButtonScaleYes" class = "modalButtonYes" style = "display: inline-block" onclick = "confirmYes1(), closeModal1(), recordTimeAutonScale()">Yes</button>
 								<button id = "modalButtonScaleNo" class = "modalButtonNo" style = "display: inline-block" onclick = "confirmNo1(), closeModal1()">No</button>
@@ -229,10 +229,13 @@
 	<script>document.getElementById("default").click();</script>
 	<script>
 		$(document).ready(function(){
+			console.log("hellow");
 			$(".positionButtons").on("click", function(){
-				$(".positionButtons").removeClass("");
-				$(this).toggleClass("positionButtonsClicked");
+				console.log("yeet");
+				$(".positionButtons").removeClass("positionButtonsClicked");
+				$(this).addClass("positionButtonsClicked");
 			});
 		});
+	</script>
 </html>
 </html>

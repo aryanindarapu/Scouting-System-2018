@@ -295,12 +295,14 @@ textarea{
 	background-color: #D3D3D3;
 	border: 2px solid black;
 	height: 50px;
-	font-size: 15px;
+	font-size: 8px;
+	font-family: "Press Start 2P";
 }
 .positionButtonsClicked{
-	cursor: pointer;
-	opacity: 0.8;
-	background-color: #ff0000;
+	cursor: pointer !important;
+	opacity: 0.8 !important;
+	background-color: #ff0000 !important;
+	font-family: "Press Start 2P";
 }
 .positionButtons:hover{
 	cursor: pointer;
@@ -309,5 +311,6 @@ textarea{
 	transition: all .2s ease-in;
 	transform: scale(1.2);
 	transition: all .2s ease-out;
+	font-family: "Press Start 2P";
 	
 }

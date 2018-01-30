@@ -561,9 +561,7 @@ function hello(){
 
 
 var clickedMap1 = false;
-var pickedUpBlockArray1 = [];
 var deliveredBlockArray1 = [];
-var blockAcquired1 = false;
 var teamColor1 ="Red";
 
 var teamColor1 = function(){
@@ -586,143 +584,69 @@ confirmClick1 = function(){
 confirmYes1 = function(){
 	document.getElementById("confirm1").style.display = "none";
 	hasBeenClick1 = true;
-	if(blockAcquired1==false){
-		blockAcquired1=true;
-		document.getElementById("pHasNoBlock1").style.display = "none";
-		document.getElementById("pHasBlock1").style.display = "block";
-		if(x1>=182 && x1<=215 && y1 >=73 && y1<=103){
-			pickedUpBlockArray1.push("Switch 1");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=180 && x1<=220 && y1 >=146 && y1<=178){
-			pickedUpBlockArray1.push("Switch 2");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=285 && x1<=325 && y1 >=60 && y1<=95){
-			pickedUpBlockArray1.push("Scale 1");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=285 && x1<=325 && y1 >=155 && y1<=190){
-			pickedUpBlockArray1.push("Scale 2");
-			console.log(pickedUpBlockArray1);		
-		}
-		if(x1>=390 && x1<=425 && y1 >=75 && y1<=105){
-			pickedUpBlockArray1.push("Switch 3");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=390 && x1<=425 && y1 >=146 && y1<=178){
-			pickedUpBlockArray1.push("Switch 4");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=60 && x1<=115 && y1 >=80 && y1<=120){
-			pickedUpBlockArray1.push("Red Station");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=490 && x1<=540 && y1 >=130 && y1<=170){
-			pickedUpBlockArray1.push("Blue Station");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=150 && x1<=185 && y1 >=110 && y1<=140){
-			pickedUpBlockArray1.push("Red Block Pile");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=420 && x1<=455 && y1 >=110 && y1<=140){
-			pickedUpBlockArray1.push("Blue Block Pile");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=220 && x1<=240 && y1 >=70 && y1<=180){
-			pickedUpBlockArray1.push("Red 6 Blocks");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=375 && x1<=390 && y1 >=70 && y1<=180){
-			pickedUpBlockArray1.push("Blue six Blocks");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=60 && x1<=120 && y1 >=5 && y1<=40){
-			pickedUpBlockArray1.push("Blue Portal Top");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=60 && x1<=119 && y1 >=208 && y1<=245){
-			pickedUpBlockArray1.push("Blue Portal Bottom");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=491 && x1<=550 && y1 >=205 && y1<=247){
-			pickedUpBlockArray1.push("Red Portal Bottom");
-			console.log(pickedUpBlockArray1);
-		}
-		if(x1>=490 && x1<=545 && y1 >=5 && y1<=40){
-			pickedUpBlockArray1.push("Red Portal Top");
-			console.log(pickedUpBlockArray1);
-		}
+	if(x1>=182 && x1<=215 && y1 >=73 && y1<=103){
+		deliveredBlockArray1.push("Switch 1");
+		console.log(deliveredBlockArray1);
 	}
-	else{
-		blockAcquired1=false;
-		document.getElementById("pHasNoBlock1").style.display = "block";
-		document.getElementById("pHasBlock1").style.display = "none";
-		if(x1>=182 && x1<=215 && y1 >=73 && y1<=103){
-			deliveredBlockArray1.push("Switch 1");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=180 && x1<=220 && y1 >=146 && y1<=178){
-			deliveredBlockArray1.push("Switch 2");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=285 && x1<=325 && y1 >=60 && y1<=95){
-			deliveredBlockArray1.push("Scale 1");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=285 && x1<=325 && y1 >=155 && y1<=190){
-			deliveredBlockArray1.push("Scale 2");
-			console.log(deliveredBlockArray1);		
-		}
-		if(x1>=390 && x1<=425 && y1 >=75 && y1<=105){
-			deliveredBlockArray1.push("Switch 3");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=390 && x1<=425 && y1 >=146 && y1<=178){
-			deliveredBlockArray1.push("Switch 4");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=60 && x1<=115 && y1 >=80 && y1<=120){
-			deliveredBlockArray1.push("Red Station");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=490 && x1<=540 && y1 >=130 && y1<=170){
-			deliveredBlockArray1.push("Blue Station");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=150 && x1<=185 && y1 >=110 && y1<=140){
-			deliveredBlockArray1.push("Red Block Pile");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=420 && x1<=455 && y1 >=110 && y1<=140){
-			deliveredBlockArray1.push("Blue Block Pile");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=220 && x1<=240 && y1 >=70 && y1<=180){
-			deliveredBlockArray1.push("Red 6 Blocks");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=375 && x1<=390 && y1 >=70 && y1<=180){
-			deliveredBlockArray1.push("Blue 6 Blocks");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=60 && x1<=120 && y1 >=5 && y1<=40){
-			deliveredBlockArray1.push("Blue Portal Top");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=60 && x1<=119 && y1 >=208 && y1<=245){
-			deliveredBlockArray1.push("Blue Portal Bottom");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=491 && x1<=550 && y1 >=205 && y1<=247){
-			deliveredBlockArray1.push("Red Portal Bottom");
-			console.log(deliveredBlockArray1);
-		}
-		if(x1>=490 && x1<=545 && y1 >=5 && y1<=40){
-			deliveredBlockArray1.push("Red Portal Top");
-			console.log(deliveredBlockArray1);
-		}
+	if(x1>=180 && x1<=220 && y1 >=146 && y1<=178){
+		deliveredBlockArray1.push("Switch 2");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=285 && x1<=325 && y1 >=60 && y1<=95){
+		deliveredBlockArray1.push("Scale 1");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=285 && x1<=325 && y1 >=155 && y1<=190){
+		deliveredBlockArray1.push("Scale 2");
+		console.log(deliveredBlockArray1);		
+	}
+	if(x1>=390 && x1<=425 && y1 >=75 && y1<=105){
+		deliveredBlockArray1.push("Switch 3");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=390 && x1<=425 && y1 >=146 && y1<=178){
+		deliveredBlockArray1.push("Switch 4");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=60 && x1<=115 && y1 >=80 && y1<=120){
+		deliveredBlockArray1.push("Red Station");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=490 && x1<=540 && y1 >=130 && y1<=170){
+		deliveredBlockArray1.push("Blue Station");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=150 && x1<=185 && y1 >=110 && y1<=140){
+		deliveredBlockArray1.push("Red Block Pile");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=420 && x1<=455 && y1 >=110 && y1<=140){
+		deliveredBlockArray1.push("Blue Block Pile");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=220 && x1<=240 && y1 >=70 && y1<=180){
+		deliveredBlockArray1.push("Red 6 Blocks");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=375 && x1<=390 && y1 >=70 && y1<=180){
+		deliveredBlockArray1.push("Blue 6 Blocks");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=60 && x1<=120 && y1 >=5 && y1<=40){
+		deliveredBlockArray1.push("Blue Portal Top");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=60 && x1<=119 && y1 >=208 && y1<=245){
+		deliveredBlockArray1.push("Blue Portal Bottom");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=491 && x1<=550 && y1 >=205 && y1<=247){
+		deliveredBlockArray1.push("Red Portal Bottom");
+		console.log(deliveredBlockArray1);
+	}
+	if(x1>=490 && x1<=545 && y1 >=5 && y1<=40){
+		deliveredBlockArray1.push("Red Portal Top");
+		console.log(deliveredBlockArray1);
 	}
 	x1=0;
 	y1=0;
@@ -769,7 +693,7 @@ function hello1(){
 			// draw the image on the canvas
 			ctx1.drawImage(img1,0,0,cw1,ch1);
 
-			if(x1>=182 && x1<=215 && y1>=73 && y1<=103 && blockAcquired1){ //Switch1 1
+			if(x1>=182 && x1<=215 && y1>=73 && y1<=103){ //Switch1 1
 				document.getElementById("modalButtonScaleYes").style.display = "none";
 				document.getElementById("modalButtonScaleNo").style.display = "none";
 				document.getElementById("modalButtonSwitchYes").style.display = "inline-block";
@@ -794,7 +718,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=180 && x1<=220 && y1>=146 && y1<=178 && blockAcquired1){ //Switch1 2
+			if(x1>=180 && x1<=220 && y1>=146 && y1<=178){ //Switch1 2
 				document.getElementById("modalButtonScaleYes").style.display = "none";
 				document.getElementById("modalButtonScaleNo").style.display = "none";
 				document.getElementById("modalButtonSwitchYes").style.display = "inline-block";
@@ -819,7 +743,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=285 && x1<=325 && y1>=60 && y1<=95 && blockAcquired1){ //Scale 1
+			if(x1>=285 && x1<=325 && y1>=60 && y1<=95){ //Scale 1
 				document.getElementById("modalButtonScaleYes").style.display = "inline-block";
 				document.getElementById("modalButtonScaleNo").style.display = "inline-block";
 				document.getElementById("modalButtonSwitchYes").style.display = "none";
@@ -844,7 +768,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=285 && x1<=325 && y1>=155 && y1<=190 && blockAcquired1){ //Scale 2
+			if(x1>=285 && x1<=325 && y1>=155 && y1<=190){ //Scale 2
 				document.getElementById("modalButtonScaleYes").style.display = "inline-block";
 				document.getElementById("modalButtonScaleNo").style.display = "inline-block";
 				document.getElementById("modalButtonSwitchYes").style.display = "none";
@@ -869,7 +793,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=390 && x1<=425 && y1>=75 && y1<=105 && blockAcquired1){ //Switch1 3
+			if(x1>=390 && x1<=425 && y1>=75 && y1<=105){ //Switch1 3
 				document.getElementById("modalButtonScaleYes").style.display = "none";
 				document.getElementById("modalButtonScaleNo").style.display = "none";
 				document.getElementById("modalButtonSwitchYes").style.display = "block";
@@ -894,7 +818,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=390 && x1<=425 && y1>=146 && y1<=178 && blockAcquired1){ //Switch1 4
+			if(x1>=390 && x1<=425 && y1>=146 && y1<=178){ //Switch1 4
 				document.getElementById("modalButtonScaleYes").style.display = "none";
 				document.getElementById("modalButtonScaleNo").style.display = "none";
 				document.getElementById("modalButtonSwitchYes").style.display = "block";
