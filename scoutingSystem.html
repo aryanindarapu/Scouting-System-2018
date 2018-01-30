@@ -69,14 +69,14 @@
 				<h6 style = "display: inline; margin-left: 15px;">Yes</h6>
 			</center>
 			<br><br>
-			<div style = "display: flex; flex-direction: row">
-				<div>
-					<button>Position Left</button><br>
-					<button>Position Middle</button><br>
-					<button>Position Right</button>
+			<div style = "display: flex; flex-direction: row; margin-left: 15%;">
+				<div style = "display: flex; flex-direction: column; justify-content: space-between">
+					<button class = "positionButtons">Position Left</button>
+					<button class = "positionButtons"">Position Middle</button>
+					<button class = "positionButtons">Position Right</button>
 				</div>
 				<div>
-					<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 20px"></canvas><p id = "demo1" style = "display: none"></p>
+					<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 20px; margin-right: 20px"></canvas><p id = "demo1" style = "display: none"></p>
 					<div id = "confirm1" style="display:none">
 						<!-- The Modal -->
 						<div id = "myModal1" style = "padding-top: 430px;" class = "modal">
@@ -96,10 +96,10 @@
 						</div>
 					</div>
 				</div>
-				<div>
-					<button>Position Right</button><br>
-					<button>Position Middle</button><br>
-					<button>Position Left</button>
+				<div style = "display: flex; flex-direction: column; justify-content: space-between">
+					<button class = "positionButtons">Position Right</button><br>
+					<button class = "positionButtons">Position Middle</button><br>
+					<button class = "positionButtons">Position Left</button>
 				</div>
 			</div>
 			
@@ -226,4 +226,12 @@
 		</div>
 	</body>
 	<script>document.getElementById("default").click();</script>
+	<script>
+		$(document).ready(function(){
+			$(".positionButtons").on("click", function(){
+				$(".positionButtons").removeClass("");
+				$(this).toggleClass("positionButtonsClicked");
+			});
+		});
+</html>
 </html>

@@ -291,3 +291,23 @@ textarea{
 	min-height:200px;
 	min-width: 700px;
 }
+.positionButtons{
+	background-color: #D3D3D3;
+	border: 2px solid black;
+	height: 50px;
+	font-size: 15px;
+}
+.positionButtonsClicked{
+	cursor: pointer;
+	opacity: 0.8;
+	background-color: #ff0000;
+}
+.positionButtons:hover{
+	cursor: pointer;
+	opacity: 0.8;
+	background-color: #ff0000;
+	transition: all .2s ease-in;
+	transform: scale(1.2);
+	transition: all .2s ease-out;
+	
+}
