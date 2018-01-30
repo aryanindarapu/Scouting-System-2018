@@ -6,7 +6,7 @@
 		<link rel = "stylesheet" type = "text/css" href = "buttons.css">
 		<link rel = "stylesheet" type = "text/css" href = "buttonsFooter.css">
 		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-		<title>RIP Jerry</title>
+		<title>Scouting System</title>
 		<div class = "tab">
 			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
@@ -14,14 +14,12 @@
 			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
 		</div>
-
-		<script type="text/javascript" src="scoutingSystem.js"></script>
 		<style>
 			canvas{border:1px solid red;}
 		</style>
 
 	</head>
-	<body onload = "hello(); helloAuton();">
+	<body onload = "hello(); hello1();">
 		<center>
 			<div id = "Info" class = "tabcontent">
 				<div class = "infoTab">
@@ -58,26 +56,44 @@
 			</center>
 			<center>
 				<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
-				<button id = "startButton" onclick = "start()">Start Time</button>
+				<button id = "startButton" onclick = "startTimer()">Start Time</button>
 				<button id = "resetButton" onclick = "reset()" style = "display: none">Reset Time</button>
 			</center>
 			<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
 			<center>
-				<h6 style = "display: inline; margin-right: 15px;">Yes</h6>
+				<h6 style = "display: inline; margin-right: 15px;">No</h6>
 				<label class = "switchAuton">
 					<input type = "checkbox">
 					<span class = "sliderAuton"></span>
 				</label>
-				<h6 style = "display: inline; margin-left: 15px;">No</h6>
+				<h6 style = "display: inline; margin-left: 15px;">Yes</h6>
 			</center>
 			<br><br>
-			<canvas id = "canvas1" width=300 height=300 onclick = "showCoordsA(event)"></canvas><p id = "demo1" style = "display: none"></p>
+			<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 320px"></canvas><p id = "demo1" style = "display: none"></p>
+			<div id = "confirm1" style="display:none">
+				<!-- The Modal -->
+				<div id = "myModal1" style = "padding-top: 430px;" class = "modal">
+
+					<!-- Modal content -->
+					<div class = "modal-content">
+						<h4 id = "pHasNoBlock1" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
+						<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
+						
+						<button id = "modalButtonScaleYes" class = "modalButtonYes" style = "display: inline-block" onclick = "confirmYes1(), closeModal1(), recordTimeAutonScale()">Yes</button>
+						<button id = "modalButtonScaleNo" class = "modalButtonNo" style = "display: inline-block" onclick = "confirmNo1(), closeModal1()">No</button>
+						
+						<button id = "modalButtonSwitchYes" class = "modalButtonYes" style = "display: none" onclick = "confirmYes1(), closeModal1(), recordTimeAutonSwitch()">Yes</button>
+						<button id = "modalButtonSwitchNo" class = "modalButtonNo" style = "display: none" onclick = "confirmNo1(), closeModal1()">No</button>
+					</div>
+
+				</div>
+			</div>
 		</div>
 
 		<center>
 			<div id = "TeleOp" class = "tabcontent">
 				<h1>TeleOp</h1>
-				<canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
+				<canvas id="canvas" onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
 				<p>Block in hand:</p>
 				<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
 				<div id = "confirm" style="display:none">
