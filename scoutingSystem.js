@@ -1075,7 +1075,7 @@ autonScoreScale = 0;
 autonScoreSwitch = 0;
 autonScoreSwitch = 0;
  function add(n, id) {
- 	if(id=="autonScoreScale"){
+/*  	if(id=="autonScoreScale"){
 		autonScoreScale += n;
 		if(autonScoreScale <= 0){
 			autonScoreScale = 0;
@@ -1100,7 +1100,12 @@ autonScoreSwitch = 0;
 		if(autonScoreScale <= 0){
 			autonScoreSwitch = 0;
 		}
-	}
+	} */
+	var x = document.getElementById(id).innerHTML;
+	x = parseInt(x);
+	x+=1;
+	x = x.toString();
+	document.getElementById(id).innerHTML = x;
  }
  
 $(function(){
