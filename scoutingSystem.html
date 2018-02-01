@@ -20,213 +20,218 @@
 		<script src="jquery-3.2.1.min.js"></script>
 
 	</head>
-	<body onload = "hello(); hello1();">
-		<center>
-			<div id = "Info" class = "tabcontent">
-				<div class = "infoTab">
-					<h1>Info</h1>
+	
+	<form action = "" method = "post">
+		<body onload = "hello(); hello1();">
+			<center>
+				<div id = "Info" class = "tabcontent">
+					<div class = "infoTab">
+						<h1>Info</h1>
 
-					<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
-					<input id = "teamNo" type = "text" onkeypress = "return event.charCode >= 48 && event.charCode <= 57" placeholder = "Team Number"><br><br>
-					<h3 style = "display: inline">Team Color:</h3>
-					<label class = "switch" onclick = "teamColor()">
-						<input type = "checkbox" id = "teamColor">
-						<span class = "slider"></span>
+						<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
+						<input id = "teamNo" type = "text" onkeypress = "return event.charCode >= 48 && event.charCode <= 57" placeholder = "Team Number"><br><br>
+						<h3 style = "display: inline">Team Color:</h3>
+						<label class = "switch" onclick = "teamColor()">
+							<input type = "checkbox" id = "teamColor">
+							<span class = "slider"></span>
+						</label>
+						<h3>OVERVIEW OF GAME</h3>
+						<p> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
+						Tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
+						to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
+						including autonomous and teleoperated periods, defeats the boss and wins the game.
+						<h3>INSTRUCTIONS</h3>
+						<h3>AUTON</h3>
+						<p> While scouting auton, there are multiple factors one must observe to scout correctly. As soon as the game starts, look at the robot and observe if they crossed the baseline.
+						Next, one must observe if the robot puts a cube is placed on a scale or switch. If so, check the boxes to the left.</p>
+						<h3>PENALTIES</h3>
+						<p> At the end of the game, fouls and technical fouls may be assessed. If any fouls are assessed, please mark how many fouls. 
+						If any yellow fouls are made, check mark the box to the left. If there is a red card assessed, then also check the box to the left.</p>
+						<h3>ENDGAME</h3>
+						<p> During the final 30 seconds of play, robots will have an opportunity to climb and scale the tower.</p>
+						<br></br>
+					</div>
+				</div>
+			</center>
+
+			<div id = "Auton" class = "tabcontent">
+				<center>
+					<h1>Auton</h1>
+				</center>
+				<center>
+					<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
+					<button id = "startButton" onclick = "startTimer()">Start Time</button>
+					<button id = "resetButton" onclick = "reset()" style = "display: none">Reset Time</button>
+				</center>
+				<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
+				<center>
+					<h6 style = "display: inline; margin-right: 15px;">No</h6>
+					<label class = "switchAuton">
+						<input type = "checkbox">
+						<span class = "sliderAuton"></span>
 					</label>
-					<h3>OVERVIEW OF GAME</h3>
-					<p> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
-					Tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
-					to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
-					including autonomous and teleoperated periods, defeats the boss and wins the game.
-					<h3>INSTRUCTIONS</h3>
-					<h3>AUTON</h3>
-					<p> While scouting auton, there are multiple factors one must observe to scout correctly. As soon as the game starts, look at the robot and observe if they crossed the baseline.
-					Next, one must observe if the robot puts a cube is placed on a scale or switch. If so, check the boxes to the left.</p>
-					<h3>PENALTIES</h3>
-					<p> At the end of the game, fouls and technical fouls may be assessed. If any fouls are assessed, please mark how many fouls. 
-					If any yellow fouls are made, check mark the box to the left. If there is a red card assessed, then also check the box to the left.</p>
-					<h3>ENDGAME</h3>
-					<p> During the final 30 seconds of play, robots will have an opportunity to climb and scale the tower.</p>
-					<br></br>
-				</div>
-			</div>
-		</center>
+					<h6 style = "display: inline; margin-left: 15px;">Yes</h6>
+				</center>
+				<br><br>
+				<div style = "display: flex; flex-direction: row; margin-left: 15%;">
+					<div style = "display: flex; flex-direction: column; justify-content: space-between">
+						<button class = "positionButtons">Position Left</button>
+						<button class = "positionButtons"">Position Middle</button>
+						<button class = "positionButtons">Position Right</button>
+					</div>
+					<div>
+						<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 20px; margin-right: 20px"></canvas><p id = "demo1" style = "display: none"></p>
+						<div id = "confirm1" style="display:none">
+							<!-- The Modal -->
+							<div id = "myModal1" style = "padding-top: 430px;" class = "modal">
 
-		<div id = "Auton" class = "tabcontent">
-			<center>
-				<h1>Auton</h1>
-			</center>
-			<center>
-				<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
-				<button id = "startButton" onclick = "startTimer()">Start Time</button>
-				<button id = "resetButton" onclick = "reset()" style = "display: none">Reset Time</button>
-			</center>
-			<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
-			<center>
-				<h6 style = "display: inline; margin-right: 15px;">No</h6>
-				<label class = "switchAuton">
-					<input type = "checkbox">
-					<span class = "sliderAuton"></span>
-				</label>
-				<h6 style = "display: inline; margin-left: 15px;">Yes</h6>
-			</center>
-			<br><br>
-			<div style = "display: flex; flex-direction: row; margin-left: 15%;">
-				<div style = "display: flex; flex-direction: column; justify-content: space-between">
-					<button class = "positionButtons">Position Left</button>
-					<button class = "positionButtons"">Position Middle</button>
-					<button class = "positionButtons">Position Right</button>
+								<!-- Modal content -->
+								<div class = "modal-content">
+									<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: block">Did the robot deliver a block at the highlighted location?</h4>
+									
+									<button id = "modalButtonScaleYes" class = "modalButtonYes" style = "display: inline-block" onclick = "confirmYes1(), closeModal1(), recordTimeAutonScale()">Yes</button>
+									<button id = "modalButtonScaleNo" class = "modalButtonNo" style = "display: inline-block" onclick = "confirmNo1(), closeModal1()">No</button>
+									
+									<button id = "modalButtonSwitchYes" class = "modalButtonYes" style = "display: none" onclick = "confirmYes1(), closeModal1(), recordTimeAutonSwitch()">Yes</button>
+									<button id = "modalButtonSwitchNo" class = "modalButtonNo" style = "display: none" onclick = "confirmNo1(), closeModal1()">No</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div style = "display: flex; flex-direction: column; justify-content: space-between">
+						<button class = "positionButtons">Position Right</button><br>
+						<button class = "positionButtons">Position Middle</button><br>
+						<button class = "positionButtons">Position Left</button>
+					</div>
 				</div>
-				<div>
-					<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 20px; margin-right: 20px"></canvas><p id = "demo1" style = "display: none"></p>
-					<div id = "confirm1" style="display:none">
+				
+			</div>
+
+			<center>
+				<div id = "TeleOp" class = "tabcontent">
+					<h1>TeleOp</h1>
+					<canvas id="canvas" onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
+					<p>Block in hand:</p>
+					<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
+					<div id = "confirm" style="display:none">
 						<!-- The Modal -->
-						<div id = "myModal1" style = "padding-top: 430px;" class = "modal">
+						<div id = "myModal" style = "padding-top: 430px;" class = "modal">
 
 							<!-- Modal content -->
 							<div class = "modal-content">
-								<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: block">Did the robot deliver a block at the highlighted location?</h4>
-								
-								<button id = "modalButtonScaleYes" class = "modalButtonYes" style = "display: inline-block" onclick = "confirmYes1(), closeModal1(), recordTimeAutonScale()">Yes</button>
-								<button id = "modalButtonScaleNo" class = "modalButtonNo" style = "display: inline-block" onclick = "confirmNo1(), closeModal1()">No</button>
-								
-								<button id = "modalButtonSwitchYes" class = "modalButtonYes" style = "display: none" onclick = "confirmYes1(), closeModal1(), recordTimeAutonSwitch()">Yes</button>
-								<button id = "modalButtonSwitchNo" class = "modalButtonNo" style = "display: none" onclick = "confirmNo1(), closeModal1()">No</button>
+								<h4 id = "pHasNoBlock" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
+								<h4 id = "pHasBlock" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
+								<button class = "modalButtonYes" onclick = "confirmYes(), closeModal()">Yes</button>
+								<button class = "modalButtonNo" onclick = "confirmNo(), closeModal()">No</button> 
 							</div>
 
 						</div>
 					</div>
 				</div>
-				<div style = "display: flex; flex-direction: column; justify-content: space-between">
-					<button class = "positionButtons">Position Right</button><br>
-					<button class = "positionButtons">Position Middle</button><br>
-					<button class = "positionButtons">Position Left</button>
+			</center>
+
+			<div id = "Endgame" class = "tabcontent">
+				<div style="padding-left: 12%; padding-top: 8%; display: inline-block;">
+					<h2>Performance</h2>
+					<label class = "container">Success
+						<input type = "checkbox" name = "endGame">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">Fail
+						<input type = "checkbox" name = "endGame">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">Levitate
+						<input type = "checkbox" name = "endGame">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">Cooperate
+						<input type = "checkbox" name = "endGame">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">Did Not Attempt
+						<input type = "checkbox" name = "endGame">
+						<span class = "checkmark"></span>
+					</label>
+				</div>
+				<div style="padding-left: 13%; display: inline-block">
+					<h2>Abilities</h2>
+					<label class = "container">Can't Climb
+						<input type = "checkbox" name = "endGameAb">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">Single Climb
+						<input type = "checkbox" name = "endGameAb">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">Dual Climb
+						<input type = "checkbox" name = "endGameAb">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">Triple Climb
+						<input type = "checkbox" name = "endGameAb">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">I have no clue
+						<input type = "checkbox" name = "endGameAb">
+						<span class = "checkmark"></span>
+					</label>
 				</div>
 			</div>
-			
-		</div>
 
-		<center>
-			<div id = "TeleOp" class = "tabcontent">
-				<h1>TeleOp</h1>
-				<canvas id="canvas" onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
-				<p>Block in hand:</p>
-				<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
-				<div id = "confirm" style="display:none">
-					<!-- The Modal -->
-					<div id = "myModal" style = "padding-top: 430px;" class = "modal">
-
-						<!-- Modal content -->
-						<div class = "modal-content">
-							<h4 id = "pHasNoBlock" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
-							<h4 id = "pHasBlock" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
-							<button class = "modalButtonYes" onclick = "confirmYes(), closeModal()">Yes</button>
-							<button class = "modalButtonNo" onclick = "confirmNo(), closeModal()">No</button> 
-						</div>
-
-					</div>
+			<div id = "Submit" class = "tabcontent">
+				<div class="submitClass">
+					<h3>Submit</h3>
+					<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
+					<input type = "button" class = "submit" onclick = "submit()" value = "Submit">
 				</div>
 			</div>
-		</center>
 
-		<div id = "Endgame" class = "tabcontent">
-			<div style="padding-left: 12%; padding-top: 8%; display: inline-block;">
-				<h2>Performance</h2>
-				<label class = "container">Success
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Fail
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Levitate
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Cooperate
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Did Not Attempt
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
-				</label>
+			<div class = "footer" id = "footer">
+				<br><br>
+				<div class = "Penalties" style = "display: inline-block; margin-left: 55px">
+					<h3 class = "footerHeaders" >Fouls</h3>
+					<br>
+					<br>
+					<input value = "-" type = "button" onclick = "add(-1, 'foul')">
+					<p id = "foul" style = "display: inline; font-family: 'Press Start 2P'">0</p>
+					<input value = "+" type = "button" onclick = "add(1, 'foul')">
+				</div>
+				<div class = "Penalties" style = "display: inline-block">
+					<h3 class = "footerHeaders">Technical Fouls</h3>
+					<br>
+					<br>
+					<input value = "-" type = "button" onclick = "add(-1, 'tech')">
+					<p id = "tech" style = "display: inline; font-family: 'Press Start 2P'">0</p>
+					<input value = "+" type = "button" onclick = "add(1, 'tech')">
+				</div>
+				<div class = "Penalties" style = "display: inline-block;">
+					<h3 class = "footerHeaders">Yellow Card</h3>
+					<br>
+					<br>
+					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:10%;" id = "yelCard">
+				</div>
+				<div class = "Penalties" style = "display: inline-block">
+					<h3 class = "footerHeaders">Red Card</h3>
+					<br>
+					<br>
+					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:10%;" id = "redCard">
+				</div>
 			</div>
-			<div style="padding-left: 13%; display: inline-block">
-				<h2>Abilities</h2>
-				<label class = "container">Can't Climb
-					<input type = "checkbox" name = "endGameAb">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Single Climb
-					<input type = "checkbox" name = "endGameAb">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Dual Climb
-					<input type = "checkbox" name = "endGameAb">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Triple Climb
-					<input type = "checkbox" name = "endGameAb">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">I have no clue
-					<input type = "checkbox" name = "endGameAb">
-					<span class = "checkmark"></span>
-				</label>
-			</div>
-		</div>
-
-		<div id = "Submit" class = "tabcontent">
-			<div class="submitClass">
-			<h3>Submit</h3>
-			<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
-			<input type = "button" class = "submit" onclick = "submit()" value = "Submit">
-			</div>
-		</div>
-
-		<div class = "footer" id = "footer">
-			<br><br>
-			<div class = "Penalties" style = "display: inline-block; margin-left: 55px">
-				<h3 class = "footerHeaders" >Fouls</h3>
-				<br>
-				<br>
-				<input value = "-" type = "button" onclick = "add(-1, 'foul')">
-				<p id = "foul" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-				<input value = "+" type = "button" onclick = "add(1, 'foul')">
-			</div>
-			<div class = "Penalties" style = "display: inline-block">
-				<h3 class = "footerHeaders">Technical Fouls</h3>
-				<br>
-				<br>
-				<input value = "-" type = "button" onclick = "add(-1, 'tech')">
-				<p id = "tech" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-				<input value = "+" type = "button" onclick = "add(1, 'tech')">
-			</div>
-			<div class = "Penalties" style = "display: inline-block;">
-				<h3 class = "footerHeaders">Yellow Card</h3>
-				<br>
-				<br>
-				<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:10%;" id = "yelCard">
-			</div>
-			<div class = "Penalties" style = "display: inline-block">
-				<h3 class = "footerHeaders">Red Card</h3>
-				<br>
-				<br>
-				<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:10%;" id = "redCard">
-			</div>
-		</div>
-	</body>
+		</body>
+	</form>
+	
 	<script>document.getElementById("default").click();</script>
+	
 	<script>
 		$(document).ready(function(){
 			console.log("hellow");

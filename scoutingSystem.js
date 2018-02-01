@@ -101,8 +101,7 @@ confirmYes = function(){
 			pickedUpBlockArray.push("Red Portal Top");
 			console.log(pickedUpBlockArray);
 		}
-	}
-	else{
+	} else {
 		blockAcquired=false;
 		document.getElementById("blockImg").style.filter = "grayscale(100%)";
 		document.getElementById("blockImg").style.opacity = 0.5;
