@@ -184,6 +184,13 @@ input:checked + .slider:before {
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: #ED1B26;
+  -webkit-transition: .4s;
+  transition: .4s;
+  display: inline;
+}
+
+.sliderAuton:before {
   background-color:  #DC143C;
   -webkit-transition: .4s;
   transition: .4s;
@@ -202,7 +209,7 @@ input:checked + .slider:before {
 }
 
 input:checked + .sliderAuton {
-  background-color: #4CAF50;
+  background-color: #10e513;
 }
 
 input:focus + .sliderAuton {
