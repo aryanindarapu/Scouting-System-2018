@@ -2,18 +2,26 @@
 <html>
 	<head>
 		<link rel = "stylesheet" type = "text/css" href = "mainPage.css">
+		<script src = "mainPage.js"></script>
+		<link href = "https://fonts.googleapis.com/css?family=Press+Start+2P" rel = "stylesheet">
 		<title>Main Page</title>
 	</head>
-	<body>
-		<center>
-			<form action = "scoutingSystem.html">
-				<input type = "submit" class = "button" value = "Scouting System"/>
-			</form>
-			<br>
-			<form action = "dataVis.html">
-				<input type = "submit" class = "button" value = "Data"/>
-			</form>
-		</center>
-		<div class = "middle"></div>
+	<body onload = "blink()">
+<!-- 		<center>
+			<div class = "buttons">
+				<form action = "scoutingSystem.html">
+					<input type = "submit" class = "button" value = "Scouting System"/>
+				</form>
+				<br>
+				<form action = "dataVis.html">
+					<input type = "submit" class = "button" value = "Data"/>
+				</form>
+			</div>
+		</center> -->
+		<div class = "middle">
+			<a href = "scoutingSystem.html">
+				<div id = "Press Start" style = "font-family: 'Press Start 2P'; color: red">Press Start</div>
+			</a>
+		</div>
 	</body>
 </html>
