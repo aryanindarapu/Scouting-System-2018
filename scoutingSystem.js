@@ -6,8 +6,8 @@ var teamColorRed;
 var yelCard;
 var redCard;
 var clickedMap = false;
-var pickedUpBlockArray = [];
-var deliveredBlockArray = [];
+var pickedUpBlockArray = "";
+var deliveredBlockArray = "";
 var blockAcquired = false;
 var teamColor="Red";
 
@@ -38,67 +38,67 @@ confirmYes = function(){
 		document.getElementById("pHasNoBlock").style.display = "none";
 		document.getElementById("pHasBlock").style.display = "block";
 		if(x>=182 && x<=215 && y >=73 && y<=103){
-			pickedUpBlockArray.push("Switch 1");
+			pickedUpBlockArray.concat(", Switch 1");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=180 && x<=220 && y >=146 && y<=178){
-			pickedUpBlockArray.push("Switch 2");
+			pickedUpBlockArray.concat(", Switch 2");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=285 && x<=325 && y >=60 && y<=95){
-			pickedUpBlockArray.push("Scale 1");
+			pickedUpBlockArray.concat(", Scale 1");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=285 && x<=325 && y >=155 && y<=190){
-			pickedUpBlockArray.push("Scale 2");
+			pickedUpBlockArray.concat(", Scale 2");
 			console.log(pickedUpBlockArray);		
 		}
 		if(x>=390 && x<=425 && y >=75 && y<=105){
-			pickedUpBlockArray.push("Switch 3");
+			pickedUpBlockArray.concat(", Switch 3");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=390 && x<=425 && y >=146 && y<=178){
-			pickedUpBlockArray.push("Switch 4");
+			pickedUpBlockArray.concat(", Switch 4");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=60 && x<=115 && y >=80 && y<=120){
-			pickedUpBlockArray.push("Red Station");
+			pickedUpBlockArray.concat(", Red Station");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=490 && x<=540 && y >=130 && y<=170){
-			pickedUpBlockArray.push("Blue Station");
+			pickedUpBlockArray.concat(", Blue Station");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=150 && x<=185 && y >=110 && y<=140){
-			pickedUpBlockArray.push("Red Block Pile");
+			pickedUpBlockArray.concat(", Red Block Pile");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=420 && x<=455 && y >=110 && y<=140){
-			pickedUpBlockArray.push("Blue Block Pile");
+			pickedUpBlockArray.concat(", Blue Block Pile");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=220 && x<=240 && y >=70 && y<=180){
-			pickedUpBlockArray.push("Red 6 Blocks");
+			pickedUpBlockArray.concat(", Red 6 Blocks");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=375 && x<=390 && y >=70 && y<=180){
-			pickedUpBlockArray.push("Blue six Blocks");
+			pickedUpBlockArray.concat(", Blue six Blocks");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=60 && x<=120 && y >=5 && y<=40){
-			pickedUpBlockArray.push("Blue Portal Top");
+			pickedUpBlockArray.concat(", Blue Portal Top");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=60 && x<=119 && y >=208 && y<=245){
-			pickedUpBlockArray.push("Blue Portal Bottom");
+			pickedUpBlockArray.concat(", Blue Portal Bottom");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=491 && x<=550 && y >=205 && y<=247){
-			pickedUpBlockArray.push("Red Portal Bottom");
+			pickedUpBlockArray.concat(", Red Portal Bottom");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=490 && x<=545 && y >=5 && y<=40){
-			pickedUpBlockArray.push("Red Portal Top");
+			pickedUpBlockArray.concat(", Red Portal Top");
 			console.log(pickedUpBlockArray);
 		}
 	} else {
@@ -108,67 +108,67 @@ confirmYes = function(){
 		document.getElementById("pHasNoBlock").style.display = "block";
 		document.getElementById("pHasBlock").style.display = "none";
 		if(x>=182 && x<=215 && y >=73 && y<=103){
-			deliveredBlockArray.push("Switch 1");
+			deliveredBlockArray.concat(", Switch 1");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=180 && x<=220 && y >=146 && y<=178){
-			deliveredBlockArray.push("Switch 2");
+			deliveredBlockArray.concat(", Switch 2");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=285 && x<=325 && y >=60 && y<=95){
-			deliveredBlockArray.push("Scale 1");
+			deliveredBlockArray.concat(", Scale 1");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=285 && x<=325 && y >=155 && y<=190){
-			deliveredBlockArray.push("Scale 2");
+			deliveredBlockArray.concat(", Scale 2");
 			console.log(deliveredBlockArray);		
 		}
 		if(x>=390 && x<=425 && y >=75 && y<=105){
-			deliveredBlockArray.push("Switch 3");
+			deliveredBlockArray.concat(", Switch 3");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=390 && x<=425 && y >=146 && y<=178){
-			deliveredBlockArray.push("Switch 4");
+			deliveredBlockArray.concat(", Switch 4");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=60 && x<=115 && y >=80 && y<=120){
-			deliveredBlockArray.push("Red Station");
+			deliveredBlockArray.concat(", Red Station");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=490 && x<=540 && y >=130 && y<=170){
-			deliveredBlockArray.push("Blue Station");
+			deliveredBlockArray.concat(", Blue Station");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=150 && x<=185 && y >=110 && y<=140){
-			deliveredBlockArray.push("Red Block Pile");
+			deliveredBlockArray.concat(", Red Block Pile");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=420 && x<=455 && y >=110 && y<=140){
-			deliveredBlockArray.push("Blue Block Pile");
+			deliveredBlockArray.concat(", Blue Block Pile");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=220 && x<=240 && y >=70 && y<=180){
-			deliveredBlockArray.push("Red 6 Blocks");
+			deliveredBlockArray.concat(", Red 6 Blocks");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=375 && x<=390 && y >=70 && y<=180){
-			deliveredBlockArray.push("Blue 6 Blocks");
+			deliveredBlockArray.concat(", Blue 6 Blocks");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=60 && x<=120 && y >=5 && y<=40){
-			deliveredBlockArray.push("Blue Portal Top");
+			deliveredBlockArray.concat(", Blue Portal Top");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=60 && x<=119 && y >=208 && y<=245){
-			deliveredBlockArray.push("Blue Portal Bottom");
+			deliveredBlockArray.concat(", Blue Portal Bottom");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=491 && x<=550 && y >=205 && y<=247){
-			deliveredBlockArray.push("Red Portal Bottom");
+			deliveredBlockArray.concat(", Red Portal Bottom");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=490 && x<=545 && y >=5 && y<=40){
-			deliveredBlockArray.push("Red Portal Top");
+			deliveredBlockArray.concat(", Red Portal Top");
 			console.log(deliveredBlockArray);
 		}
 	}
@@ -178,6 +178,7 @@ confirmYes = function(){
 	hello();
 }
 confirmNo = function(){
+	console.log("this is the error");
 	document.getElementById("confirm").style.display = "none";
 	x=0;
 	y=0;
@@ -584,67 +585,67 @@ confirmYes1 = function(){
 	document.getElementById("confirm1").style.display = "none";
 	hasBeenClick1 = true;
 	if(x1>=182 && x1<=215 && y1 >=73 && y1<=103){
-		deliveredBlockArray1.push("Switch 1");
+		deliveredBlockArray1.concat(", Switch 1");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=180 && x1<=220 && y1 >=146 && y1<=178){
-		deliveredBlockArray1.push("Switch 2");
+		deliveredBlockArray1.concat(", Switch 2");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=285 && x1<=325 && y1 >=60 && y1<=95){
-		deliveredBlockArray1.push("Scale 1");
+		deliveredBlockArray1.concat(", Scale 1");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=285 && x1<=325 && y1 >=155 && y1<=190){
-		deliveredBlockArray1.push("Scale 2");
+		deliveredBlockArray1.concat(", Scale 2");
 		console.log(deliveredBlockArray1);		
 	}
 	if(x1>=390 && x1<=425 && y1 >=75 && y1<=105){
-		deliveredBlockArray1.push("Switch 3");
+		deliveredBlockArray1.concat(", Switch 3");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=390 && x1<=425 && y1 >=146 && y1<=178){
-		deliveredBlockArray1.push("Switch 4");
+		deliveredBlockArray1.concat(", Switch 4");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=60 && x1<=115 && y1 >=80 && y1<=120){
-		deliveredBlockArray1.push("Red Station");
+		deliveredBlockArray1.concat(", Red Station");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=490 && x1<=540 && y1 >=130 && y1<=170){
-		deliveredBlockArray1.push("Blue Station");
+		deliveredBlockArray1.concat(", Blue Station");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=150 && x1<=185 && y1 >=110 && y1<=140){
-		deliveredBlockArray1.push("Red Block Pile");
+		deliveredBlockArray1.concat(", Red Block Pile");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=420 && x1<=455 && y1 >=110 && y1<=140){
-		deliveredBlockArray1.push("Blue Block Pile");
+		deliveredBlockArray1.concat(", Blue Block Pile");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=220 && x1<=240 && y1 >=70 && y1<=180){
-		deliveredBlockArray1.push("Red 6 Blocks");
+		deliveredBlockArray1.concat(", Red 6 Blocks");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=375 && x1<=390 && y1 >=70 && y1<=180){
-		deliveredBlockArray1.push("Blue 6 Blocks");
+		deliveredBlockArray1.concat(", Blue 6 Blocks");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=60 && x1<=120 && y1 >=5 && y1<=40){
-		deliveredBlockArray1.push("Blue Portal Top");
+		deliveredBlockArray1.concat(", Blue Portal Top");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=60 && x1<=119 && y1 >=208 && y1<=245){
-		deliveredBlockArray1.push("Blue Portal Bottom");
+		deliveredBlockArray1.concat(", Blue Portal Bottom");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=491 && x1<=550 && y1 >=205 && y1<=247){
-		deliveredBlockArray1.push("Red Portal Bottom");
+		deliveredBlockArray1.concat(", Red Portal Bottom");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=490 && x1<=545 && y1 >=5 && y1<=40){
-		deliveredBlockArray1.push("Red Portal Top");
+		deliveredBlockArray1.concat(", Red Portal Top");
 		console.log(deliveredBlockArray1);
 	}
 	x1=0;
@@ -1167,7 +1168,7 @@ var recordTimeAutonScale = function(){
 		autonTimeScale.push(value);
 		console.log(autonTimeScale);
 	} else {
-		subtract(1,'autonScoreScale');
+		autonScoreScale -= 1;
 	}
 }
 
@@ -1176,11 +1177,11 @@ var recordTimeAutonSwitch = function() {
 		autonTimeSwitch.push(value);
 		console.log(autonTimeSwitch);
 	} else {
-		subtract(1,'autonScoreSwitch');
+		autonScoreSwitch -= 1;
 	}
 }
 
-function submit() {
+function submitx() {
 	//Check Statements
 	if (document.getElementById("teamName").value == "" | document.getElementById("teamNo").value == "") {
 		if (document.getElementById("teamName").value == "") {
