@@ -1,0 +1,293 @@
+body {
+	font-family: Arial;
+	background-image: url("sky.png");
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+	background-image:url("output_FKsPkq.gif");
+    background-repeat: repeat-x;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: #ffffff ;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #cce6ff;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #b3d9ff;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+	padding-bottom: 100px;
+}
+
+div.infoTab {
+	margin-right: 150px;
+	margin-left: 150px;
+}
+
+.modalButtonYes {
+	font-family: 'Press Start 2P';
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+	box-shadow: 0 9px #999;
+}
+
+.modalButtonYes:hover {filter: brightness(80%)}
+
+.modalButtonYes:active {
+	filter: brightness(80%)
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+.modalButtonNo {
+	font-family: 'Press Start 2P';
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #DC143C;
+	border: none;
+	box-shadow: 0 9px #999;
+}
+
+.modalButtonNo:hover {filter: brightness(80%)}
+
+.modalButtonNo:active {
+	filter: brightness(80%)
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+input[type=text] {
+    background-color: white;
+	border: 3px solid #555;
+    padding: 6px 10px;
+	transition: all .2s ease-out;
+	}
+	
+input[type=text]:focus {
+	transition: all .2s ease-in;
+	transform: scale(1.5);
+	transition: all .2s ease-out;
+}
+
+/* input[type=text]:focus {
+    background-color: lightblue;
+	border: 3px solid #555;
+	height: 75px;
+	width: 250px;
+	font-size: 200%;
+} */
+
+input[value="+"] {
+	margin-top: 8px;
+	font-weight: bold;
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+	box-shadow: 0 9px #999;
+	margin-left: 30px;
+	margin-right: 5px;
+}
+
+input[type="button"]:hover {filter: brightness(80%)}
+
+input[type="button"]:active {
+	filter: brightness(80%);
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+input[value="-"] {
+	font-weight: bold;
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+    background-color: #DC143C;
+	border: none;
+	box-shadow: 0 9px #999;
+	margin-right: 30px;
+}
+
+.submit {
+	font-family: 'Press Start 2P';
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+	box-shadow: 0 9px #999;
+}
+
+.footer {
+	position: fixed;
+	display: flex;
+	align-items: start;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 150px;
+	background: #ff8080;
+	color: white;
+	text-align: center;
+	background-image: url("grass.png");
+	background-color: #cccccc;
+}
+
+#timer{
+	width: 160px;
+	height: 40px;
+	padding-top: 15px;
+	outline: #000 dotted thick;
+}
+
+div.Penalties {
+	display: inline;
+	margin-top: 10px;
+	padding-right: 50px;
+}
+	
+
+.footerHeaders {
+	font-family: "Press Start 2P";
+	-webkit-font-smoothing: antialiased;
+	display: inline;
+	margin-right: 25px;
+	margin-left: 25px;
+}
+
+h3 {
+	font-family: "Press Start 2P";
+}
+
+h1 {
+	font-family: "Press Start 2P";
+	font-size: 45px;
+}
+
+h6 {
+	font-family: "Press Start 2P";
+	font-size: 20px;
+}
+
+h2 {
+	font-family: "Press Start 2P";
+	font-size: 30px;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.autonButtons {
+	padding-left: 32%;
+}
+
+.blackLine {
+	color: black;
+	font-size: 400%;
+	display: flex;
+	align-items: start;
+}
+.autonHeader {
+	padding-left:50px;
+}
+.submitClass {
+	padding-top:10%;
+	text-align: center;
+}
+
+textarea{
+	height: 200px;
+	width: 700px;
+	max-height: 200px;
+	max-width: 700px;
+	min-height:200px;
+	min-width: 700px;
+}
