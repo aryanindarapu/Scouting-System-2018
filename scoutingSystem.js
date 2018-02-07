@@ -1149,7 +1149,8 @@ function startTimer() {
 	timerInterval = setInterval(changeValue, 1000);
 }
 
-function reseT() {
+
+var resetTimer = function(){
 	console.log("im a beast");
 	document.getElementById("startButton").style.display = "block";
 	document.getElementById("resetButton").style.display = "none";

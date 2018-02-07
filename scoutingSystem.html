@@ -63,18 +63,20 @@
 					<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
 					<input id = "startButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "startTimer(), timerPress()" type = "button" class = "timerButton"/>
 					<input id = "resetButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "reseT(), timerPress()" type = "button" class = "resetButton"/>
+					<button type = "button" id = "startButton" onclick = "startTimer()">Start Time</button>
+					<button type = "button" id = "resetButton" onclick = "resetTimer()" style = "display: none">Reset Time</button>
 				</center>
 				<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
-				<center>
+				<center style = "margin-left: 15px;">
 					<h6 style = "display: inline; margin-right: 15px;">No</h6>
-					<label class = "switchAuton">
+					<label class = "switch">
 						<input type = "checkbox">
 						<span class = "sliderAuton"></span>
 					</label>
 					<h6 style = "display: inline; margin-left: 15px;">Yes</h6>
 				</center>
 				<br><br>
-				<div style = "display: flex; flex-direction: row; margin-left: 15%;">
+				<div style = "display: flex; flex-direction: row; margin-left: 12%;">
 					<div style = "display: flex; flex-direction: column; justify-content: space-between">
 						<button type = "button" class = "positionButtons" name = "Left">Position Left</button>
 						<button type = "button" class = "positionButtons" name = "Mid">Position Middle</button>
@@ -191,8 +193,7 @@
 				<div class="submitClass">
 					<h3>Submit</h3>
 					<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
-					<input type = "button" class = "submit" onclick = "submitx()">
-					<input href = "submit.php?hello=true"type = "button" class = "submit" onclick = "submit()" value = "Submit">
+					<input href = "submit.php?hello=true"type = "button" class = "submit" onclick = "submitx()" value = "Submit">
 				</div>
 			</div>
 
@@ -218,13 +219,13 @@
 					<h3 class = "footerHeaders">Yellow Card</h3>
 					<br>
 					<br>
-					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:10%;" id = "yelCard">
+					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:25px;" id = "yelCard">
 				</div>
 				<div class = "Penalties" style = "display: inline-block">
 					<h3 class = "footerHeaders">Red Card</h3>
 					<br>
 					<br>
-					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:10%;" id = "redCard">
+					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:25px;" id = "redCard">
 				</div>
 			</div>
 		</body>
