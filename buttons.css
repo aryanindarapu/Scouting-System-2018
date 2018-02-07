@@ -190,7 +190,7 @@ input:checked + .slider:before {
   display: inline;
 }
 
-.sliderTwo:before {
+.sliderAuton:before {
   background-color:  #DC143C;
   -webkit-transition: .4s;
   transition: .4s;
@@ -208,19 +208,8 @@ input:checked + .slider:before {
   transition: .4s;
 }
 
-<<<<<<< HEAD
-input:checked + .sliderTwo {
-  background-color: #10e513;
-}
-
-input:focus + .sliderTwo {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .sliderTwo:before {
-=======
 input:checked + .sliderAuton {
-  background-color: #4CAF50;
+  background-color: #10e513;
 }
 
 input:focus + .sliderAuton {
@@ -228,7 +217,6 @@ input:focus + .sliderAuton {
 }
 
 input:checked + .sliderAuton:before {
->>>>>>> ec974fef939ebd3fc226af9fafbf1947fe7df610
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
