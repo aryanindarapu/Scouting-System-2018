@@ -6,16 +6,7 @@ var clickedMap = false;
 var pickedUpBlockArray = [];
 var deliveredBlockArray = [];
 var blockAcquired = false;
-var teamColor="Red";
 
-var teamColor = function(){
-	if(teamColor == "Red"){
-		teamColor = "Blue"
-	}
-	if(teamColor == "Blue"){
-		teamColor = "Red"
-	}
-}
 confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
 	var modal = document.getElementById("myModal");
