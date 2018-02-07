@@ -101,9 +101,9 @@
 						</div>
 					</div>
 					<div style = "display: flex; flex-direction: column; justify-content: space-between">
-						<button type = "button" class = "positionButtons">Position Right</button><br>
-						<button type = "button" class = "positionButtons">Position Middle</button><br>
-						<button type = "button" class = "positionButtons">Position Left</button>
+						<button type = "button" class = "positionButtons" name = "Right">Position Right</button><br>
+						<button type = "button" class = "positionButtons" name = "Mid">Position Middle</button><br>
+						<button type = "button" class = "positionButtons" name = "Left">Position Left</button>
 					</div>
 				</div>
 				
@@ -126,12 +126,10 @@
 								<button type = "button" class = "modalButtonYes" onclick = "confirmYes(), closeModal()">Yes</button>
 								<button type = "button" class = "modalButtonNo" onclick = "confirmNo(), closeModal()">No</button> 
 							</div>
-
 						</div>
 					</div>
 				</div>
 			</center>
-
 			<div id = "Endgame" class = "tabcontent">
 				<div style="padding-left: 12%; padding-top: 8%; display: inline-block;">
 					<h2>Performance</h2>
@@ -233,16 +231,5 @@
 	</form>
 	
 	<script>document.getElementById("default").click();</script>
-	
-	<script>
-		$(document).ready(function(){
-			console.log("hellow");
-			$(".positionButtons").on("click", function(){
-				console.log("yeet");
-				$(".positionButtons").removeClass("positionButtonsClicked");
-				$(this).addClass("positionButtonsClicked");
-			});
-		});
-	</script>
 </html>
 </html>

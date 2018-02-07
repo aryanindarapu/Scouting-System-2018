@@ -9,16 +9,7 @@ var clickedMap = false;
 var pickedUpBlockArray = "";
 var deliveredBlockArray = "";
 var blockAcquired = false;
-var teamColor="Red";
 
-var teamColor = function(){
-	if(teamColor == "Red"){
-		teamColor = "Blue"
-	}
-	if(teamColor == "Blue"){
-		teamColor = "Red"
-	}
-}
 confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
 	var modal = document.getElementById("myModal");
@@ -1196,8 +1187,16 @@ var recordTimeAutonSwitch = function() {
 		autonScoreSwitch -= 1;
 	}
 }
-
+$(document).ready(function(){
+	$(".positionButtons").on("click", function(){
+		$(".positionButtons").removeClass("positionButtonsClicked");
+		$(this).addClass("positionButtonsClicked");
+		var autonPosition = $(this).attr('name');
+		console.log(autonPosition);
+	});
+});
 function submitx() {
+	//Check Statements
 	if (document.getElementById("teamName").value == "" | document.getElementById("teamNo").value == "") {
 		if (document.getElementById("teamName").value == "") {
 			alert("Please Enter A Team Name");
@@ -1235,8 +1234,11 @@ function submitx() {
 		yelCard = true;
 	}
 	
-	//TeleOp
+	//Auton
+	var autonPosition = "";
 	
+	
+	//TeleOp
 	
 	//Red Card
 	if (document.getElementById("redCard").checked == false) {
