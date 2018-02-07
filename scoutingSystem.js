@@ -1142,11 +1142,14 @@ var autonTimeScale = [];
 var autonTimeSwitch = [];
 var timerStarted = false;
 function startTimer() {
+	console.log("jengeldows the goat");
 	timerStarted = true;
 	autonTimeScale = [];
 	autonTimeSwitch = [];
 	document.getElementById("startButton").style.display = "none";
 	document.getElementById("resetButton").style.display = "block";
+	document.getElementById("startButton").style.zIndex = "0";
+	document.getElementById("resetButton").style.zIndex = "1";
 	document.getElementById("timer").style.outline = "#00FF00 dotted thick";
 	stop();
 	value = 15;
@@ -1156,8 +1159,11 @@ function startTimer() {
 }
 
 var reset = function(){
+	console.log("im a beast");
 	document.getElementById("startButton").style.display = "block";
 	document.getElementById("resetButton").style.display = "none";
+	document.getElementById("startButton").style.zIndex = "1";
+	document.getElementById("resetButton").style.zIndex = "0";
 	timerStarted = false;
 	stop();
 	value = 15;
@@ -1191,13 +1197,7 @@ var recordTimeAutonSwitch = function() {
 	}
 }
 
-<<<<<<< HEAD
 function submitx() {
-=======
-function submit() {
-	
->>>>>>> 12b203320a62ed6387f43e9b65e70fc3a376c56c
-	//Check Statements
 	if (document.getElementById("teamName").value == "" | document.getElementById("teamNo").value == "") {
 		if (document.getElementById("teamName").value == "") {
 			alert("Please Enter A Team Name");
