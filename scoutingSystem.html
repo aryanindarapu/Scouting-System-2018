@@ -79,6 +79,9 @@
 						<button type = "button" class = "positionButtons">Position Left</button>
 						<button type = "button" class = "positionButtons">Position Middle</button>
 						<button type = "button" class = "positionButtons">Position Right</button>
+						<button class = "positionButtons">Position Left</button>
+						<button class = "positionButtons">Position Middle</button>
+						<button class = "positionButtons">Position Right</button>
 					</div>
 					<div>
 						<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 20px; margin-right: 20px"></canvas><p id = "demo1" style = "display: none"></p>
@@ -194,12 +197,13 @@
 					<h3>Submit</h3>
 					<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
 					<input type = "button" class = "submit" onclick = "submitx()">
+					<input href = "submit.php?hello=true"type = "button" class = "submit" onclick = "submit()" value = "Submit">
 				</div>
 			</div>
 
 			<div class = "footer" id = "footer">
 				<br><br>
-				<div class = "Penalties" style = "display: inline-block; margin-left: 55px">
+				<div class = "Penalties" style = "display: inline-block; margin-left: 50px">
 					<h3 class = "footerHeaders" >Fouls</h3>
 					<br>
 					<br>

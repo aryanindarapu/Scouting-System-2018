@@ -1074,8 +1074,8 @@ function openTab(evt, tabName) {
 autonScoreScale = 0;
 autonScoreSwitch = 0;
 autonScoreSwitch = 0;
- function add(n, id) {
-/*  	if(id=="autonScoreScale"){
+/*  function add(n, id) {
+	if(id=="autonScoreScale"){
 		autonScoreScale += n;
 		if(autonScoreScale <= 0){
 			autonScoreScale = 0;
@@ -1100,12 +1100,22 @@ autonScoreSwitch = 0;
 		if(autonScoreScale <= 0){
 			autonScoreSwitch = 0;
 		}
-	} */
+	} 
+	
 	var x = document.getElementById(id).innerHTML;
 	x = parseInt(x);
-	x+=1;
+	x += 1;
 	x = x.toString();
 	document.getElementById(id).innerHTML = x;
+ } */
+ 
+  function add(n, id) {
+ 	x = parseInt(document.getElementById(id).innerHTML);
+ 	x += n;
+ 	if (x<0) {
+ 		x=0;
+ 	}
+ 	document.getElementById(id).innerHTML = x.toString();
  }
  
 $(function(){
@@ -1181,7 +1191,12 @@ var recordTimeAutonSwitch = function() {
 	}
 }
 
+<<<<<<< HEAD
 function submitx() {
+=======
+function submit() {
+	
+>>>>>>> 12b203320a62ed6387f43e9b65e70fc3a376c56c
 	//Check Statements
 	if (document.getElementById("teamName").value == "" | document.getElementById("teamNo").value == "") {
 		if (document.getElementById("teamName").value == "") {

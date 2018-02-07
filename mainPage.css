@@ -2,6 +2,18 @@ body {
 	background-color: black;
 }
 
+div.middle {
+	width: 75%;
+	height: 75%;
+	background-color: red;
+	top:10%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 1;
+}
+
 .button {
 	display: inline-block;
 	padding: 15px 25px;

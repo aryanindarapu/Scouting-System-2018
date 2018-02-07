@@ -1,6 +1,8 @@
 body {
 	font-family: Arial;
-	background-image: url("tmnt.png");
+	background-image: url("sky.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 /* Style the tab */
