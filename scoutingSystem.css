@@ -316,3 +316,24 @@ textarea{
 	font-family: "Press Start 2P";
 	
 }
+
+.timerButton{
+	background-image: url("start1.png");
+	background-size: 70px;
+	height: 70px;
+	width: 70px;
+	border-radius: 100%
+	}
+
+.timerButton:focus{
+	background-image: url("start2.png");
+}
+
+.resetButton{
+	background-image: url("start2.png");
+	background-size: 70px;
+	height: 70px;
+	width: 70px;
+	border-radius: 100%;
+	display: none;
+}

@@ -61,8 +61,8 @@
 				</center>
 				<center>
 					<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
-					<button type = "button" id = "startButton" onclick = "startTimer()">Start Time</button>
-					<button type = "button" id = "resetButton" onclick = "reset()" style = "display: none">Reset Time</button>
+					<input id = "startButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "startTimer(), timerPress()" type = "button" class = "timerButton"/>
+					<input id = "resetButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "reseT(), timerPress()" type = "button" class = "resetButton"/>
 				</center>
 				<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
 				<center>
@@ -76,9 +76,9 @@
 				<br><br>
 				<div style = "display: flex; flex-direction: row; margin-left: 15%;">
 					<div style = "display: flex; flex-direction: column; justify-content: space-between">
-						<button type = "button" class = "positionButtons">Position Left</button>
-						<button type = "button" class = "positionButtons">Position Middle</button>
-						<button type = "button" class = "positionButtons">Position Right</button>
+						<button type = "button" class = "positionButtons" name = "Left">Position Left</button>
+						<button type = "button" class = "positionButtons" name = "Mid">Position Middle</button>
+						<button type = "button" class = "positionButtons" name = "Right">Position Right</button>
 					</div>
 					<div>
 						<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 20px; margin-right: 20px"></canvas><p id = "demo1" style = "display: none"></p>

@@ -1149,7 +1149,7 @@ function startTimer() {
 	timerInterval = setInterval(changeValue, 1000);
 }
 
-var reset = function(){
+function reseT() {
 	console.log("im a beast");
 	document.getElementById("startButton").style.display = "block";
 	document.getElementById("resetButton").style.display = "none";
@@ -1187,6 +1187,14 @@ var recordTimeAutonSwitch = function() {
 		autonScoreSwitch -= 1;
 	}
 }
+var timerHover = function() {
+	document.getElementById("startButton1").style.filter = "brightness(70%)";
+	console.log("if this acutally works");
+}
+var timerOut = function() {
+	document.getElementById("startButton1").style.filter = "brightness(100%)";
+}
+
 $(document).ready(function(){
 	$(".positionButtons").on("click", function(){
 		$(".positionButtons").removeClass("positionButtonsClicked");
