@@ -26,14 +26,16 @@ confirmYes = function(){
 		blockAcquired=true;
 		document.getElementById("blockImg").style.filter = "grayscale(0%)";
 		document.getElementById("blockImg").style.opacity = 1;
+		document.getElementById("dropBlock").style.display = "block";
 		document.getElementById("pHasNoBlock").style.display = "none";
 		document.getElementById("pHasBlock").style.display = "block";
 		if(x>=182 && x<=215 && y >=73 && y<=103){
-			pickedUpBlockArray.concat(", Switch 1");
+			pickedUpBlockArray += ", Switch 1";
+			console.log("has been added");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=180 && x<=220 && y >=146 && y<=178){
-			pickedUpBlockArray.concat(", Switch 2");
+			pickedUpBlockArray += ", Switch 2";
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=285 && x<=325 && y >=60 && y<=95){
@@ -96,6 +98,7 @@ confirmYes = function(){
 		blockAcquired=false;
 		document.getElementById("blockImg").style.filter = "grayscale(100%)";
 		document.getElementById("blockImg").style.opacity = 0.5;
+		document.getElementById("dropBlock").style.display = "none";
 		document.getElementById("pHasNoBlock").style.display = "block";
 		document.getElementById("pHasBlock").style.display = "none";
 		if(x>=182 && x<=215 && y >=73 && y<=103){
@@ -177,7 +180,19 @@ confirmNo = function(){
 	hello();
 	hasBeenClick = false;
 }
-
+dropBlock = function(){
+	blockAcquired=false;
+	document.getElementById("blockImg").style.filter = "grayscale(100%)";
+	document.getElementById("blockImg").style.opacity = 0.5;
+	document.getElementById("dropBlock").style.display = "none";
+	document.getElementById("pHasNoBlock").style.display = "block";
+	document.getElementById("pHasBlock").style.display = "none";
+	deliveredBlockArray.concet(", Dropped Block");
+	x=0;
+	y=0;
+	clickedMap = false;
+	hello();
+}
 window.onload = hello;
 var x = 0;
 var y = 0;
