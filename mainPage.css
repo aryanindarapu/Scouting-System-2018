@@ -1,5 +1,8 @@
 body {
-	background-color: white;
+	background-image: url("Ercad.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%; 
 }
 
 div.buttons {
@@ -7,11 +10,18 @@ div.buttons {
 	z-index: 2;
 }
 
+div.PressStart {
+	font-family: 'Press Start 2P';
+	color: red;
+	text-align: center;
+	margin-top: 150px;
+	font-size: 80px;
+}
+
 div.middle {
-	width: 75%;
-	height: 75%;
+	width: 88%;
+	height: 87%;
 	background-color: black;
-	border: 10px solid red;
 	position: fixed;
 	z-index: 1;
 	top:0;
@@ -19,8 +29,8 @@ div.middle {
 	left: 0;
 	right: 0;
 	margin: auto;
-    overflow: hidden;
-    text-align: center;  /* align center all inline elements */
+	overflow: hidden;
+	margin-top: 100px;
 }
 
 .button {
