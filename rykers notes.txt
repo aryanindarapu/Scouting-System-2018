@@ -1,0 +1,6 @@
+Rykers notes:
+restrict blocks by team
+keep track of team on screen
+wording on end game
+unclicking position
+next/previous buttons
