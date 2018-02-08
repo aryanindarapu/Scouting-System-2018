@@ -1204,11 +1204,10 @@ var recordTimeAutonSwitch = function() {
 	}
 }
 var timerHover = function() {
-	document.getElementById("startButton1").style.filter = "brightness(70%)";
-	console.log("if this acutally works");
+	document.getElementById("startButton").style.filter = "brightness(70%)";
 }
 var timerOut = function() {
-	document.getElementById("startButton1").style.filter = "brightness(100%)";
+	document.getElementById("startButton").style.filter = "brightness(100%)";
 }
 
 $(document).ready(function(){
