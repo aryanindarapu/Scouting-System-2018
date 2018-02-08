@@ -5,7 +5,7 @@
 		<link rel = "stylesheet" type = "text/css" href = "scoutingSystem.css">
 		<link rel = "stylesheet" type = "text/css" href = "buttons.css">
 		<link rel = "stylesheet" type = "text/css" href = "buttonsFooter.css">
-		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+		<link href = "https://fonts.googleapis.com/css?family=Press+Start+2P" rel = "stylesheet">
 		<title>Scouting System</title>
 		<div class = "tab">
 			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
@@ -61,6 +61,8 @@
 				</center>
 				<center>
 					<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
+					<input id = "startButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "startTimer(), timerPress()" type = "button" class = "timerButton"/>
+					<input id = "resetButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "reseT(), timerPress()" type = "button" class = "resetButton"/>
 					<button type = "button" id = "startButton" onclick = "startTimer()">Start Time</button>
 					<button type = "button" id = "resetButton" onclick = "resetTimer()" style = "display: none">Reset Time</button>
 				</center>
