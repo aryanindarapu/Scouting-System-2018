@@ -1,6 +1,9 @@
 body {
 	font-family: Arial;
-	background-image: url("tmnt.png");
+	background-image: url("sky.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%; 
 }
 
 /* Style the tab */
@@ -276,10 +279,10 @@ h2 {
 	align-items: start;
 }
 .autonHeader {
-	padding-left:50px;
+	padding-left: 50px;
 }
 .submitClass {
-	padding-top:10%;
+	padding-top: 17%;
 	text-align: center;
 }
 
@@ -313,4 +316,25 @@ textarea{
 	transition: all .2s ease-out;
 	font-family: "Press Start 2P";
 	
+}
+
+.timerButton{
+	background-image: url("start1.png");
+	background-size: 70px;
+	height: 70px;
+	width: 70px;
+	border-radius: 100%
+	}
+
+.timerButton:focus{
+	background-image: url("start2.png");
+}
+
+.resetButton{
+	background-image: url("start2.png");
+	background-size: 70px;
+	height: 70px;
+	width: 70px;
+	border-radius: 100%;
+	display: none;
 }
