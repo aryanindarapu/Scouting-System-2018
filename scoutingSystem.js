@@ -189,6 +189,7 @@ function dropTheBlock(){
 	document.getElementById("pHasBlock").style.display = "none";
 	deliveredBlockArray += (", Dropped Block");
 	console.log(deliveredBlockArray);
+	deliveredBlockArray.concat(", Dropped Block");
 	x=0;
 	y=0;
 	clickedMap = false;
