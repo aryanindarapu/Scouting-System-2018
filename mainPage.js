@@ -1,6 +1,6 @@
 function blink() {
 	var visibility = "showing";
-	var f = document.getElementById('Press Start');
+	var f = document.getElementById('PressStart');
 	setInterval(function() {
 	   if(visibility == "showing"){
 		  f.style.visibility = "hidden";
