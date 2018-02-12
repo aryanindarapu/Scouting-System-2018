@@ -37,18 +37,31 @@
 						</label>
 						<h3>OVERVIEW OF GAME</h3>
 						<p> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
-						Tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
+						tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
 						to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
 						including autonomous and teleoperated periods, defeats the boss and wins the game.
 						<h3>INSTRUCTIONS</h3>
+						<p> Before the game begins, type in the team name and team number. Move the slider in accordance to the team color. To navigate
+						the website, use the tabs at the top of the page. Please be aware that the penalties are at the bottom of the page and are
+						accessible at any point in the game.</p>
 						<h3>AUTON</h3>
-						<p> When the auton phase begins, press the timer button once to begin the timer. 
-						If so, check the boxes to the left.</p>
+						<p> Before the match, signify the robot's starting position by selecting the appropriate box next to the map.Immediately when the auton phase begins,
+						press the start timer button once to start the timer. Pressing the timer button a second time will reset it.
+						Make sure to observe when and where the robot delivers blocks; upon delivery, promptly click the respective location on the map and 
+						confirm the delivery. Make sure to mark whether the robot crossed the baseline by moving the slider.</p>
 						<h3>PENALTIES</h3>
-						<p> At the end of the game, fouls and technical fouls may be assessed. If any fouls are assessed, please mark how many fouls. 
-						If any yellow fouls are made, check mark the box to the left. If there is a red card assessed, then also check the box to the left.</p>
+						<p> Penalties given at any time may be checked at the bottom of the page. If any fouls are assessed, please mark how many fouls. 
+						If there is a yellow or red card assessed, check their respective boxes as well.</p>
 						<h3>ENDGAME</h3>
-						<p> During the final 30 seconds of play, robots will have an opportunity to climb and scale the tower.</p>
+						<p> During the final 30 seconds of play, robots will have an opportunity to climb and scale the tower. Under the performance
+						category, please signify whether the robot attempted to climb, cooperated, levitated, or succeeded in climbing. Multiple boxes
+						may be checked. Also, if the robot attempted to climb, signify whether the robot is capable of a single, double, or triple climb;
+						otherwise, mark that the robot did not attempt.</p>
+						<h3>SUBMIT</h3>
+						<p> After the game is over, type any additional comments or concerns in the given text box. If a mistake was made or information
+						was missed during scouting, please indicate so. After finalizing information, press the submit button to submit. Please note
+						that upon submitting information, any user information will be erased, the website will refresh, and the input will be sent
+						to the server. </p>
 						<br></br>
 					</div>
 				</div>
@@ -60,8 +73,8 @@
 				</center>
 				<center>
 					<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
-					<input id = "startButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "startTimer(), timerPress()" type = "button" class = "timerButton"/>
-					<input id = "resetButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "resetTimer(), timerPress()" type = "button" class = "resetButton"/>
+					<input id = "startButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "startTimer()" type = "button" class = "timerButton"/>
+					<input id = "resetButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "resetTimer()" type = "button" class = "resetButton"/>
 				</center>
 				<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
 				<center style = "margin-left: 15px;">
@@ -114,6 +127,8 @@
 					<canvas id="canvas" onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
 					<p>Block in hand:</p>
 					<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
+					<br><button type = "button" id = "dropBlock" style = "margin-top: 20px; display: none" class = "modalButtonNo" onclick = "dropTheBlock()">Dropped/Lost Block</button>
+					<br><button type = "button" id = "dropBlock" style = "margin-top: 20px; display: none" class = "modalButtonNo" onclick = "dropTheBlock()">Dropped/Lost Block</button>
 					<div id = "confirm" style="display:none">
 						<!-- The Modal -->
 						<div id = "myModal" style = "padding-top: 430px;" class = "modal">
