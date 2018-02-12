@@ -27,7 +27,7 @@ div.PressStart {
 div.HighScore {
 	font-family: 'Press Start 2P';
 	color: red;
-	margin-left: 5%;
+	margin-left: 7%;
 	margin-top: 250px;
 	font-size: 40px;
 
@@ -40,7 +40,7 @@ div.Instructions {
 	margin-right: 5%;
 	font-size: 40px;
 	margin-bottom: 10px;
-	margin-left: 80px;
+	margin-left: 50px;
 }
 
 div.middle {
