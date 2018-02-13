@@ -1,5 +1,5 @@
 body {
-	background-image: url("Ercad.jpg");
+	background-image: url("Filter.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%; 
@@ -14,6 +14,7 @@ div.PressStart {
 	font-family: 'Press Start 2P';
 	color: red;
 	text-align: center;
+	align: center;
 	margin-top: 150px;
 	font-size: 80px;
 }
@@ -21,7 +22,6 @@ div.PressStart {
 div.middle {
 	width: 88%;
 	height: 87%;
-	background-color: black;
 	position: fixed;
 	z-index: 1;
 	top:0;

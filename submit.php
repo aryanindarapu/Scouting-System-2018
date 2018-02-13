@@ -10,7 +10,6 @@
 		echo "Connection failed: " . $link->connect_error;
 	}
 	
-	$sql = "CREATE DATABASE Scouting2018";
 	if(mysqli_query($link, $sql)){
 		echo "Database created successfully";
 	} else{
