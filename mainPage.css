@@ -1,5 +1,10 @@
+@font-face {
+	font-family: 'Press Start 2P';
+	src: url('PressStart2P-Regular.ttf')  format('truetype');
+}
+
 body {
-	background-image: url("Ercad.jpg");
+	background-image: url("Filter2.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%; 
@@ -14,14 +19,20 @@ div.PressStart {
 	font-family: 'Press Start 2P';
 	color: red;
 	text-align: center;
-	margin-top: 150px;
-	font-size: 80px;
+	font-size: 70px;
+}
+
+div.HighScore {
+	font-family: 'Press Start 2P';
+	color: red;
+	margin-left: 30px;
+	font-size: 40px;
+	text-decoration: underline;
 }
 
 div.middle {
 	width: 88%;
 	height: 87%;
-	background-color: black;
 	position: fixed;
 	z-index: 1;
 	top:0;

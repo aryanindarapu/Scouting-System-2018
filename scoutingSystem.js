@@ -1214,10 +1214,17 @@ var timerOut = function() {
 
 $(document).ready(function(){
 	$(".positionButtons").on("click", function(){
-		$(".positionButtons").removeClass("positionButtonsClicked");
-		$(this).addClass("positionButtonsClicked");
-		var autonPosition = $(this).attr('name');
-		console.log(autonPosition);
+		if($(this).hasClass("positionButtonsClicked")){
+			$(".positionButtons").removeClass("positionButtonsClicked");
+			var autonPosition = "none";
+			console.log(autonPosition);
+		}
+		else{
+			$(".positionButtons").removeClass("positionButtonsClicked");
+			$(this).addClass("positionButtonsClicked");
+			var autonPosition = $(this).attr('name');
+			console.log(autonPosition);
+		}
 	});
 });
 function submitx() {
@@ -1260,7 +1267,7 @@ function submitx() {
 	}
 	
 	//Auton
-	var autonPosition = "";
+	var autonPosition = "none";
 	
 	
 	//TeleOp
