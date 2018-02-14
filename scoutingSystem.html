@@ -7,9 +7,7 @@
 		<link rel = "stylesheet" type = "text/css" href = "buttonsFooter.css">
 		<title>Scouting System</title>
 		<div style = "position: relative" >
-			<image src = "Pipe.png" style = "position: absolute; right: 0px; height: 70px"/>
-			<input style = "position: absolute; right: 15px; margin-top: 10px; width: 130px" placeholder = "Team Name"/>
-			<input style = "position: absolute; right: 15px; margin-top: 40px; width: 130px;" placeholder = "Team Number"/>
+			<image src = "Pipe.png" style = "position: absolute; right: 0px; height: 70px;"/>
 		</div>
 		<div class = "tab">
 			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
@@ -17,6 +15,10 @@
 			<button class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
+		</div>
+		<p id = "teamNameTop"></p>
+		<div style = "position: relative; left: 88%; bottom: 25px;;">
+			<p style = "display: inline">Team Color: </p><p id = "teamColorTop" style = "display: inline">Red</p>
 		</div>
 		<style>
 			canvas{border:1px solid red;}
@@ -36,7 +38,7 @@
 						<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
 						<input id = "teamNo" type = "text" onkeypress = "return event.charCode >= 48 && event.charCode <= 57" placeholder = "Team Number"><br><br>
 						<h3 style = "display: inline">Team Color:</h3>
-						<label class = "switch" onclick = "teamColor()">
+						<label class = "switch" onclick = "teamColorTop()">
 							<input type = "checkbox" id = "teamColor">
 							<span class = "slider"></span>
 						</label>
