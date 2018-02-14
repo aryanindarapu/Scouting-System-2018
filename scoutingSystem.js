@@ -207,6 +207,7 @@ function showCoords(event) {
 		hello();
 	}
 }
+
 function hello(){
 
     var canvas=document.getElementById("canvas");
@@ -1227,6 +1228,17 @@ $(document).ready(function(){
 		}
 	});
 });
+
+function teamColorTop() {
+	if (document.getElementById("teamColor").checked == false) {
+		teamColorRed = true;
+		document.getElementById("teamColorTop").innerHTML = "Red";
+	} else if (document.getElementById("teamColor").checked == true){
+		teamColorRed = false;
+		document.getElementById("teamColorTop").innerHTML = "Blue";
+	}
+}
+
 function submitx() {
 	//Check Statements
 	if (document.getElementById("teamName").value == "" | document.getElementById("teamNo").value == "") {

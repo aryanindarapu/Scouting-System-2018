@@ -6,12 +6,19 @@
 		<link rel = "stylesheet" type = "text/css" href = "buttons.css">
 		<link rel = "stylesheet" type = "text/css" href = "buttonsFooter.css">
 		<title>Scouting System</title>
+		<div style = "position: relative" >
+			<image src = "Pipe.png" style = "position: absolute; right: 0px; height: 70px;"/>
+		</div>
 		<div class = "tab">
 			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
 			<button class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
+		</div>
+		<p id = "teamNameTop"></p>
+		<div style = "position: relative; left: 88%; bottom: 25px;;">
+			<p style = "display: inline">Team Color: </p><p id = "teamColorTop" style = "display: inline">Red</p>
 		</div>
 		<style>
 			canvas{border:1px solid red;}
@@ -31,7 +38,7 @@
 						<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
 						<input id = "teamNo" type = "text" onkeypress = "return event.charCode >= 48 && event.charCode <= 57" placeholder = "Team Number"><br><br>
 						<h3 style = "display: inline">Team Color:</h3>
-						<label class = "switch" onclick = "teamColor()">
+						<label class = "switch" onclick = "teamColorTop()">
 							<input type = "checkbox" id = "teamColor">
 							<span class = "slider"></span>
 						</label>
@@ -147,7 +154,7 @@
 			<div id = "Endgame" class = "tabcontent">
 				<div style="padding-left: 12%; padding-top: 8%; display: inline-block;">
 					<h2>Performance</h2>
-					<label class = "container">Success
+					<label class = "container">Attempt
 						<input type = "checkbox" name = "endGame">
 						<span class = "checkmark"></span>
 					</label>
@@ -162,7 +169,7 @@
 						<span class = "checkmark"></span>
 					</label>
 					<br>
-					<label class = "container">Did Not Attempt
+					<label class = "container">Levitate
 						<input type = "checkbox" name = "endGame">
 						<span class = "checkmark"></span>
 					</label>
@@ -170,23 +177,23 @@
 				<div style="padding-left: 13%; display: inline-block">
 					<h2>Abilities</h2>
 					<label class = "container">Can't Climb
-						<input type = "checkbox" name = "endGameAb">
-						<span class = "checkmark"></span>
+						<input type = "radio" name = "endGameAb">
+						<span class = "radio"></span>
 					</label>
 					<br>
 					<label class = "container">Single Climb
-						<input type = "checkbox" name = "endGameAb">
-						<span class = "checkmark"></span>
+						<input type = "radio" name = "endGameAb">
+						<span class = "radio"></span>
 					</label>
 					<br>
 					<label class = "container">Dual Climb
-						<input type = "checkbox" name = "endGameAb">
-						<span class = "checkmark"></span>
+						<input type = "radio" name = "endGameAb">
+						<span class = "radio"></span>
 					</label>
 					<br>
 					<label class = "container">Triple Climb
-						<input type = "checkbox" name = "endGameAb">
-						<span class = "checkmark"></span>
+						<input type = "radio" name = "endGameAb">
+						<span class = "radio"></span>
 					</label>
 				</div>
 			</div>
@@ -221,13 +228,13 @@
 					<h3 class = "footerHeaders">Yellow Card</h3>
 					<br>
 					<br>
-					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:25px;" id = "yelCard">
+					<input class = "footerCheck" type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:25px;" id = "yelCard">
 				</div>
 				<div class = "Penalties" style = "display: inline-block">
 					<h3 class = "footerHeaders">Red Card</h3>
 					<br>
 					<br>
-					<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:25px;" id = "redCard">
+					<input class = "footerCheck" type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:25px;" id = "redCard">
 				</div>
 			</div>
 		</body>
