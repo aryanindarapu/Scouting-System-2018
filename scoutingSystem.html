@@ -6,24 +6,25 @@
 		<link rel = "stylesheet" type = "text/css" href = "buttons.css">
 		<link rel = "stylesheet" type = "text/css" href = "buttonsFooter.css">
 		<title>Scouting System</title>
+		
 		<div style = "position: relative" >
-			<image src = "Pipe.png" style = "position: absolute; right: 0px; height: 70px"/>
-			<input style = "position: absolute; right: 15px; margin-top: 10px; width: 130px" placeholder = "Team Name"/>
-			<input style = "position: absolute; right: 15px; margin-top: 40px; width: 130px;" placeholder = "Team Number"/>
-			<button style = "position: absolute; height: 50px; width: 50px; margin-left: 500px" onclick = "openTab(event, 5)">></button>
-			<image src = "Pipe.png" style = "position: absolute; right: 0px; height: 70px;"/>
+
+			<image src = "Pipe.png" id = "teamColorTop" style = "position: absolute; right: 0px; height: 70px"/>
+			<div style = "position: absolute; right: 0px; margin-top: 30px; font-family: 'Press Start 2P'; font-size: 15px;" >
+				<p style = "display: inline">Team No:</p><p id = "teamNoTop" style = "display: inline"></p>
+			</div>
 		</div>
+		
 		<div class = "tab">
-			<button id = "default" class = "tablinks" onclick = "openTab(event, 0)">Info</button>
-			<button class = "tablinks" onclick = "openTab(event, 1)">Auton</button>
-			<button class = "tablinks" onclick = "openTab(event, 2)">TeleOp</button>
-			<button class = "tablinks" onclick = "openTab(event, 3)">End Game</button>
-			<button class = "tablinks" onclick = "openTab(event, 4)">Submit</button>
+			<button onclick = "tabLeft()"><</button>
+			<button id = "infoTab" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
+			<button id = "autonTab" class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
+			<button id = "teleTab" class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
+			<button id = "endTab" class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
+			<button id = "submitTab" class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
+			<button onclick = "tabRight()">></button>
 		</div>
-		<p id = "teamNameTop"></p>
-		<div style = "position: relative; left: 88%; bottom: 25px;;">
-			<p style = "display: inline">Team Color: </p><p id = "teamColorTop" style = "display: inline">Red</p>
-		</div>
+		
 		<style>
 			canvas{border:1px solid red;}
 			
@@ -33,46 +34,23 @@
 	</head>
 	
 	<form action = "" method = "post">
-		<body onload = "hello(); hello1();">
+		<body onload = "hello(); hello1();" style = "margin: 0;">
 			<center>
 				<div id = "Info" class = "tabcontent">
-					<div class = "infoTab">
+					<div class = "infoTab" style="margin-top: 100px">
 						<h1>Info</h1>
-
 						<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
-						<input id = "teamNo" type = "text" onkeypress = "return event.charCode >= 48 && event.charCode <= 57" placeholder = "Team Number"><br><br>
+						<input id = "teamNo" type = "text"  onkeyup = "getTeamNo()" onkeypress = "return event.charCode >= 48 && event.charCode <= 57" maxlength = "4" placeholder = "Team Number"><br><br>
 						<h3 style = "display: inline">Team Color:</h3>
 						<label class = "switch" onclick = "teamColorTop()">
 							<input type = "checkbox" id = "teamColor">
 							<span class = "slider"></span>
 						</label>
-						<h3>OVERVIEW OF GAME</h3>
-						<p> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
+						<h3 style="margin-top: 100px">OVERVIEW OF GAME</h3>
+						<p style = "font-size: 20px"> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
 						tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
 						to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
 						including autonomous and teleoperated periods, defeats the boss and wins the game.
-						<h3>INSTRUCTIONS</h3>
-						<p> Before the game begins, type in the team name and team number. Move the slider in accordance to the team color. To navigate
-						the website, use the tabs at the top of the page. Please be aware that the penalties are at the bottom of the page and are
-						accessible at any point in the game.</p>
-						<h3>AUTON</h3>
-						<p> Before the match, signify the robot's starting position by selecting the appropriate box next to the map.Immediately when the auton phase begins,
-						press the start timer button once to start the timer. Pressing the timer button a second time will reset it.
-						Make sure to observe when and where the robot delivers blocks; upon delivery, promptly click the respective location on the map and 
-						confirm the delivery. Make sure to mark whether the robot crossed the baseline by moving the slider.</p>
-						<h3>PENALTIES</h3>
-						<p> Penalties given at any time may be checked at the bottom of the page. If any fouls are assessed, please mark how many fouls. 
-						If there is a yellow or red card assessed, check their respective boxes as well.</p>
-						<h3>ENDGAME</h3>
-						<p> During the final 30 seconds of play, robots will have an opportunity to climb and scale the tower. Under the performance
-						category, please signify whether the robot attempted to climb, cooperated, levitated, or succeeded in climbing. Multiple boxes
-						may be checked. Also, if the robot attempted to climb, signify whether the robot is capable of a single, double, or triple climb;
-						otherwise, mark that the robot did not attempt.</p>
-						<h3>SUBMIT</h3>
-						<p> After the game is over, type any additional comments or concerns in the given text box. If a mistake was made or information
-						was missed during scouting, please indicate so. After finalizing information, press the submit button to submit. Please note
-						that upon submitting information, any user information will be erased, the website will refresh, and the input will be sent
-						to the server. </p>
 						<br></br>
 					</div>
 				</div>
@@ -173,7 +151,7 @@
 						<span class = "checkmark"></span>
 					</label>
 					<br>
-					<label class = "container">Levitate
+					<label class = "container">Success
 						<input type = "checkbox" name = "endGame">
 						<span class = "checkmark"></span>
 					</label>
@@ -244,6 +222,6 @@
 		</body>
 	</form>
 	
-	<script>document.getElementById("default").click();</script>
+	<script>document.getElementById("infoTab").click();</script>
 </html>
 </html>
