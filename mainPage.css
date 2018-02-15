@@ -1,0 +1,67 @@
+@font-face {
+	font-family: 'Press Start 2P';
+	src: url('PressStart2P-Regular.ttf')  format('truetype');
+}
+
+body {
+	background-image: url("Filter.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%; 
+}
+
+div.buttons {
+	position: fixed;
+	z-index: 2;
+}
+
+div.PressStart {
+	font-family: 'Press Start 2P';
+	color: red;
+	text-align: center;
+	font-size: 70px;
+}
+
+div.HighScore {
+	color: red;
+	font-family: 'Press Start 2P';
+	margin-left: 30px;
+	font-size: 40px;
+	padding: 0px;
+}
+
+div.middle {
+	width: 88%;
+	height: 87%;
+	position: fixed;
+	z-index: 1;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	overflow: hidden;
+	margin-top: 100px;
+}
+
+.button {
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+	box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}

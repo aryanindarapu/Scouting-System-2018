@@ -5,221 +5,245 @@
 		<link rel = "stylesheet" type = "text/css" href = "scoutingSystem.css">
 		<link rel = "stylesheet" type = "text/css" href = "buttons.css">
 		<link rel = "stylesheet" type = "text/css" href = "buttonsFooter.css">
-		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 		<title>Scouting System</title>
-		<div class = "tab">
-			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
-			<button class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
+		<div style = "position: relative" >
+			<image src = "Pipe.png" style = "position: absolute; right: 0px; height: 70px"/>
+			<input style = "position: absolute; right: 15px; margin-top: 10px; width: 130px" placeholder = "Team Name"/>
+			<input style = "position: absolute; right: 15px; margin-top: 40px; width: 130px;" placeholder = "Team Number"/>
+			<button style = "position: absolute; height: 50px; width: 50px; margin-left: 500px" onclick = "openTab(event, 5)">></button>
+			<image src = "Pipe.png" style = "position: absolute; right: 0px; height: 70px;"/>
 		</div>
-
-		<script type="text/javascript" src="scoutingSystem.js"></script>
+		<div class = "tab">
+			<button id = "default" class = "tablinks" onclick = "openTab(event, 0)">Info</button>
+			<button class = "tablinks" onclick = "openTab(event, 1)">Auton</button>
+			<button class = "tablinks" onclick = "openTab(event, 2)">TeleOp</button>
+			<button class = "tablinks" onclick = "openTab(event, 3)">End Game</button>
+			<button class = "tablinks" onclick = "openTab(event, 4)">Submit</button>
+		</div>
+		<p id = "teamNameTop"></p>
+		<div style = "position: relative; left: 88%; bottom: 25px;;">
+			<p style = "display: inline">Team Color: </p><p id = "teamColorTop" style = "display: inline">Red</p>
+		</div>
 		<style>
 			canvas{border:1px solid red;}
+			
 		</style>
+		<script src="jquery-3.2.1.min.js"></script>
 
 	</head>
-	<body>
-		<center>
-			<div id = "Info" class = "tabcontent">
-				<div class = "infoTab">
-					<h1>Info</h1>
-					<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
-					<input id = "teamNo" type = "text" placeholder = "Team Number"><br><br>
-					<h3 style = "display: inline">Team Color:</h3>
-					<label class="switch" onclick = "teamColor()">
-					<input type="checkbox">
-					<span class="slider"></span>
+	
+	<form action = "" method = "post">
+		<body onload = "hello(); hello1();">
+			<center>
+				<div id = "Info" class = "tabcontent">
+					<div class = "infoTab">
+						<h1>Info</h1>
+
+						<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
+						<input id = "teamNo" type = "text" onkeypress = "return event.charCode >= 48 && event.charCode <= 57" placeholder = "Team Number"><br><br>
+						<h3 style = "display: inline">Team Color:</h3>
+						<label class = "switch" onclick = "teamColorTop()">
+							<input type = "checkbox" id = "teamColor">
+							<span class = "slider"></span>
+						</label>
+						<h3>OVERVIEW OF GAME</h3>
+						<p> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
+						tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
+						to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
+						including autonomous and teleoperated periods, defeats the boss and wins the game.
+						<h3>INSTRUCTIONS</h3>
+						<p> Before the game begins, type in the team name and team number. Move the slider in accordance to the team color. To navigate
+						the website, use the tabs at the top of the page. Please be aware that the penalties are at the bottom of the page and are
+						accessible at any point in the game.</p>
+						<h3>AUTON</h3>
+						<p> Before the match, signify the robot's starting position by selecting the appropriate box next to the map.Immediately when the auton phase begins,
+						press the start timer button once to start the timer. Pressing the timer button a second time will reset it.
+						Make sure to observe when and where the robot delivers blocks; upon delivery, promptly click the respective location on the map and 
+						confirm the delivery. Make sure to mark whether the robot crossed the baseline by moving the slider.</p>
+						<h3>PENALTIES</h3>
+						<p> Penalties given at any time may be checked at the bottom of the page. If any fouls are assessed, please mark how many fouls. 
+						If there is a yellow or red card assessed, check their respective boxes as well.</p>
+						<h3>ENDGAME</h3>
+						<p> During the final 30 seconds of play, robots will have an opportunity to climb and scale the tower. Under the performance
+						category, please signify whether the robot attempted to climb, cooperated, levitated, or succeeded in climbing. Multiple boxes
+						may be checked. Also, if the robot attempted to climb, signify whether the robot is capable of a single, double, or triple climb;
+						otherwise, mark that the robot did not attempt.</p>
+						<h3>SUBMIT</h3>
+						<p> After the game is over, type any additional comments or concerns in the given text box. If a mistake was made or information
+						was missed during scouting, please indicate so. After finalizing information, press the submit button to submit. Please note
+						that upon submitting information, any user information will be erased, the website will refresh, and the input will be sent
+						to the server. </p>
+						<br></br>
+					</div>
+				</div>
+			</center>
+
+			<div id = "Auton" class = "tabcontent">
+				<center>
+					<h1>Auton</h1>
+				</center>
+				<center>
+					<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
+					<input id = "startButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "startTimer()" type = "button" class = "timerButton"/>
+					<input id = "resetButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "resetTimer()" type = "button" class = "resetButton"/>
+				</center>
+				<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
+				<center style = "margin-left: 15px;">
+					<h6 style = "display: inline; margin-right: 15px;">No</h6>
+					<label class = "switch">
+						<input type = "checkbox">
+						<span class = "sliderAuton"></span>
 					</label>
-					<h3>OVERVIEW OF GAME</h3>
-					<p> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
-					Tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
-					to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
-					including autonomous and teleoperated periods, defeats the boss and wins the game.
-					<h3>INSTRUCTIONS</h3>
-					<h3>AUTON</h3>
-					<p> While scouting auton, there are multiple factors one must observe to scout correctly. As soon as the game starts, look at the robot and observe if they crossed the baseline.
-					Next, one must observe if the robot puts a cube is placed on a scale or switch. If so, check the boxes to the left.</p>
-					<h3>PENALTIES</h3>
-					<p> At the end of the game, fouls and technical fouls may be assessed. If any fouls are assessed, please mark how many fouls. 
-					If any yellow fouls are made, check mark the box to the left. If there is a red card assessed, then also check the box to the left.</p>
-					<h3>ENDGAME</h3>
-					<p> During the final 30 seconds of play, robots will have an opportunity to climb and scale the tower.</p>
-					<br></br>
-				</div>
-			</div>
-		</center>
-
-		<div id = "Auton" class = "tabcontent">
-			<center>
-				<h1>Auton</h1>
-			</center>
-			<center>
-				<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
-				<button id = "startButton" onclick="start()">Start Time</button>
-				<button id = "resetButton" onclick="reset()" style = "display: none">Reset Time</button>
-			</center>
-			<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
-			<div class = "autonButtons">
-				<label class = "container">Yes
-				<input id = "crossY" type = "radio" name = "baseline">
-				<span class = "radio"></span>
-				</label><br>
-				<label class = "container">No
-				<input id = "crossN" type = "radio" name = "baseline">
-				<span class = "radio"></span>
-				</label><br>
-			</div>
-			</center>
-			<h3 style = "text-align: center;">Placed Block On:</h3><br>
-			<div class = "autonButtons">
-				<div class = "Penalties" style = "display: inline-block">
-					<h3 class = "autonHeader">Scale</h3>
-					<br>
-					<input value = "-" type = "button" onclick = "add(-1, 'autonScale')">
-					<p id = "autonScale" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-					<input value = "+" type = "button" onclick = "add(1, 'autonScale'), recordTimeAutonScale()">
-				</div>
-					<div class = "Penalties" style = "display: inline-block">
-						<h3 class = "autonHeader">Switch</h3>
-						<br>
-						<input value = "-" type = "button" onclick = "add(-1, 'autonSwitch')">
-						<p id = "autonSwitch" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-						<input value = "+" type = "button" onclick = "add(1, 'autonSwitch'), recordTimeAutonSwitch()">
+					<h6 style = "display: inline; margin-left: 15px;">Yes</h6>
+				</center>
+				<br><br>
+				<div style = "display: flex; flex-direction: row; margin-left: 12%;">
+					<div style = "display: flex; flex-direction: column; justify-content: space-between">
+						<button type = "button" class = "positionButtons" name = "Left">Position Left</button>
+						<button type = "button" class = "positionButtons" name = "Mid">Position Middle</button>
+						<button type = "button" class = "positionButtons" name = "Right">Position Right</button>
 					</div>
-					<!-- <input value = "-" type = "button" onclick = "add(-1, 2)">
-					<p id = "autonScale" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-					<input value = "+" type = "button" onclick = "add(1, 2)">
-					</label><p class="blackLine">|</p>
-					<input value = "-" type = "button" onclick = "add(-1, 3)">
-					<p id = "autonSwitch" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-					<input value = "+" type = "button" onclick = "add(1, 3)">
-					</label> -->
-			</div>	
-		</div>
+					<div>
+						<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 20px; margin-right: 20px"></canvas><p id = "demo1" style = "display: none"></p>
+						<div id = "confirm1" style="display:none">
+							<!-- The Modal -->
+							<div id = "myModal1" style = "padding-top: 430px;" class = "modal">
 
-		<center>
-			<div id = "TeleOp" class = "tabcontent">
-				<h1>TeleOp</h1>
-				<canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
-				<p>Block in hand:</p>
-				<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
-				<div id = "confirm" style="display:none">
-					<!-- The Modal -->
-					<div id = "myModal" style = "padding-top: 430px;" class = "modal">
+								<!-- Modal content -->
+								<div class = "modal-content">
+									<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: block">Did the robot deliver a block at the highlighted location?</h4>
+									
+									<button type = "button" id = "modalButtonScaleYes" class = "modalButtonYes" style = "display: inline-block" onclick = "confirmYes1(), closeModal1(), recordTimeAutonScale()">Yes</button>
+									<button type = "button" id = "modalButtonScaleNo" class = "modalButtonNo" style = "display: inline-block" onclick = "confirmNo1(), closeModal1()">No</button>
+									
+									<button type = "button"id = "modalButtonSwitchYes" class = "modalButtonYes" style = "display: none" onclick = "confirmYes1(), closeModal1(), recordTimeAutonSwitch()">Yes</button>
+									<button type = "button" id = "modalButtonSwitchNo" class = "modalButtonNo" style = "display: none" onclick = "confirmNo1(), closeModal1()">No</button>
+								</div>
 
-						<!-- Modal content -->
-						<div class = "modal-content">
-							<h4 id = "pHasNoBlock" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
-							<h4 id = "pHasBlock" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
-							<button class = "modalButtonYes" onclick = "confirmYes(), closeModal()">Yes</button>
-							<button class = "modalButtonNo" onclick = "confirmNo(), closeModal()">No</button> 
+							</div>
 						</div>
-
 					</div>
+					<div style = "display: flex; flex-direction: column; justify-content: space-between">
+						<button type = "button" class = "positionButtons" name = "Right">Position Right</button><br>
+						<button type = "button" class = "positionButtons" name = "Mid">Position Middle</button><br>
+						<button type = "button" class = "positionButtons" name = "Left">Position Left</button>
+					</div>
+				</div>
+				
+			</div>
+
+			<center>
+				<div id = "TeleOp" class = "tabcontent">
+					<h1>TeleOp</h1>
+					<canvas id="canvas" onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
+					<p>Block in hand:</p>
+					<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
+					<br><button type = "button" id = "dropBlock" style = "margin-top: 20px; display: none" class = "modalButtonNo" onclick = "dropTheBlock()">Dropped/Lost Block</button>
+					<br><button type = "button" id = "dropBlock" style = "margin-top: 20px; display: none" class = "modalButtonNo" onclick = "dropTheBlock()">Dropped/Lost Block</button>
+					<div id = "confirm" style="display:none">
+						<!-- The Modal -->
+						<div id = "myModal" style = "padding-top: 430px;" class = "modal">
+
+							<!-- Modal content -->
+							<div class = "modal-content">
+								<h4 id = "pHasNoBlock" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
+								<h4 id = "pHasBlock" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
+								<button type = "button" class = "modalButtonYes" onclick = "confirmYes(), closeModal()">Yes</button>
+								<button type = "button" class = "modalButtonNo" onclick = "confirmNo(), closeModal()">No</button> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</center>
+			<div id = "Endgame" class = "tabcontent">
+				<div style="padding-left: 12%; padding-top: 8%; display: inline-block;">
+					<h2>Performance</h2>
+					<label class = "container">Attempt
+						<input type = "checkbox" name = "endGame">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">Levitate
+						<input type = "checkbox" name = "endGame">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">Cooperate
+						<input type = "checkbox" name = "endGame">
+						<span class = "checkmark"></span>
+					</label>
+					<br>
+					<label class = "container">Levitate
+						<input type = "checkbox" name = "endGame">
+						<span class = "checkmark"></span>
+					</label>
+				</div>
+				<div style="padding-left: 13%; display: inline-block">
+					<h2>Abilities</h2>
+					<label class = "container">Can't Climb
+						<input type = "radio" name = "endGameAb">
+						<span class = "radio"></span>
+					</label>
+					<br>
+					<label class = "container">Single Climb
+						<input type = "radio" name = "endGameAb">
+						<span class = "radio"></span>
+					</label>
+					<br>
+					<label class = "container">Dual Climb
+						<input type = "radio" name = "endGameAb">
+						<span class = "radio"></span>
+					</label>
+					<br>
+					<label class = "container">Triple Climb
+						<input type = "radio" name = "endGameAb">
+						<span class = "radio"></span>
+					</label>
 				</div>
 			</div>
 
-		</center>
+			<div id = "Submit" class = "tabcontent">
+				<div class="submitClass">
+					<h3>Submit</h3>
+					<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
+					<input href = "submit.php?hello=true"type = "button" class = "submit" onclick = "submitx()" value = "Submit">
+				</div>
+			</div>
 
-		<div id = "Endgame" class = "tabcontent">
-			<div style="padding-left: 12%; padding-top: 8%; display: inline-block;">
-				<h2>Performance</h2>
-				<label class = "container">Success
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Fail
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Levitate
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Cooperate
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
-				</label>
-				<br>
-				<label class = "container">Did Not Attempt
-					<input type = "checkbox" name = "endGame">
-					<span class = "checkmark"></span>
-				</label>
+			<div class = "footer" id = "footer">
+				<br><br>
+				<div class = "Penalties" style = "display: inline-block; margin-left: 50px">
+					<h3 class = "footerHeaders" >Fouls</h3>
+					<br>
+					<br>
+					<input value = "-" type = "button" onclick = "add(-1, 'foul')">
+					<p id = "foul" style = "display: inline; font-family: 'Press Start 2P'">0</p>
+					<input value = "+" type = "button" onclick = "add(1, 'foul')">
+				</div>
+				<div class = "Penalties" style = "display: inline-block">
+					<h3 class = "footerHeaders">Technical Fouls</h3>
+					<br>
+					<br>
+					<input value = "-" type = "button" onclick = "add(-1, 'tech')">
+					<p id = "tech" style = "display: inline; font-family: 'Press Start 2P'">0</p>
+					<input value = "+" type = "button" onclick = "add(1, 'tech')">
+				</div>
+				<div class = "Penalties" style = "display: inline-block;">
+					<h3 class = "footerHeaders">Yellow Card</h3>
+					<br>
+					<br>
+					<input class = "footerCheck" type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:25px;" id = "yelCard">
+				</div>
+				<div class = "Penalties" style = "display: inline-block">
+					<h3 class = "footerHeaders">Red Card</h3>
+					<br>
+					<br>
+					<input class = "footerCheck" type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:25px;" id = "redCard">
+				</div>
 			</div>
-			<div style="padding-left: 13%; display: inline-block">
-				<h2>Abilities</h2>
-				<label class = "container">Can't Climb
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
-				</label>
-				<br>
-				<label class = "container">Single Climb
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
-				</label>
-				<br>
-				<label class = "container">Dual Climb
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
-				</label>
-				<br>
-				<label class = "container">Triple Climb
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
-				</label>
-				<br>
-				<label class = "container">I have no clue
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
-				</label>
-			</div>
-		</div>
-
-		<div id = "Submit" class = "tabcontent">
-			<div class="submitClass">
-			<h3>Submit</h3>
-			<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
-			<input type = "button" class = "submit" onclick = "submit()" value = "Submit">
-			</div>
-		</div>
-
-		<div class = "footer" id = "footer">
-			<br><br>
-			<div class = "Penalties" style = "display: inline-block; margin-left: 55px">
-				<h3 class = "footerHeaders" >Fouls</h3>
-				<br>
-				<br>
-				<input value = "-" type = "button" onclick = "add(-1, 'foul')">
-				<p id = "foul" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-				<input value = "+" type = "button" onclick = "add(1, 'foul')">
-			</div>
-			<div class = "Penalties" style = "display: inline-block">
-				<h3 class = "footerHeaders">Technical Fouls</h3>
-				<br>
-				<br>
-				<input value = "-" type = "button" onclick = "add(-1, 'tech')">
-				<p id = "tech" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-				<input value = "+" type = "button" onclick = "add(1, 'tech')">
-			</div>
-			<div class = "Penalties" style = "display: inline-block;">
-				<h3 class = "footerHeaders">Yellow Card</h3>
-				<br>
-				<br>
-				<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:10%;">
-			</div>
-			<div class = "Penalties" style = "display: inline-block">
-				<h3 class = "footerHeaders">Red Card</h3>
-				<br>
-				<br>
-				<input type = "checkbox" name = "yellowCard" style = "height: 30px; width: 30px; margin-top:10%;">
-			</div>
-		</div>
-	</body>
+		</body>
+	</form>
+	
 	<script>document.getElementById("default").click();</script>
+</html>
 </html>

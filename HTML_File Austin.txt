@@ -14,24 +14,22 @@
 			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
 		</div>
-
-		<script type="text/javascript" src="scoutingSystem.js"></script>
 		<style>
 			canvas{border:1px solid red;}
 		</style>
 
 	</head>
-	<body>
+	<body onload = "hello(); hello1();">
 		<center>
 			<div id = "Info" class = "tabcontent">
 				<div class = "infoTab">
 					<h1>Info</h1>
-					<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
+					<input id = "teamName" type = "text" placeholder = "Match Number"><br><br>
 					<input id = "teamNo" type = "text" placeholder = "Team Number"><br><br>
 					<h3 style = "display: inline">Team Color:</h3>
-					<label class="switch" onclick = "teamColor()">
-					<input type="checkbox">
-					<span class="slider"></span>
+					<label class = "switch" onclick = "teamColor()">
+						<input type = "checkbox">
+						<span class = "slider"></span>
 					</label>
 					<h3>OVERVIEW OF GAME</h3>
 					<p> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
@@ -58,52 +56,59 @@
 			</center>
 			<center>
 				<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
-				<button id = "startButton" onclick="start()">Start Time</button>
-				<button id = "resetButton" onclick="reset()" style = "display: none">Reset Time</button>
+				<button id = "startButton" onclick = "startTimer()">Start Time</button>
+				<button id = "resetButton" onclick = "reset()" style = "display: none">Reset Time</button>
 			</center>
 			<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
-			<div class = "autonButtons">
-				<label class = "container">Yes
-				<input id = "crossY" type = "radio" name = "baseline">
-				<span class = "radio"></span>
-				</label><br>
-				<label class = "container">No
-				<input id = "crossN" type = "radio" name = "baseline">
-				<span class = "radio"></span>
-				</label><br>
-			</div>
+			<center>
+				<h6 style = "display: inline; margin-right: 15px;">No</h6>
+				<label class = "switchAuton">
+					<input type = "checkbox">
+					<span class = "sliderAuton"></span>
+				</label>
+				<h6 style = "display: inline; margin-left: 15px;">Yes</h6>
 			</center>
-			<h3 style = "text-align: center;">Placed Block On:</h3><br>
-			<div class = "autonButtons">
-				<div class = "Penalties" style = "display: inline-block">
-					<h3 class = "autonHeader">Scale</h3>
-					<br>
-					<input value = "-" type = "button" onclick = "add(-1, 'autonScale')">
-					<p id = "autonScale" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-					<input value = "+" type = "button" onclick = "add(1, 'autonScale'), recordTimeAutonScale()">
+			<br><br>
+			<div style = "display: flex; flex-direction: row">
+				<div>
+					<button>Position Left</button><br>
+					<button>Position Middle</button><br>
+					<button>Position Right</button>
 				</div>
-					<div class = "Penalties" style = "display: inline-block">
-						<h3 class = "autonHeader">Switch</h3>
-						<br>
-						<input value = "-" type = "button" onclick = "add(-1, 'autonSwitch')">
-						<p id = "autonSwitch" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-						<input value = "+" type = "button" onclick = "add(1, 'autonSwitch'), recordTimeAutonSwitch()">
+				<div>
+					<canvas id = "canvas1" onclick = "showCoords1(event)" style = "margin-left: 20px"></canvas><p id = "demo1" style = "display: none"></p>
+					<div id = "confirm1" style="display:none">
+						<!-- The Modal -->
+						<div id = "myModal1" style = "padding-top: 430px;" class = "modal">
+
+							<!-- Modal content -->
+							<div class = "modal-content">
+								<h4 id = "pHasNoBlock1" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
+								<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
+								
+								<button id = "modalButtonScaleYes" class = "modalButtonYes" style = "display: inline-block" onclick = "confirmYes1(), closeModal1(), recordTimeAutonScale()">Yes</button>
+								<button id = "modalButtonScaleNo" class = "modalButtonNo" style = "display: inline-block" onclick = "confirmNo1(), closeModal1()">No</button>
+								
+								<button id = "modalButtonSwitchYes" class = "modalButtonYes" style = "display: none" onclick = "confirmYes1(), closeModal1(), recordTimeAutonSwitch()">Yes</button>
+								<button id = "modalButtonSwitchNo" class = "modalButtonNo" style = "display: none" onclick = "confirmNo1(), closeModal1()">No</button>
+							</div>
+
+						</div>
 					</div>
-					<!-- <input value = "-" type = "button" onclick = "add(-1, 2)">
-					<p id = "autonScale" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-					<input value = "+" type = "button" onclick = "add(1, 2)">
-					</label><p class="blackLine">|</p>
-					<input value = "-" type = "button" onclick = "add(-1, 3)">
-					<p id = "autonSwitch" style = "display: inline; font-family: 'Press Start 2P'">0</p>
-					<input value = "+" type = "button" onclick = "add(1, 3)">
-					</label> -->
-			</div>	
+				</div>
+				<div>
+					<button>Position Right</button><br>
+					<button>Position Middle</button><br>
+					<button>Position Left</button>
+				</div>
+			</div>
+			
 		</div>
 
 		<center>
 			<div id = "TeleOp" class = "tabcontent">
 				<h1>TeleOp</h1>
-				<canvas id="canvas" width=300 height=300 onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
+				<canvas id="canvas" onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
 				<p>Block in hand:</p>
 				<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
 				<div id = "confirm" style="display:none">
@@ -121,62 +126,61 @@
 					</div>
 				</div>
 			</div>
-
 		</center>
 
 		<div id = "Endgame" class = "tabcontent">
 			<div style="padding-left: 12%; padding-top: 8%; display: inline-block;">
 				<h2>Performance</h2>
 				<label class = "container">Success
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
+					<input type = "checkbox" name = "endGame">
+					<span class = "checkmark"></span>
 				</label>
 				<br>
 				<label class = "container">Fail
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
+					<input type = "checkbox" name = "endGame">
+					<span class = "checkmark"></span>
 				</label>
 				<br>
 				<label class = "container">Levitate
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
+					<input type = "checkbox" name = "endGame">
+					<span class = "checkmark"></span>
 				</label>
 				<br>
 				<label class = "container">Cooperate
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
+					<input type = "checkbox" name = "endGame">
+					<span class = "checkmark"></span>
 				</label>
 				<br>
 				<label class = "container">Did Not Attempt
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
+					<input type = "checkbox" name = "endGame">
+					<span class = "checkmark"></span>
 				</label>
 			</div>
 			<div style="padding-left: 13%; display: inline-block">
 				<h2>Abilities</h2>
 				<label class = "container">Can't Climb
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
+					<input type = "checkbox" name = "endGame">
+					<span class = "checkmark"></span>
 				</label>
 				<br>
 				<label class = "container">Single Climb
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
+					<input type = "checkbox" name = "endGame">
+					<span class = "checkmark"></span>
 				</label>
 				<br>
 				<label class = "container">Dual Climb
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
+					<input type = "checkbox" name = "endGame">
+					<span class = "checkmark"></span>
 				</label>
 				<br>
 				<label class = "container">Triple Climb
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
+					<input type = "checkbox" name = "endGame">
+					<span class = "checkmark"></span>
 				</label>
 				<br>
 				<label class = "container">I have no clue
-					<input type = "radio" name = "endGame">
-					<span class = "radio"></span>
+					<input type = "checkbox" name = "endGame">
+					<span class = "checkmark"></span>
 				</label>
 			</div>
 		</div>

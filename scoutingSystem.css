@@ -1,7 +1,16 @@
+@font-face {
+	font-family: 'Press Start 2P';
+	src: url('PressStart2P-Regular.ttf')  format('truetype');
+}
+
 body {
 	font-family: Arial;
 	background-image: url("sky.png");
-	cursor: crosshair;
+	cursor: default;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%; 
+
 }
 
 /* Style the tab */
@@ -215,11 +224,16 @@ h1 {
 	font-family: "Press Start 2P";
 	font-size: 45px;
 }
+
+h6 {
+	font-family: "Press Start 2P";
+	font-size: 20px;
+}
+
 h2 {
 	font-family: "Press Start 2P";
 	font-size: 30px;
 }
-
 
 
 /* The Modal (background) */
@@ -263,8 +277,8 @@ h2 {
 
 .autonButtons {
 	padding-left: 32%;
-	
 }
+
 .blackLine {
 	color: black;
 	font-size: 400%;
@@ -272,10 +286,10 @@ h2 {
 	align-items: start;
 }
 .autonHeader {
-	padding-left:50px;
+	padding-left: 50px;
 }
 .submitClass {
-	padding-top:10%;
+	padding-top: 17%;
 	text-align: center;
 }
 
@@ -286,4 +300,48 @@ textarea{
 	max-width: 700px;
 	min-height:200px;
 	min-width: 700px;
+}
+.positionButtons{
+	background-color: #D3D3D3;
+	border: 2px solid black;
+	height: 50px;
+	font-size: 8px;
+	font-family: "Press Start 2P";
+}
+.positionButtonsClicked{
+	cursor: pointer !important;
+	opacity: 0.8 !important;
+	background-color: #ff0000 !important;
+	font-family: "Press Start 2P";
+}
+.positionButtons:hover{
+	cursor: pointer;
+	opacity: 0.8;
+	background-color: #ff0000;
+	transition: all .2s ease-in;
+	transform: scale(1.2);
+	transition: all .2s ease-out;
+	font-family: "Press Start 2P";
+	
+}
+
+.timerButton{
+	background-image: url("start1.png");
+	background-size: 70px;
+	height: 70px;
+	width: 70px;
+	border-radius: 100%
+	}
+
+.timerButton:focus{
+	background-image: url("start2.png");
+}
+
+.resetButton{
+	background-image: url("start2.png");
+	background-size: 70px;
+	height: 70px;
+	width: 70px;
+	border-radius: 100%;
+	display: none;
 }
