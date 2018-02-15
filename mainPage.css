@@ -10,13 +10,14 @@ body {
 	background-size: 100% 100%; 
 }
 
+
 div.buttons {
 	position: fixed;
 	z-index: 2;
 }
 
 div.PressStart {
-	font-family: 'Press Start 2P';
+	font-family: "Press Start 2P";
 	color: red;
 	text-align: center;
 	margin-top: 225px;
