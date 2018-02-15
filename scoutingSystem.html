@@ -10,13 +10,14 @@
 			<image src = "Pipe.png" style = "position: absolute; right: 0px; height: 70px"/>
 			<input style = "position: absolute; right: 15px; margin-top: 10px; width: 130px" placeholder = "Team Name"/>
 			<input style = "position: absolute; right: 15px; margin-top: 40px; width: 130px;" placeholder = "Team Number"/>
+			<button style = "position: absolute; height: 50px; width: 50px; margin-left: 500px" onclick = "openTab(event, 5)">></button>
 		</div>
 		<div class = "tab">
-			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
-			<button class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
+			<button id = "default" class = "tablinks" onclick = "openTab(event, 0)">Info</button>
+			<button class = "tablinks" onclick = "openTab(event, 1)">Auton</button>
+			<button class = "tablinks" onclick = "openTab(event, 2)">TeleOp</button>
+			<button class = "tablinks" onclick = "openTab(event, 3)">End Game</button>
+			<button class = "tablinks" onclick = "openTab(event, 4)">Submit</button>
 		</div>
 		<style>
 			canvas{border:1px solid red;}

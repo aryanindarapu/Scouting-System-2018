@@ -1066,6 +1066,17 @@ function hello1(){
 }; // end $(function(){});
 
 function openTab(evt, tabName) {
+	var array = ["Info", "Auton", "TeleOp", "Endgame", "Submit"]
+	if (tabName <= 4) {
+		tabName = array[tabName];
+	}
+	else if (tabName == 5) {
+		tabName = "Info";
+		tablinks = document.getElementsByClassName("tablinks")
+        tablinks[0].className = tablinks[0].className.replace(" active", "");
+		evt.currentTarget.className += "active";
+	}
+	console.log(tabName);
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
