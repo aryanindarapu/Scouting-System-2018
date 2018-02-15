@@ -16,14 +16,19 @@
 		</div>
 		
 		<div class = "tab">
-			<a href = "mainPage.html"><button>< Main Page</button></a>
+			<a onclick = "homePage()"><button>< Main Page</button></a>
 			<button id = "infoTab" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
 			<button id = "autonTab" class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
 			<button id = "teleTab" class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
 			<button id = "endTab" class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button id = "submitTab" class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
 		</div>
-		
+		<script>
+		function homePage() {
+			var result = confirm("Are you sure you wish to return to the main page? Any current scouting progress will be erased.");
+			if(result){window.location.replace("mainPage.html");}
+		}
+		</script>
 		<style>
 			canvas{border:1px solid red;}
 			
