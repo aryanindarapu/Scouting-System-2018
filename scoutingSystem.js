@@ -1067,6 +1067,17 @@ function hello1(){
 }; // end $(function(){});
 
 function openTab(evt, tabName) {
+	var array = ["Info", "Auton", "TeleOp", "Endgame", "Submit"]
+	if (tabName <= 4) {
+		tabName = array[tabName];
+	}
+	else if (tabName == 5) {
+		tabName = "Info";
+		tablinks = document.getElementsByClassName("tablinks")
+        tablinks[0].className = tablinks[0].className.replace(" active", "");
+		evt.currentTarget.className += "active";
+	}
+	console.log(tabName);
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -1118,7 +1129,7 @@ var autonScoreSwitch = 0;
 	document.getElementById(id).innerHTML = x;
  } */
  
-  function add(n, id) {
+function add(n, id) {
  	x = parseInt(document.getElementById(id).innerHTML);
  	x += n;
  	if (x<0) {
@@ -1232,11 +1243,17 @@ $(document).ready(function(){
 function teamColorTop() {
 	if (document.getElementById("teamColor").checked == false) {
 		teamColorRed = true;
-		document.getElementById("teamColorTop").innerHTML = "Red";
+		document.getElementById("teamColorTop").src = "pipeRed.png";
 	} else if (document.getElementById("teamColor").checked == true){
 		teamColorRed = false;
-		document.getElementById("teamColorTop").innerHTML = "Blue";
+		document.getElementById("teamColorTop").src = "pipeBlue.png";
 	}
+}
+
+var teamNo = "";
+function getTeamNo() {
+	teamNo = document.getElementById("teamNo").value;
+	document.getElementById("teamNoTop").innerHTML = teamNo;
 }
 
 function submitx() {

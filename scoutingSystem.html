@@ -6,15 +6,23 @@
 		<link rel = "stylesheet" type = "text/css" href = "buttons.css">
 		<link rel = "stylesheet" type = "text/css" href = "buttonsFooter.css">
 		<title>Scouting System</title>
+		
 		<div style = "position: relative" >
-			<image src = "Pipe.png" style = "position: absolute; right: 0px; height: 70px;"/>
+			<image src = "Pipe.png" id = "teamColorTop" style = "position: absolute; right: 0px; height: 70px"/>
+			<div style = "position: absolute; right: 0px; margin-top: 30px; font-family: 'Press Start 2P'; font-size: 15px;" >
+				<p style = "display: inline">Team No:</p><p id = "teamNoTop" style = "display: inline"></p>
+			</div>
+			<button style = "position: absolute; height: 50px; width: 50px; margin-left: 500px" onclick = "openTab(event, 5)">></button>
 		</div>
-		<div class = "tab" style = "display: inline">
-			<button id = "default" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
-			<button class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
-			<button class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
+		
+		<div class = "tab">
+			<button id = "default" class = "tablinks" onclick = "openTab(event, 0)">Info</button>
+			<button class = "tablinks" onclick = "openTab(event, 1)">Auton</button>
+			<button class = "tablinks" onclick = "openTab(event, 2)">TeleOp</button>
+			<button class = "tablinks" onclick = "openTab(event, 3)">End Game</button>
+			<button class = "tablinks" onclick = "openTab(event, 4)">Submit</button>
+		</div>
+		
 		<style>
 			canvas{border:1px solid red;}
 			
@@ -24,14 +32,13 @@
 	</head>
 	
 	<form action = "" method = "post">
-		<body onload = "hello(); hello1();">
+		<body onload = "hello(); hello1();" style = "margin: 0;">
 			<center>
 				<div id = "Info" class = "tabcontent">
 					<div class = "infoTab">
 						<h1>Info</h1>
-
 						<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
-						<input id = "teamNo" type = "text" onkeypress = "return event.charCode >= 48 && event.charCode <= 57" placeholder = "Team Number"><br><br>
+						<input id = "teamNo" type = "text"  onkeyup = "getTeamNo()" onkeypress = "return event.charCode >= 48 && event.charCode <= 57" maxlength = "4" placeholder = "Team Number"><br><br>
 						<h3 style = "display: inline">Team Color:</h3>
 						<label class = "switch" onclick = "teamColorTop()">
 							<input type = "checkbox" id = "teamColor">
