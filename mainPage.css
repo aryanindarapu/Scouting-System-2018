@@ -4,7 +4,7 @@
 }
 
 body {
-	background-image: url("Filter2.png");
+	background-image: url("Filter.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%; 
@@ -23,11 +23,11 @@ div.PressStart {
 }
 
 div.HighScore {
-	font-family: 'Press Start 2P';
 	color: red;
+	font-family: 'Press Start 2P';
 	margin-left: 30px;
 	font-size: 40px;
-	text-decoration: underline;
+	padding: 0px;
 }
 
 div.middle {
