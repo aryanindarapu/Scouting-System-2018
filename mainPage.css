@@ -4,10 +4,10 @@
 }
 
 body {
-	background-image: url("Ercad.jpg");
+	background-image: url("Filter.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-size: 100% 100%; 
+	background-size: 100% 100%;
 }
 
 
@@ -20,13 +20,10 @@ div.PressStart {
 	font-family: "Press Start 2P";
 	color: red;
 	text-align: center;
-	margin-top: 225px;
-	font-size: 100px;
-	margin-left: 15px;
+	font-size: 70px;
 }
 
 div.HighScore {
-	font-family: 'Press Start 2P';
 	color: red;
 	margin-left: 7%;
 	margin-top: 250px;
@@ -36,18 +33,16 @@ div.HighScore {
 
 div.Instructions {
 	font-family: 'Press Start 2P';
-	color: red;
-	text-align: right;
-	margin-right: 5%;
+	margin-left: 30px;
 	font-size: 40px;
 	margin-bottom: 10px;
 	margin-left: 50px;
+	padding: 0px;
 }
 
 div.middle {
 	width: 88%;
 	height: 87%;
-	background-color: black;
 	position: fixed;
 	z-index: 1;
 	top:0;
