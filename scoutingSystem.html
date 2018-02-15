@@ -8,6 +8,7 @@
 		<title>Scouting System</title>
 		
 		<div style = "position: relative" >
+
 			<image src = "Pipe.png" id = "teamColorTop" style = "position: absolute; right: 0px; height: 70px"/>
 			<div style = "position: absolute; right: 0px; margin-top: 30px; font-family: 'Press Start 2P'; font-size: 15px;" >
 				<p style = "display: inline">Team No:</p><p id = "teamNoTop" style = "display: inline"></p>
@@ -16,11 +17,13 @@
 		</div>
 		
 		<div class = "tab">
-			<button id = "default" class = "tablinks" onclick = "openTab(event, 0)">Info</button>
-			<button class = "tablinks" onclick = "openTab(event, 1)">Auton</button>
-			<button class = "tablinks" onclick = "openTab(event, 2)">TeleOp</button>
-			<button class = "tablinks" onclick = "openTab(event, 3)">End Game</button>
-			<button class = "tablinks" onclick = "openTab(event, 4)">Submit</button>
+			<button onclick = "tabLeft()"><</button>
+			<button id = "infoTab" class = "tablinks" onclick = "openTab(event, 'Info')">Info</button>
+			<button id = "autonTab" class = "tablinks" onclick = "openTab(event, 'Auton')">Auton</button>
+			<button id = "teleTab" class = "tablinks" onclick = "openTab(event, 'TeleOp')">TeleOp</button>
+			<button id = "endTab" class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
+			<button id = "submitTab" class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
+			<button onclick = "tabRight()">></button>
 		</div>
 		
 		<style>
@@ -242,6 +245,6 @@
 		</body>
 	</form>
 	
-	<script>document.getElementById("default").click();</script>
+	<script>document.getElementById("infoTab").click();</script>
 </html>
 </html>

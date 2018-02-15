@@ -1067,16 +1067,6 @@ function hello1(){
 }; // end $(function(){});
 
 function openTab(evt, tabName) {
-	var array = ["Info", "Auton", "TeleOp", "Endgame", "Submit"]
-	if (tabName <= 4) {
-		tabName = array[tabName];
-	}
-	else if (tabName == 5) {
-		tabName = "Info";
-		tablinks = document.getElementsByClassName("tablinks")
-        tablinks[0].className = tablinks[0].className.replace(" active", "");
-		evt.currentTarget.className += "active";
-	}
 	console.log(tabName);
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -1088,9 +1078,24 @@ function openTab(evt, tabName) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     document.getElementById(tabName).style.display = "block";
+	console.log(evt.currentTarget);
     evt.currentTarget.className += " active";
 };
 
+function tabRight() {
+	var array = ["Info", "Auton", "TeleOp", "Endgame", "Submit"];
+	if (document.getElementById("infoTab").className == "tablinks active") {document.getElementById("autonTab").click();}
+	else if (document.getElementById("autonTab").className == "tablinks active") {document.getElementById("teleTab").click();}
+	else if (document.getElementById("teleTab").className == "tablinks active") {document.getElementById("endTab").click();}
+	else if (document.getElementById("endTab").className == "tablinks active") {document.getElementById("submitTab").click();}
+}
+function tabLeft() {
+	var array = ["Info", "Auton", "TeleOp", "Endgame", "Submit"];
+	if (document.getElementById("submitTab").className == "tablinks active") {document.getElementById("endTab").click();}
+	else if (document.getElementById("endTab").className == "tablinks active") {document.getElementById("teleTab").click();}
+	else if (document.getElementById("teleTab").className == "tablinks active") {document.getElementById("autonTab").click();}
+	else if (document.getElementById("autonTab").className == "tablinks active") {document.getElementById("infoTab").click();}
+}
 var autonScoreScale = 0;
 var autonScoreSwitch = 0;
 var autonScoreSwitch = 0;
