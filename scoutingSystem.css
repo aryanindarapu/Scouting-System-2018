@@ -1,6 +1,7 @@
 body {
 	font-family: Arial;
 	background-image: url("sky.png");
+	cursor: crosshair;
 }
 
 /* Style the tab */
