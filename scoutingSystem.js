@@ -1067,7 +1067,6 @@ function hello1(){
 }; // end $(function(){});
 
 function openTab(evt, tabName) {
-	console.log(tabName);
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -1078,7 +1077,6 @@ function openTab(evt, tabName) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     document.getElementById(tabName).style.display = "block";
-	console.log(evt.currentTarget);
     evt.currentTarget.className += " active";
 };
 
@@ -1095,6 +1093,10 @@ function tabLeft() {
 	else if (document.getElementById("endTab").className == "tablinks active") {document.getElementById("teleTab").click();}
 	else if (document.getElementById("teleTab").className == "tablinks active") {document.getElementById("autonTab").click();}
 	else if (document.getElementById("autonTab").className == "tablinks active") {document.getElementById("infoTab").click();}
+}
+function homePage() {
+	var result = confirm("Are you sure you wish to return to the main page? Any current scouting progress will be erased.");
+	if(result){window.location.replace("mainPage.html");}
 }
 var autonScoreScale = 0;
 var autonScoreSwitch = 0;

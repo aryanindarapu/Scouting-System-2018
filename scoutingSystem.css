@@ -140,6 +140,47 @@ input[value="+"] {
 	margin-right: 5px;
 }
 
+input[value="<"] {
+	font-weight: bold;
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+	box-shadow: 0 9px #999;
+	margin-left: 30px;
+	margin-right: 5px;
+	position: absolute;
+	top: 30%;
+	opacity: 0.1;
+}
+
+input[src="margin.png"] {
+	font-weight: bold;
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #4CAF50;
+	border: none;
+	box-shadow: 0 9px #999;
+	margin-left: 30px;
+	margin-right: 5px;
+	position: absolute;
+	top: 30%;
+	right: 0px;
+	opacity: 0.1;
+}
+
 input[type="button"]:hover {filter: brightness(80%)}
 
 input[type="button"]:active {
