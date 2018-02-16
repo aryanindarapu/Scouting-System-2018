@@ -23,12 +23,6 @@
 			<button id = "endTab" class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button id = "submitTab" class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
 		</div>
-		<script>
-		function homePage() {
-			var result = confirm("Are you sure you wish to return to the main page? Any current scouting progress will be erased.");
-			if(result){window.location.replace("mainPage.html");}
-		}
-		</script>
 		<style>
 			canvas{border:1px solid red;}
 			
@@ -38,6 +32,8 @@
 	</head>
 	
 	<form action = "" method = "post">
+		<image onclick = "tabLeft()" type = "button" src = "margin.png"/>
+		<image onclick = "tabRight()" type = "button" src = "margin.png" style = "float: right;"/>
 		<body onload = "hello(); hello1();" style = "margin: 0;">
 			<center>
 				<div id = "Info" class = "tabcontent">
