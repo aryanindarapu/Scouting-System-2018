@@ -1,6 +1,2 @@
 Rykers notes:
-restrict clickable block spaces by team color (can't cross half auton, can't get/deliver to other teams station and portals . . .)
---keep track of team name and color on every tab screen
---fix wording of end game and change to radio buttons
---next/previous buttons on sides to go between tabs
---Instructions button has to link to actual instructions page
+

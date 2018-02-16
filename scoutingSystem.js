@@ -27,6 +27,7 @@ var confirmYes = function(){
 		document.getElementById("blockImg").style.filter = "grayscale(0%)";
 		document.getElementById("blockImg").style.opacity = 1;
 		document.getElementById("dropBlock").style.display = "block";
+		document.getElementById("pickUpBlock").style.display = "none";
 		document.getElementById("pHasNoBlock").style.display = "none";
 		document.getElementById("pHasBlock").style.display = "block";
 		if(x>=182 && x<=215 && y >=73 && y<=103){
@@ -99,6 +100,7 @@ var confirmYes = function(){
 		document.getElementById("blockImg").style.filter = "grayscale(100%)";
 		document.getElementById("blockImg").style.opacity = 0.5;
 		document.getElementById("dropBlock").style.display = "none";
+		document.getElementById("pickUpBlock").style.display = "block";
 		document.getElementById("pHasNoBlock").style.display = "block";
 		document.getElementById("pHasBlock").style.display = "none";
 		if(x>=182 && x<=215 && y >=73 && y<=103){
@@ -185,11 +187,26 @@ function dropTheBlock(){
 	document.getElementById("blockImg").style.filter = "grayscale(100%)";
 	document.getElementById("blockImg").style.opacity = 0.5;
 	document.getElementById("dropBlock").style.display = "none";
+	document.getElementById("pickUpBlock").style.display = "block";
 	document.getElementById("pHasNoBlock").style.display = "block";
 	document.getElementById("pHasBlock").style.display = "none";
 	deliveredBlockArray += (", Dropped Block");
 	console.log(deliveredBlockArray);
-	deliveredBlockArray.concat(", Dropped Block");
+	x=0;
+	y=0;
+	clickedMap = false;
+	hello();
+}
+function pickUpTheBlock(){
+	blockAcquired=false;
+	document.getElementById("blockImg").style.filter = "grayscale(0%)";
+	document.getElementById("blockImg").style.opacity = 1;
+	document.getElementById("pickUpBlock").style.display = "none";
+	document.getElementById("dropBlock").style.display = "block";
+	document.getElementById("pHasNoBlock").style.display = "block";
+	document.getElementById("pHasBlock").style.display = "none";
+	pickedUpBlockArray += (", Pick From Ground");
+	console.log(pickedUpBlockArray);
 	x=0;
 	y=0;
 	clickedMap = false;
@@ -1317,4 +1334,16 @@ function submitx() {
 	
 	//Comments
 	var comments = document.getElementById("comment").value;
+}
+var climbCount = 0;
+var noClimb = function(){
+	console.log(climbCount);
+	if(climbCount == 0){
+		document.getElementById("climbStuff").style.display = "none";
+		climbCount = 1;
+	}
+	else{
+		document.getElementById("climbStuff").style.display = "block";
+		climbCount = 0;
+	}
 }
