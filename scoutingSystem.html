@@ -120,7 +120,7 @@
 					<canvas id="canvas" onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
 					<p>Block in hand:</p>
 					<img src="Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
-					<br><button type = "button" id = "dropBlock" style = "margin-top: 20px; display: none" class = "modalButtonNo" onclick = "dropTheBlock()">Dropped/Lost Block</button>
+					<br><button type = "button" id = "pickUpBlock" style = "margin-top: 20px; display: block" class = "modalButtonYes" onclick = "pickUpTheBlock()">Picked Up Block - Ground</button>
 					<br><button type = "button" id = "dropBlock" style = "margin-top: 20px; display: none" class = "modalButtonNo" onclick = "dropTheBlock()">Dropped/Lost Block</button>
 					<div id = "confirm" style="display:none">
 						<!-- The Modal -->
@@ -138,50 +138,59 @@
 				</div>
 			</center>
 			<div id = "Endgame" class = "tabcontent">
-				<div style="padding-left: 12%; padding-top: 8%; display: inline-block;">
-					<h2>Performance</h2>
-					<label class = "container">Attempt
-						<input type = "checkbox" name = "endGame">
-						<span class = "checkmark"></span>
-					</label>
-					<br>
-					<label class = "container">Levitate
-						<input type = "checkbox" name = "endGame">
-						<span class = "checkmark"></span>
-					</label>
-					<br>
-					<label class = "container">Cooperate
-						<input type = "checkbox" name = "endGame">
-						<span class = "checkmark"></span>
-					</label>
-					<br>
-					<label class = "container">Success
-						<input type = "checkbox" name = "endGame">
-						<span class = "checkmark"></span>
-					</label>
-				</div>
-				<div style="padding-left: 13%; display: inline-block">
-					<h2>Abilities</h2>
-					<label class = "container">Can't Climb
-						<input type = "radio" name = "endGameAb">
-						<span class = "radio"></span>
-					</label>
-					<br>
-					<label class = "container">Single Climb
-						<input type = "radio" name = "endGameAb">
-						<span class = "radio"></span>
-					</label>
-					<br>
-					<label class = "container">Dual Climb
-						<input type = "radio" name = "endGameAb">
-						<span class = "radio"></span>
-					</label>
-					<br>
-					<label class = "container">Triple Climb
-						<input type = "radio" name = "endGameAb">
-						<span class = "radio"></span>
-					</label>
-				</div>
+				<center><h2 style = "margin-top: 150px; font-size: 50px">Climbing</h2></center>
+				<center>
+					<div id = "climbStuff">
+						<div style="margin-top: -10%; display: inline-block;">
+							<h2>Performance</h2>
+							<label class = "container">Successful Climb
+								<input type = "checkbox" name = "endGame">
+								<span class = "checkmark"></span>
+							</label>
+							<br>
+							<label class = "container">Failed Climb
+								<input type = "checkbox" name = "endGame">
+								<span class = "checkmark"></span>
+							</label>
+							<br>
+							<label class = "container">Levitate
+								<input type = "checkbox" name = "endGame">
+								<span class = "checkmark"></span>
+							</label>
+							<br>
+							<label class = "container">No Attempt Climb/Levitate
+								<input type = "checkbox" name = "endGame">
+								<span class = "checkmark"></span>
+							</label>
+						</div>
+						<div style="padding-left: 10%; display: inline-block">
+							<h2>Abilities</h2>
+							<label class = "container">Can't Climb
+								<input type = "radio" name = "endGameAb">
+								<span class = "radio"></span>
+							</label>
+							<br>
+							<label class = "container">Single Climb
+								<input type = "radio" name = "endGameAb">
+								<span class = "radio"></span>
+							</label>
+							<br>
+							<label class = "container">Dual Climb
+								<input type = "radio" name = "endGameAb">
+								<span class = "radio"></span>
+							</label>
+							<br>
+							<label class = "container">Triple Climb
+								<input type = "radio" name = "endGameAb">
+								<span class = "radio"></span>
+							</label>
+						</div>
+					</div>
+				</center>
+				<center>
+					<h2 style = "font-size: 15px; width: 60%; margin-top: 50px">*If they continue collecting cubes instead of climbing, check this box and continue scouting in the teleop tab<h2>
+					<input class = "footerCheck" type = "checkbox" name = "noClimbing" style = "height: 30px; width: 30px; margin-top:0px;" id = "noClimbing" onclick = "noClimb()">
+				</center>
 			</div>
 
 			<div id = "Submit" class = "tabcontent">

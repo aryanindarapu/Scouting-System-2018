@@ -21,6 +21,9 @@ div.PressStart {
 	text-align: center;
 	font-size: 70px;
 }
+div.PressStart1:hover {
+	opacity: 0.5;
+}
 
 div.HighScore {
 	color: red;
@@ -28,6 +31,20 @@ div.HighScore {
 	margin-left: 30px;
 	font-size: 40px;
 	padding: 0px;
+}
+
+div.Rules {
+	color: red;
+	font-family: 'Press Start 2P';
+	margin-left: 30px;
+	font-size: 40px;
+	padding: 0px;
+}
+.Rules:hover {
+	opacity: 0.5;
+}
+.HighScore:hover {
+	opacity: 0.5;
 }
 
 div.middle {
