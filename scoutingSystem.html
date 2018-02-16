@@ -23,12 +23,6 @@
 			<button id = "endTab" class = "tablinks" onclick = "openTab(event, 'Endgame')">End Game</button>
 			<button id = "submitTab" class = "tablinks" onclick = "openTab(event, 'Submit')">Submit</button>
 		</div>
-		<script>
-		function homePage() {
-			var result = confirm("Are you sure you wish to return to the main page? Any current scouting progress will be erased.");
-			if(result){window.location.replace("mainPage.html");}
-		}
-		</script>
 		<style>
 			canvas{border:1px solid red;}
 			
@@ -38,6 +32,8 @@
 	</head>
 	
 	<form action = "" method = "post">
+		<image onclick = "tabLeft()" type = "button" src = "margin.png"/>
+		<image onclick = "tabRight()" type = "button" src = "margin.png" style = "float: right;"/>
 		<body onload = "hello(); hello1();" style = "margin: 0;">
 			<center>
 				<div id = "Info" class = "tabcontent">
@@ -93,13 +89,15 @@
 
 								<!-- Modal content -->
 								<div class = "modal-content">
-									<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: block">Did the robot deliver a block at the highlighted location?</h4>
-									
-									<button type = "button" id = "modalButtonScaleYes" class = "modalButtonYes" style = "display: inline-block" onclick = "confirmYes1(), closeModal1(), recordTimeAutonScale()">Yes</button>
-									<button type = "button" id = "modalButtonScaleNo" class = "modalButtonNo" style = "display: inline-block" onclick = "confirmNo1(), closeModal1()">No</button>
-									
-									<button type = "button"id = "modalButtonSwitchYes" class = "modalButtonYes" style = "display: none" onclick = "confirmYes1(), closeModal1(), recordTimeAutonSwitch()">Yes</button>
-									<button type = "button" id = "modalButtonSwitchNo" class = "modalButtonNo" style = "display: none" onclick = "confirmNo1(), closeModal1()">No</button>
+									<center>
+										<h4 id = "pHasBlock1" style = "font-family: 'Press Start 2P'; display: block">Did the robot deliver a block at the highlighted location?</h4>
+										
+										<button type = "button" id = "modalButtonScaleYes" class = "modalButtonYes" style = "display: inline-block" onclick = "confirmYes1(), closeModal1(), recordTimeAutonScale()">Yes</button>
+										<button type = "button" id = "modalButtonScaleNo" class = "modalButtonNo" style = "display: inline-block" onclick = "confirmNo1(), closeModal1()">No</button>
+										
+										<button type = "button"id = "modalButtonSwitchYes" class = "modalButtonYes" style = "display: none" onclick = "confirmYes1(), closeModal1(), recordTimeAutonSwitch()">Yes</button>
+										<button type = "button" id = "modalButtonSwitchNo" class = "modalButtonNo" style = "display: none" onclick = "confirmNo1(), closeModal1()">No</button>
+									</center>	
 								</div>
 
 							</div>

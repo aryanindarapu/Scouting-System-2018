@@ -10,13 +10,14 @@ body {
 	background-size: 100% 100%;
 }
 
+
 div.buttons {
 	position: fixed;
 	z-index: 2;
 }
 
 div.PressStart {
-	font-family: 'Press Start 2P';
+	font-family: "Press Start 2P";
 	color: red;
 	text-align: center;
 	font-size: 70px;
@@ -27,9 +28,18 @@ div.PressStart1:hover {
 
 div.HighScore {
 	color: red;
+	margin-left: 7%;
+	margin-top: 250px;
+	font-size: 40px;
+
+}
+
+div.Instructions {
 	font-family: 'Press Start 2P';
 	margin-left: 30px;
 	font-size: 40px;
+	margin-bottom: 10px;
+	margin-left: 50px;
 	padding: 0px;
 }
 

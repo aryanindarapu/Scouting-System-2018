@@ -1,4 +1,2 @@
 Rykers notes:
-restrict clickable block spaces by team color (can't cross half auton, can't get/deliver to other teams station and portals . . .)
-fix wording of end game and change to radio buttons
-next/previous buttons on sides to go between tabs
+
