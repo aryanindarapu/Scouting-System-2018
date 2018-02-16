@@ -207,6 +207,7 @@ function showCoords(event) {
 		hello();
 	}
 }
+
 function hello(){
 
     var canvas=document.getElementById("canvas");
@@ -1066,6 +1067,7 @@ function hello1(){
 }; // end $(function(){});
 
 function openTab(evt, tabName) {
+	console.log(tabName);
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -1076,9 +1078,24 @@ function openTab(evt, tabName) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     document.getElementById(tabName).style.display = "block";
+	console.log(evt.currentTarget);
     evt.currentTarget.className += " active";
 };
 
+function tabRight() {
+	var array = ["Info", "Auton", "TeleOp", "Endgame", "Submit"];
+	if (document.getElementById("infoTab").className == "tablinks active") {document.getElementById("autonTab").click();}
+	else if (document.getElementById("autonTab").className == "tablinks active") {document.getElementById("teleTab").click();}
+	else if (document.getElementById("teleTab").className == "tablinks active") {document.getElementById("endTab").click();}
+	else if (document.getElementById("endTab").className == "tablinks active") {document.getElementById("submitTab").click();}
+}
+function tabLeft() {
+	var array = ["Info", "Auton", "TeleOp", "Endgame", "Submit"];
+	if (document.getElementById("submitTab").className == "tablinks active") {document.getElementById("endTab").click();}
+	else if (document.getElementById("endTab").className == "tablinks active") {document.getElementById("teleTab").click();}
+	else if (document.getElementById("teleTab").className == "tablinks active") {document.getElementById("autonTab").click();}
+	else if (document.getElementById("autonTab").className == "tablinks active") {document.getElementById("infoTab").click();}
+}
 var autonScoreScale = 0;
 var autonScoreSwitch = 0;
 var autonScoreSwitch = 0;
@@ -1117,7 +1134,7 @@ var autonScoreSwitch = 0;
 	document.getElementById(id).innerHTML = x;
  } */
  
-  function add(n, id) {
+function add(n, id) {
  	x = parseInt(document.getElementById(id).innerHTML);
  	x += n;
  	if (x<0) {
@@ -1227,6 +1244,23 @@ $(document).ready(function(){
 		}
 	});
 });
+
+function teamColorTop() {
+	if (document.getElementById("teamColor").checked == false) {
+		teamColorRed = true;
+		document.getElementById("teamColorTop").src = "pipeRed.png";
+	} else if (document.getElementById("teamColor").checked == true){
+		teamColorRed = false;
+		document.getElementById("teamColorTop").src = "pipeBlue.png";
+	}
+}
+
+var teamNo = "";
+function getTeamNo() {
+	teamNo = document.getElementById("teamNo").value;
+	document.getElementById("teamNoTop").innerHTML = teamNo;
+}
+
 function submitx() {
 	//Check Statements
 	if (document.getElementById("teamName").value == "" | document.getElementById("teamNo").value == "") {

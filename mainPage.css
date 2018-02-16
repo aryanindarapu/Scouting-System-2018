@@ -4,11 +4,12 @@
 }
 
 body {
-	background-image: url("Filter2.png");
+	background-image: url("Filter.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-size: 100% 100%; 
+	background-size: 100% 100%;
 }
+
 
 div.buttons {
 	position: fixed;
@@ -16,18 +17,27 @@ div.buttons {
 }
 
 div.PressStart {
-	font-family: 'Press Start 2P';
+	font-family: "Press Start 2P";
 	color: red;
 	text-align: center;
 	font-size: 70px;
 }
 
 div.HighScore {
-	font-family: 'Press Start 2P';
 	color: red;
+	margin-left: 7%;
+	margin-top: 250px;
+	font-size: 40px;
+
+}
+
+div.Instructions {
+	font-family: 'Press Start 2P';
 	margin-left: 30px;
 	font-size: 40px;
-	text-decoration: underline;
+	margin-bottom: 10px;
+	margin-left: 50px;
+	padding: 0px;
 }
 
 div.middle {

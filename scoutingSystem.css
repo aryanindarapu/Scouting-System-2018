@@ -6,9 +6,11 @@
 body {
 	font-family: Arial;
 	background-image: url("sky.png");
+	cursor: default;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%; 
+
 }
 
 /* Style the tab */
