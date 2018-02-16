@@ -182,6 +182,7 @@ var confirmNo = function(){
 	hello();
 	hasBeenClick = false;
 }
+
 function dropTheBlock(){
 	blockAcquired=false;
 	document.getElementById("blockImg").style.filter = "grayscale(100%)";
@@ -196,7 +197,9 @@ function dropTheBlock(){
 	y=0;
 	clickedMap = false;
 	hello();
+	blockAcquired = false;
 }
+
 function pickUpTheBlock(){
 	blockAcquired=false;
 	document.getElementById("blockImg").style.filter = "grayscale(0%)";
@@ -211,6 +214,7 @@ function pickUpTheBlock(){
 	y=0;
 	clickedMap = false;
 	hello();
+	blockAcquired = true;
 }
 window.onload = hello;
 var x = 0;
