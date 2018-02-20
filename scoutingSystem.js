@@ -45,7 +45,7 @@ var confirmYes = function(){
 		}
 		if(x>=285 && x<=325 && y >=155 && y<=190){
 			pickedUpBlockArray += (", Scale 2");
-			console.log(pickedUpBlockArray);		
+			console.log(pickedUpBlockArray);
 		}
 		if(x>=390 && x<=425 && y >=75 && y<=105){
 			pickedUpBlockArray += (", Switch 3");
@@ -117,7 +117,7 @@ var confirmYes = function(){
 		}
 		if(x>=285 && x<=325 && y >=155 && y<=190){
 			deliveredBlockArray += (", Scale 2");
-			console.log(deliveredBlockArray);		
+			console.log(deliveredBlockArray);
 		}
 		if(x>=390 && x<=425 && y >=75 && y<=105){
 			deliveredBlockArray += (", Switch 3");
@@ -628,7 +628,7 @@ var confirmYes1 = function(){
 	}
 	if(x1>=285 && x1<=325 && y1 >=155 && y1<=190){
 		deliveredBlockArray1 += (", Scale 2");
-		console.log(deliveredBlockArray1);		
+		console.log(deliveredBlockArray1);
 	}
 	if(x1>=390 && x1<=425 && y1 >=75 && y1<=105){
 		deliveredBlockArray1 += (", Switch 3");
@@ -1148,7 +1148,7 @@ var autonScoreSwitch = 0;
 		if(autonScoreScale <= 0){
 			autonScoreSwitch = 0;
 		}
-	} 
+	}
 	
 	var x = document.getElementById(id).innerHTML;
 	x = parseInt(x);
@@ -1172,7 +1172,7 @@ $(function(){
         x-=1;
         $('.tab').css('background-position', x + 'px 0');
     }, 10);
-}) 
+})
 
 function changeValue() {
 	value = value-1;
@@ -1190,7 +1190,8 @@ var autonTimeScale = [];
 var autonTimeSwitch = [];
 var timerStarted = false;
 function startTimer() {
-	console.log("jengeldows the goat");
+	console.log("jengLEdows the goat");
+	console.log("Austin you dont even know how to spell my name correctly")
 	timerStarted = true;
 	autonTimeScale = [];
 	autonTimeSwitch = [];
@@ -1350,4 +1351,21 @@ var noClimb = function(){
 		document.getElementById("climbStuff").style.display = "block";
 		climbCount = 0;
 	}
+}
+function submitForm(){
+  console.log("ran");
+  $.ajax({
+    type: "POST",
+    url: "submit.php",
+    data: {
+      "teamColorRed" : teamColorRed,
+      "yelCards" : yelCard,
+      "redCards" : redCard,
+      "pickedUpBlocks" : pickedUpBlockArray,
+      "deliveredBlocks" : deliveredBlockArray,
+    },
+    success: function(){
+      console.log("worked");
+    }
+  })
 }

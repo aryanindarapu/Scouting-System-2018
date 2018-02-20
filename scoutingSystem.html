@@ -31,7 +31,6 @@
 
 	</head>
 	
-	<form action = "" method = "post">
 		<image onclick = "tabLeft()" type = "button" src = "margin.png"/>
 		<image onclick = "tabRight()" type = "button" src = "margin.png" style = "float: right;"/>
 		<body onload = "hello(); hello1();" style = "margin: 0;">
@@ -47,9 +46,9 @@
 							<span class = "slider"></span>
 						</label>
 						<h3 style="margin-top: 100px">OVERVIEW OF GAME</h3>
-						<p style = "font-size: 20px"> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss: 
-						tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate) 
-						to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match, 
+						<p style = "font-size: 20px"> In FIRST Power Up, teams are transported into an 8-bit video game. Each three-team alliance has three ways to help defeat the boss:
+						tipping the scale or the alliance’s switch in their favor to earn points, exchanging power cubes for power ups (force, boost, and levitate)
+						to gain a temporary advantage during the match, and climbing the scale tower to face the boss. The alliance with the highest score at the end of the match,
 						including autonomous and teleoperated periods, defeats the boss and wins the game.
 						<br></br>
 					</div>
@@ -97,7 +96,7 @@
 										
 										<button type = "button"id = "modalButtonSwitchYes" class = "modalButtonYes" style = "display: none" onclick = "confirmYes1(), closeModal1(), recordTimeAutonSwitch()">Yes</button>
 										<button type = "button" id = "modalButtonSwitchNo" class = "modalButtonNo" style = "display: none" onclick = "confirmNo1(), closeModal1()">No</button>
-									</center>	
+									</center>
 								</div>
 
 							</div>
@@ -129,7 +128,7 @@
 								<h4 id = "pHasNoBlock" style = "font-family: 'Press Start 2P'">Did the robot pick up a block at the clicked location?</h4>
 								<h4 id = "pHasBlock" style = "font-family: 'Press Start 2P'; display: none">Did the robot deliver a block at the highlighted location?</h4>
 								<button type = "button" class = "modalButtonYes" onclick = "confirmYes(), closeModal()">Yes</button>
-								<button type = "button" class = "modalButtonNo" onclick = "confirmNo(), closeModal()">No</button> 
+								<button type = "button" class = "modalButtonNo" onclick = "confirmNo(), closeModal()">No</button>
 							</div>
 						</div>
 					</div>
@@ -240,7 +239,8 @@
 				<div class="submitClass">
 					<h3>Submit</h3>
 					<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
-					<input href = "submit.php?hello=true"type = "button" class = "submit" onclick = "submitx()" value = "Submit">
+					<!--<input href = "submit.php?hello=true"type = "button" class = "submit" onclick = "submitx()" value = "Submit">-->
+					<input type = "button" class = "submit" onclick = "submitForm()" value = "Submit">
 				</div>
 			</div>
 
@@ -276,8 +276,7 @@
 				</div>
 			</div>
 		</body>
-	</form>
-	
-	<script>document.getElementById("infoTab").click();</script>
-</html>
+	<script>
+	  document.getElementById("infoTab").click();
+	</script>
 </html>
