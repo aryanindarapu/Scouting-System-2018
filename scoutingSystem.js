@@ -9,10 +9,32 @@ var clickedMap = false;
 var pickedUpBlockArray = [];
 var deliveredBlockArray = [];
 var blockAcquired = false;
+var modal;
+var x = 0;
+var y = 0;
+var coords;
+var clickedMap1 = false;
+var deliveredBlockArray1 = [];
+var teamColor1 ="Red";
+var x1 = 0;
+var y1 = 0;
+var autonScoreScale = 0;
+var autonScoreSwitch = 0;
+var timerInterval = null;
+var autonTimeScale = [];
+var autonTimeSwitch = [];
+var timerStarted = false;
+var teamNo = "";
+var autonPosition;
+var teamName;
+var foul;
+var techFoul;
+var climbCount;
+var distance;
 
 var confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
-	var modal = document.getElementById("myModal");
+	modal = document.getElementById("myModal");
 	modal.style.display = "block";
 	closeModal = function() {
 		modal.style.display = "none";
@@ -220,13 +242,11 @@ function pickUpTheBlock(){
 	blockAcquired = true;
 }
 window.onload = hello;
-var x = 0;
-var y = 0;
 function showCoords(event) {
 	if(clickedMap==false){
 		x = event.clientX - $('#canvas').offset().left;
 		y = event.clientY - $('#canvas').offset().top;
-		var coords = "X coords: " + x + ", Y coords: " + y;
+		coords = "X coords: " + x + ", Y coords: " + y;
 		document.getElementById("demo").innerHTML = coords;
 		hello();
 	}
@@ -590,13 +610,6 @@ function hello(){
 	}
 }; // end $(function(){});
 
-
-
-
-var clickedMap1 = false;
-var deliveredBlockArray1 = [];
-var teamColor1 ="Red";
-
 var teamColor1 = function(){
 	if(teamColor1 == "Red"){
 		teamColor1 = "Blue"
@@ -696,8 +709,6 @@ var confirmNo1 = function(){
 }
 
 window.onload = hello1;
-var x1 = 0;
-var y1 = 0;
 function showCoords1(event) {
 	if(clickedMap1==false){
 		x1 = event.clientX - $('#canvas1').offset().left;
@@ -1122,9 +1133,6 @@ function homePage() {
 	var result = confirm("Are you sure you wish to return to the main page? Any current scouting progress will be erased.");
 	if(result){window.location.replace("mainPage.html");}
 }
-var autonScoreScale = 0;
-var autonScoreSwitch = 0;
-var autonScoreSwitch = 0;
 /*  function add(n, id) {
 	if(id=="autonScoreScale"){
 		autonScoreScale += n;
@@ -1188,10 +1196,7 @@ function changeValue() {
 	}
 }
 
-var timerInterval = null;
-var autonTimeScale = [];
-var autonTimeSwitch = [];
-var timerStarted = false;
+
 function startTimer() {
 	console.log("jengLEdows the goat");
 	console.log("Austin you dont even know how to spell my name correctly")
@@ -1260,13 +1265,13 @@ $(document).ready(function(){
 	$(".positionButtons").on("click", function(){
 		if($(this).hasClass("positionButtonsClicked")){
 			$(".positionButtons").removeClass("positionButtonsClicked");
-			var autonPosition = "none";
+			autonPosition = "none";
 			console.log(autonPosition);
 		}
 		else{
 			$(".positionButtons").removeClass("positionButtonsClicked");
 			$(this).addClass("positionButtonsClicked");
-			var autonPosition = $(this).attr('name');
+			autonPosition = $(this).attr('name');
 			console.log(autonPosition);
 		}
 	});
@@ -1282,7 +1287,7 @@ function teamColorTop() {
 	}
 }
 
-var teamNo = "";
+
 function getTeamNo() {
 	teamNo = document.getElementById("teamNo").value;
 	document.getElementById("teamNoTop").innerHTML = teamNo;
@@ -1301,11 +1306,11 @@ function submitx() {
 	}
 	
 	//Team Name
-	var teamName = document.getElementById("teamName").value;
+	teamName = document.getElementById("teamName").value;
 	
 	
 	//Team Number
-	var teamNo = document.getElementById("teamNo").value;
+	teamNo = document.getElementById("teamNo").value;
 	
 	//Team Color
 	if (document.getElementById("teamColor").checked == false) {
@@ -1315,10 +1320,10 @@ function submitx() {
 	}
 	
 	//Fouls
-	var test = parseInt(document.getElementById("foul").innerHTML);
+	foul = parseInt(document.getElementById("foul").innerHTML);
 	
 	//Tech Fouls
-	var techFoul = parseInt(document.getElementById("tech").innerHTML);
+	techFoul = parseInt(document.getElementById("tech").innerHTML);
 	
 	//Yellow Card
 	if (document.getElementById("yelCard").checked == false) {
@@ -1343,7 +1348,7 @@ function submitx() {
 	//Comments
 	var comments = document.getElementById("comment").value;
 }
-var climbCount = 0;
+
 var noClimb = function(){
 	console.log(climbCount);
 	if(climbCount == 0){
@@ -1356,7 +1361,7 @@ var noClimb = function(){
 	}
 }
 function parseSpeed(pickup, deliver){
-	var distance = 0; //in meters, preferably
+	distance = 0; //in meters, preferably
 	for(i = 0; i<deliver.length; i++){
 		switch(pickup[i]){
 			case certain cases:
@@ -1380,10 +1385,20 @@ function submitForm(){
     type: "POST",
     url: "submit.php",
     data: {
-      "teamColorRed" : teamColorRed,
+      $("#id").is(':checked');
+      "pickedUpBlockArray" : pickedUpBlockArray, //might need parse function
+      "deliveredBlockArray" : deliveredBlockArray,
+      "autonScoreScale" : autonScoreScale,
+      "autonScoreSwitch" : autonScoreSwitch,
+      "autonTimeScale" : autonTimeScale, //parse array
+      "autonTimeSwitch" : autonTimeSwitch,
+      "teamNo" : teamNo,
+      "autonPosition" : autonPosition,
+      "fouls" : foul,
+      "techFouls" : techFoul,
       "yelCards" : yelCard,
       "redCards" : redCard,
-	  "speed" : parseSpeed(pickedUpBlockArray, deliveredBlockArray);
+	    "speed" : parseSpeed(pickedUpBlockArray, deliveredBlockArray);
     },
     success: function(){
       console.log("worked");
