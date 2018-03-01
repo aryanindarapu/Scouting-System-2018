@@ -6,8 +6,8 @@ var teamColorRed = true;
 var yelCard;
 var redCard;
 var clickedMap = false;
-var pickedUpBlockArray = "";
-var deliveredBlockArray = "";
+var pickedUpBlockArray = [];
+var deliveredBlockArray = [];
 var blockAcquired = false;
 
 var confirmClick = function(){
@@ -30,13 +30,14 @@ var confirmYes = function(){
 		document.getElementById("pickUpBlock").style.display = "none";
 		document.getElementById("pHasNoBlock").style.display = "none";
 		document.getElementById("pHasBlock").style.display = "block";
+		//delivery areas
 		if(x>=182 && x<=215 && y >=73 && y<=103){
 			pickedUpBlockArray += ", Switch 1";
 			console.log("has been added");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=180 && x<=220 && y >=146 && y<=178){
-			pickedUpBlockArray += ", Switch 2";
+			pickedUpBlockArray += (", Switch 2");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=285 && x<=325 && y >=60 && y<=95){
@@ -56,43 +57,45 @@ var confirmYes = function(){
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=60 && x<=115 && y >=80 && y<=120){
-			pickedUpBlockArray += (", Red Station");
+			pickedUpBlockArray.push("Red Station");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=490 && x<=540 && y >=130 && y<=170){
-			pickedUpBlockArray += (", Blue Station");
+			pickedUpBlockArray.push("Blue Station");
 			console.log(pickedUpBlockArray);
 		}
+		//pick up areas
 		if(x>=150 && x<=185 && y >=110 && y<=140){
-			pickedUpBlockArray += (", Red Block Pile");
+			pickedUpBlockArray.push("Red Block Pile");
+			//pickedUpBlockArray += (", Red Block Pile");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=420 && x<=455 && y >=110 && y<=140){
-			pickedUpBlockArray += (", Blue Block Pile");
+			pickedUpBlockArray.push("Blue Block Pile");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=220 && x<=240 && y >=70 && y<=180){
-			pickedUpBlockArray += (", Red 6 Blocks");
+			pickedUpBlockArray.push("Red 6 Blocks");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=375 && x<=390 && y >=70 && y<=180){
-			pickedUpBlockArray += (", Blue six Blocks");
+			pickedUpBlockArray.push("Blue 6 Blocks");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=60 && x<=120 && y >=5 && y<=40){
-			pickedUpBlockArray += (", Blue Portal Top");
+			pickedUpBlockArray.push("Blue Portal Top");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=60 && x<=119 && y >=208 && y<=245){
-			pickedUpBlockArray += (", Blue Portal Bottom");
+			pickedUpBlockArray.push("Blue Portal Bottom");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=491 && x<=550 && y >=205 && y<=247){
-			pickedUpBlockArray += (", Red Portal Bottom");
+			pickedUpBlockArray.push("Red Portal Bottom");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=490 && x<=545 && y >=5 && y<=40){
-			pickedUpBlockArray += (", Red Portal Top");
+			pickedUpBlockArray.push("Red Portal Top");
 			console.log(pickedUpBlockArray);
 		}
 	} else {
@@ -104,35 +107,35 @@ var confirmYes = function(){
 		document.getElementById("pHasNoBlock").style.display = "block";
 		document.getElementById("pHasBlock").style.display = "none";
 		if(x>=182 && x<=215 && y >=73 && y<=103){
-			deliveredBlockArray += (", Switch 1");
+			deliveredBlockArray.push("Switch 1");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=180 && x<=220 && y >=146 && y<=178){
-			deliveredBlockArray += (", Switch 2");
+			deliveredBlockArray.push("Switch 2");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=285 && x<=325 && y >=60 && y<=95){
-			deliveredBlockArray += (", Scale 1");
+			deliveredBlockArray.push("Scale 1");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=285 && x<=325 && y >=155 && y<=190){
-			deliveredBlockArray += (", Scale 2");
+			deliveredBlockArray.push("Scale 2");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=390 && x<=425 && y >=75 && y<=105){
-			deliveredBlockArray += (", Switch 3");
+			deliveredBlockArray.push("Switch 3");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=390 && x<=425 && y >=146 && y<=178){
-			deliveredBlockArray += (", Switch 4");
+			deliveredBlockArray.push("Switch 4");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=60 && x<=115 && y >=80 && y<=120){
-			deliveredBlockArray += (", Red Station");
+			deliveredBlockArray.push("Red Station");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=490 && x<=540 && y >=130 && y<=170){
-			deliveredBlockArray += (", Blue Station");
+			deliveredBlockArray.push("Blue Station");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=150 && x<=185 && y >=110 && y<=140){
@@ -152,19 +155,19 @@ var confirmYes = function(){
 			console.log(deliveredBlockArray);
 		}
 		if(x>=60 && x<=120 && y >=5 && y<=40){
-			deliveredBlockArray += (", Blue Portal Top");
+			deliveredBlockArray.push("Blue Portal Top");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=60 && x<=119 && y >=208 && y<=245){
-			deliveredBlockArray += (", Blue Portal Bottom");
+			deliveredBlockArray.push("Blue Portal Bottom");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=491 && x<=550 && y >=205 && y<=247){
-			deliveredBlockArray += (", Red Portal Bottom");
+			deliveredBlockArray.push("Red Portal Bottom");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=490 && x<=545 && y >=5 && y<=40){
-			deliveredBlockArray += (", Red Portal Top");
+			deliveredBlockArray.push("Red Portal Top");
 			console.log(deliveredBlockArray);
 		}
 	}
@@ -191,7 +194,7 @@ function dropTheBlock(){
 	document.getElementById("pickUpBlock").style.display = "block";
 	document.getElementById("pHasNoBlock").style.display = "block";
 	document.getElementById("pHasBlock").style.display = "none";
-	deliveredBlockArray += (", Dropped Block");
+	deliveredBlockArray.push("Dropped Block");
 	console.log(deliveredBlockArray);
 	x=0;
 	y=0;
@@ -1352,6 +1355,25 @@ var noClimb = function(){
 		climbCount = 0;
 	}
 }
+function parseSpeed(pickup, deliver){
+	var distance = 0; //in meters, preferably
+	for(i = 0; i<deliver.length; i++){
+		switch(pickup[i]){
+			case certain cases:
+				switch(deliver[i]){
+					case delivery cases:
+						//what to do, add certain distance or how to deal with dropped block;
+						break;
+					default:
+						distance += 0;
+				}
+				break;
+			default:
+				distance += 0;
+		}
+	}
+	//return the total distance traveled and divide it by 150 to get approx. speed
+}
 function submitForm(){
   console.log("ran");
   $.ajax({
@@ -1361,8 +1383,7 @@ function submitForm(){
       "teamColorRed" : teamColorRed,
       "yelCards" : yelCard,
       "redCards" : redCard,
-      "pickedUpBlocks" : pickedUpBlockArray,
-      "deliveredBlocks" : deliveredBlockArray,
+	  "speed" : parseSpeed(pickedUpBlockArray, deliveredBlockArray);
     },
     success: function(){
       console.log("worked");
