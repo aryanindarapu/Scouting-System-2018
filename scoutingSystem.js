@@ -54,28 +54,28 @@ var confirmYes = function(){
 		document.getElementById("pHasBlock").style.display = "block";
 		//delivery areas
 		if(x>=182 && x<=215 && y >=73 && y<=103){
-			pickedUpBlockArray += ", Switch 1";
+			pickedUpBlockArray.push("Switch 1");
 			console.log("has been added");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=180 && x<=220 && y >=146 && y<=178){
-			pickedUpBlockArray += (", Switch 2");
+			pickedUpBlockArray.push("Switch 2");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=285 && x<=325 && y >=60 && y<=95){
-			pickedUpBlockArray += (", Scale 1");
+			pickedUpBlockArray.push("Scale 1");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=285 && x<=325 && y >=155 && y<=190){
-			pickedUpBlockArray += (", Scale 2");
+			pickedUpBlockArray.push("Scale 2");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=390 && x<=425 && y >=75 && y<=105){
-			pickedUpBlockArray += (", Switch 3");
+			pickedUpBlockArray.push("Switch 3");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=390 && x<=425 && y >=146 && y<=178){
-			pickedUpBlockArray += (", Switch 4");
+			pickedUpBlockArray.push("Switch 4");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=60 && x<=115 && y >=80 && y<=120){
@@ -89,7 +89,7 @@ var confirmYes = function(){
 		//pick up areas
 		if(x>=150 && x<=185 && y >=110 && y<=140){
 			pickedUpBlockArray.push("Red Block Pile");
-			//pickedUpBlockArray += (", Red Block Pile");
+			//pickedUpBlockArray.push("Red Block Pile");
 			console.log(pickedUpBlockArray);
 		}
 		if(x>=420 && x<=455 && y >=110 && y<=140){
@@ -161,19 +161,19 @@ var confirmYes = function(){
 			console.log(deliveredBlockArray);
 		}
 		if(x>=150 && x<=185 && y >=110 && y<=140){
-			deliveredBlockArray += (", Red Block Pile");
+			deliveredBlockArray.push("Red Block Pile");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=420 && x<=455 && y >=110 && y<=140){
-			deliveredBlockArray += (", Blue Block Pile");
+			deliveredBlockArray.push("Blue Block Pile");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=220 && x<=240 && y >=70 && y<=180){
-			deliveredBlockArray += (", Red 6 Blocks");
+			deliveredBlockArray.push("Red 6 Blocks");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=375 && x<=390 && y >=70 && y<=180){
-			deliveredBlockArray += (", Blue 6 Blocks");
+			deliveredBlockArray.push("Blue 6 Blocks");
 			console.log(deliveredBlockArray);
 		}
 		if(x>=60 && x<=120 && y >=5 && y<=40){
@@ -196,6 +196,7 @@ var confirmYes = function(){
 	x=0;
 	y=0;
 	clickedMap = false;
+	console.log(parseSpeed(pickedUpBlockArray, deliveredBlockArray));
 	hello();
 }
 var confirmNo = function(){
@@ -233,7 +234,7 @@ function pickUpTheBlock(){
 	document.getElementById("dropBlock").style.display = "block";
 	document.getElementById("pHasNoBlock").style.display = "block";
 	document.getElementById("pHasBlock").style.display = "none";
-	pickedUpBlockArray += (", Pick From Ground");
+	pickedUpBlockArray.push("Pick From Ground");
 	console.log(pickedUpBlockArray);
 	x=0;
 	y=0;
@@ -631,67 +632,67 @@ var confirmYes1 = function(){
 	document.getElementById("confirm1").style.display = "none";
 	hasBeenClick1 = true;
 	if(x1>=182 && x1<=215 && y1 >=73 && y1<=103){
-		deliveredBlockArray1 += (", Switch 1");
+		deliveredBlockArray1.push("Switch 1");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=180 && x1<=220 && y1 >=146 && y1<=178){
-		deliveredBlockArray1 += (", Switch 2");
+		deliveredBlockArray1.push("Switch 2");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=285 && x1<=325 && y1 >=60 && y1<=95){
-		deliveredBlockArray1 += (", Scale 1");
+		deliveredBlockArray1.push("Scale 1");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=285 && x1<=325 && y1 >=155 && y1<=190){
-		deliveredBlockArray1 += (", Scale 2");
+		deliveredBlockArray1.push("Scale 2");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=390 && x1<=425 && y1 >=75 && y1<=105){
-		deliveredBlockArray1 += (", Switch 3");
+		deliveredBlockArray1.push("Switch 3");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=390 && x1<=425 && y1 >=146 && y1<=178){
-		deliveredBlockArray1 += (", Switch 4");
+		deliveredBlockArray1.push("Switch 4");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=60 && x1<=115 && y1 >=80 && y1<=120){
-		deliveredBlockArray1 += (", Red Station");
+		deliveredBlockArray1.push("Red Station");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=490 && x1<=540 && y1 >=130 && y1<=170){
-		deliveredBlockArray1 += (", Blue Station");
+		deliveredBlockArray1.push("Blue Station");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=150 && x1<=185 && y1 >=110 && y1<=140){
-		deliveredBlockArray1 += (", Red Block Pile");
+		deliveredBlockArray1.push("Red Block Pile");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=420 && x1<=455 && y1 >=110 && y1<=140){
-		deliveredBlockArray1 += (", Blue Block Pile");
+		deliveredBlockArray1.push("Blue Block Pile");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=220 && x1<=240 && y1 >=70 && y1<=180){
-		deliveredBlockArray1 += (", Red 6 Blocks");
+		deliveredBlockArray1.push("Red 6 Blocks");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=375 && x1<=390 && y1 >=70 && y1<=180){
-		deliveredBlockArray1 += (", Blue 6 Blocks");
+		deliveredBlockArray1.push("Blue 6 Blocks");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=60 && x1<=120 && y1 >=5 && y1<=40){
-		deliveredBlockArray1 += (", Blue Portal Top");
+		deliveredBlockArray1.push("Blue Portal Top");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=60 && x1<=119 && y1 >=208 && y1<=245){
-		deliveredBlockArray1 += (", Blue Portal Bottom");
+		deliveredBlockArray1.push("Blue Portal Bottom");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=491 && x1<=550 && y1 >=205 && y1<=247){
-		deliveredBlockArray1 += (", Red Portal Bottom");
+		deliveredBlockArray1.push("Red Portal Bottom");
 		console.log(deliveredBlockArray1);
 	}
 	if(x1>=490 && x1<=545 && y1 >=5 && y1<=40){
-		deliveredBlockArray1 += (", Red Portal Top");
+		deliveredBlockArray1.push("Red Portal Top");
 		console.log(deliveredBlockArray1);
 	}
 	x1=0;
@@ -1364,10 +1365,337 @@ function parseSpeed(pickup, deliver){
 	distance = 0; //in meters, preferably
 	for(i = 0; i<deliver.length; i++){
 		switch(pickup[i]){
-			case certain cases:
+			case "Red 6 Blocks":
 				switch(deliver[i]){
-					case delivery cases:
-						//what to do, add certain distance or how to deal with dropped block;
+					case "Switch 1":
+						distance += 100;
+						break;
+					case "Switch 2":
+						distance += 100;
+					  break;
+					case "Switch 3":
+						distance += 100;
+						break;
+					case "Switch 4":
+						distance += 100;
+						break;
+					case "Scale 1":
+						distance += 100;
+						break;
+					case "Scale 2":
+						distance += 100;
+						break;
+					case "Red Station":
+						distance += 100;
+						break;
+					case "Blue Station":
+						distance += 100;
+						break;
+					case "Blue Portal Top":
+						distance += 100;
+						break;
+					case "Blue Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Top":
+						distance += 100;
+						break;
+					default:
+						distance += 0;
+				}
+				break;
+			case "Blue 6 Blocks":
+				switch(deliver[i]){
+					case "Switch 1":
+						distance += 100;
+						break;
+					case "Switch 2":
+						distance += 100;
+					  break;
+					case "Switch 3":
+						distance += 100;
+						break;
+					case "Switch 4":
+						distance += 100;
+						break;
+					case "Scale 1":
+						distance += 100;
+						break;
+					case "Scale 2":
+						distance += 100;
+						break;
+					case "Red Station":
+						distance += 100;
+						break;
+					case "Blue Station":
+						distance += 100;
+						break;
+					case "Blue Portal Top":
+						distance += 100;
+						break;
+					case "Blue Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Top":
+						distance += 100;
+						break;
+					default:
+						distance += 0;
+				}
+				break;
+			case "Red Block Pile":
+				switch(deliver[i]){
+					case "Switch 1":
+						distance += 100;
+						break;
+					case "Switch 2":
+						distance += 100;
+					  break;
+					case "Switch 3":
+						distance += 100;
+						break;
+					case "Switch 4":
+						distance += 100;
+						break;
+					case "Scale 1":
+						distance += 100;
+						break;
+					case "Scale 2":
+						distance += 100;
+						break;
+					case "Red Station":
+						distance += 100;
+						break;
+					case "Blue Station":
+						distance += 100;
+						break;
+					case "Blue Portal Top":
+						distance += 100;
+						break;
+					case "Blue Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Top":
+						distance += 100;
+						break;
+					default:
+						distance += 0;
+				}
+				break;
+			case "Blue Block Pile":
+				switch(deliver[i]){
+					case "Switch 1":
+						distance += 100;
+						break;
+					case "Switch 2":
+						distance += 100;
+					  break;
+					case "Switch 3":
+						distance += 100;
+						break;
+					case "Switch 4":
+						distance += 100;
+						break;
+					case "Scale 1":
+						distance += 100;
+						break;
+					case "Scale 2":
+						distance += 100;
+						break;
+					case "Red Station":
+						distance += 100;
+						break;
+					case "Blue Station":
+						distance += 100;
+						break;
+					case "Blue Portal Top":
+						distance += 100;
+						break;
+					case "Blue Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Top":
+						distance += 100;
+						break;
+					default:
+						distance += 0;
+				}
+				break;
+			case "Red Portal Top":
+				switch(deliver[i]){
+					case "Switch 1":
+						distance += 100;
+						break;
+					case "Switch 2":
+						distance += 100;
+					  break;
+					case "Switch 3":
+						distance += 100;
+						break;
+					case "Switch 4":
+						distance += 100;
+						break;
+					case "Scale 1":
+						distance += 100;
+						break;
+					case "Scale 2":
+						distance += 100;
+						break;
+					case "Red Station":
+						distance += 100;
+						break;
+					case "Blue Station":
+						distance += 100;
+						break;
+					case "Blue Portal Top":
+						distance += 100;
+						break;
+					case "Blue Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Top":
+						distance += 100;
+						break;
+					default:
+						distance += 0;
+				}
+				break;
+			case "Red Portal Bottom":
+				switch(deliver[i]){
+					case "Switch 1":
+						distance += 100;
+						break;
+					case "Switch 2":
+						distance += 100;
+					  break;
+					case "Switch 3":
+						distance += 100;
+						break;
+					case "Switch 4":
+						distance += 100;
+						break;
+					case "Scale 1":
+						distance += 100;
+						break;
+					case "Scale 2":
+						distance += 100;
+						break;
+					case "Red Station":
+						distance += 100;
+						break;
+					case "Blue Station":
+						distance += 100;
+						break;
+					case "Blue Portal Top":
+						distance += 100;
+						break;
+					case "Blue Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Top":
+						distance += 100;
+						break;
+					default:
+						distance += 0;
+				}
+				break;
+			case "Blue Portal Top":
+				switch(deliver[i]){
+					case "Switch 1":
+						distance += 100;
+						break;
+					case "Switch 2":
+						distance += 100;
+					  break;
+					case "Switch 3":
+						distance += 100;
+						break;
+					case "Switch 4":
+						distance += 100;
+						break;
+					case "Scale 1":
+						distance += 100;
+						break;
+					case "Scale 2":
+						distance += 100;
+						break;
+					case "Red Station":
+						distance += 100;
+						break;
+					case "Blue Station":
+						distance += 100;
+						break;
+					case "Blue Portal Top":
+						distance += 100;
+						break;
+					case "Blue Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Top":
+						distance += 100;
+						break;
+					default:
+						distance += 0;
+				}
+				break;
+			case "Blue Portal Bottom":
+				switch(deliver[i]){
+					case "Switch 1":
+						distance += 100;
+						break;
+					case "Switch 2":
+						distance += 100;
+					  break;
+					case "Switch 3":
+						distance += 100;
+						break;
+					case "Switch 4":
+						distance += 100;
+						break;
+					case "Scale 1":
+						distance += 100;
+						break;
+					case "Scale 2":
+						distance += 100;
+						break;
+					case "Red Station":
+						distance += 100;
+						break;
+					case "Blue Station":
+						distance += 100;
+						break;
+					case "Blue Portal Top":
+						distance += 100;
+						break;
+					case "Blue Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Top":
+						distance += 100;
 						break;
 					default:
 						distance += 0;
@@ -1377,7 +1705,7 @@ function parseSpeed(pickup, deliver){
 				distance += 0;
 		}
 	}
-	//return the total distance traveled and divide it by 150 to get approx. speed
+	return distance/150;
 }
 function submitForm(){
   console.log("ran");
