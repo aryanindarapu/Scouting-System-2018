@@ -1356,6 +1356,15 @@ var noClimb = function(){
 		climbCount = 0;
 	}
 }
+function delivered(arr){
+  var count = 0;
+  for(i = 0; i<arr.length; i++){
+    if(arr[i] != "Dropped Block"){
+      count++;
+    }
+  }
+  return count;
+}
 function parseSpeed(pickup, deliver){
 	var distance = 0; //in meters, preferably
 	for(i = 0; i<deliver.length; i++){
@@ -1655,6 +1664,90 @@ function parseSpeed(pickup, deliver){
 				}
 				break;
 			case "Blue Portal Bottom":
+				switch(deliver[i]){
+					case "Switch 1":
+						distance += 100;
+						break;
+					case "Switch 2":
+						distance += 100;
+					  break;
+					case "Switch 3":
+						distance += 100;
+						break;
+					case "Switch 4":
+						distance += 100;
+						break;
+					case "Scale 1":
+						distance += 100;
+						break;
+					case "Scale 2":
+						distance += 100;
+						break;
+					case "Red Station":
+						distance += 100;
+						break;
+					case "Blue Station":
+						distance += 100;
+						break;
+					case "Blue Portal Top":
+						distance += 100;
+						break;
+					case "Blue Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Top":
+						distance += 100;
+						break;
+					default:
+						distance += 0;
+				}
+				break;
+			case "Blue Station":
+				switch(deliver[i]){
+					case "Switch 1":
+						distance += 100;
+						break;
+					case "Switch 2":
+						distance += 100;
+					  break;
+					case "Switch 3":
+						distance += 100;
+						break;
+					case "Switch 4":
+						distance += 100;
+						break;
+					case "Scale 1":
+						distance += 100;
+						break;
+					case "Scale 2":
+						distance += 100;
+						break;
+					case "Red Station":
+						distance += 100;
+						break;
+					case "Blue Station":
+						distance += 100;
+						break;
+					case "Blue Portal Top":
+						distance += 100;
+						break;
+					case "Blue Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Bottom":
+						distance += 100;
+						break;
+					case "Red Portal Top":
+						distance += 100;
+						break;
+					default:
+						distance += 0;
+				}
+				break;
+			case "Red Station":
 				switch(deliver[i]){
 					case "Switch 1":
 						distance += 100;
