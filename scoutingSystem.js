@@ -18,8 +18,6 @@ var deliveredBlockArray1 = [];
 var teamColor1 ="Red";
 var x1 = 0;
 var y1 = 0;
-var autonScoreScale = 0;
-var autonScoreSwitch = 0;
 var timerInterval = null;
 var autonTimeScale = [];
 var autonTimeSwitch = [];
@@ -31,6 +29,7 @@ var foul;
 var techFoul;
 var climbCount;
 var distance;
+var crossedBaseline = false;
 
 var confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
@@ -1239,21 +1238,13 @@ var stop = function() {
 }
 
 var recordTimeAutonScale = function(){
-	if (timerStarted){
 		autonTimeScale.push(value);
 		console.log(autonTimeScale);
-	} else {
-		autonScoreScale -= 1;
-	}
 }
 
 var recordTimeAutonSwitch = function() {
-	if (timerStarted){
 		autonTimeSwitch.push(value);
 		console.log(autonTimeSwitch);
-	} else {
-		autonScoreSwitch -= 1;
-	}
 }
 var timerHover = function() {
 	document.getElementById("startButton").style.filter = "brightness(70%)";
@@ -1707,26 +1698,33 @@ function parseSpeed(pickup, deliver){
 	}
 	return distance/150;
 }
+function crossBaseline(){
+  if(crossedBaseline==false){
+    crossedBaseline=true;
+  }else{
+    crossedBaseline = false;
+  }
+}
 function submitForm(){
   console.log("ran");
   $.ajax({
     type: "POST",
     url: "submit.php",
     data: {
-      $("#id").is(':checked');
-      "pickedUpBlockArray" : pickedUpBlockArray, //might need parse function
-      "deliveredBlockArray" : deliveredBlockArray,
-      "autonScoreScale" : autonScoreScale,
-      "autonScoreSwitch" : autonScoreSwitch,
-      "autonTimeScale" : autonTimeScale, //parse array
-      "autonTimeSwitch" : autonTimeSwitch,
+      //$("#id").is(':checked');
       "teamNo" : teamNo,
-      "autonPosition" : autonPosition,
       "fouls" : foul,
       "techFouls" : techFoul,
       "yelCards" : yelCard,
       "redCards" : redCard,
-	    "speed" : parseSpeed(pickedUpBlockArray, deliveredBlockArray);
+      "autonPosition" : autonPosition,
+      "crossedBaseline" : crossedBaseline,
+      "autonTimeScale" : autonTimeScale[0],
+      "autonTimeSwitch" : autonTimeSwitch[0],
+      "autonCountScale" : autonTimeScale.length,
+      "autonCountSwitch" : autonTimeSwitch.length.
+      "deliveredBlockCount" : deliveredBlockArray.length, //function for count
+	    "speed" : parseSpeed(pickedUpBlockArray, deliveredBlockArray),
     },
     success: function(){
       console.log("worked");
