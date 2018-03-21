@@ -27,9 +27,12 @@ var autonPosition;
 var teamName;
 var foul;
 var techFoul;
-var climbCount;
+var climbCount = 0;
 var distance;
 var crossedBaseline = false;
+var comments;
+var climb1 = "";
+var climb2 = "";
 
 var confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
@@ -1283,6 +1286,8 @@ function teamColorTop() {
 function getTeamNo() {
 	teamNo = document.getElementById("teamNo").value;
 	document.getElementById("teamNoTop").innerHTML = teamNo;
+	teamName = document.getElementById("teamName").value;
+	comments = document.getElementById("comments").value;
 }
 
 function submitx() {
@@ -1299,6 +1304,7 @@ function submitx() {
 	
 	//Team Name
 	teamName = document.getElementById("teamName").value;
+	console.log("Name: " + teamName);
 	
 	
 	//Team Number
@@ -1789,7 +1795,9 @@ function parseSpeed(pickup, deliver){
 				distance += 0;
 		}
 	}
-	return distance/150;
+	if(climbCount==0){
+		return distance/150;
+	}else{return distance/180;}
 }
 function crossBaseline(){
   if(crossedBaseline==false){
@@ -1798,13 +1806,37 @@ function crossBaseline(){
     crossedBaseline = false;
   }
 }
+function blockCount(array){
+	var num = 0;
+	for(var i = 0; i<array.length; i++){
+		if(array[i] === ("Dropped Block")){
+			num++;
+		}
+	}
+	return (array.length-num);
+}
+function climbSummary(){
+	climb1 = "";
+	climb2 = "";
+	if(document.getElementById("climb").checked == true){climb1="climb"};
+	if(document.getElementById("fail").checked == true){climb1="fail"};
+	if(document.getElementById("levitate").checked == true){climb1="levitate"};
+	if(document.getElementById("noAttempt").checked == true){climb1="noAttempt"};
+	
+	if(document.getElementById("single").checked == true){climb2="single"};
+	if(document.getElementById("double").checked == true){climb2="double"};
+	if(document.getElementById("triple").checked == true){climb2="triple"};
+	if(document.getElementById("cant").checked == true){climb2="cant"};
+}
 function submitForm(){
+	climbSummary();
   console.log("ran");
   $.ajax({
     type: "POST",
     url: "submit.php",
     data: {
       //$("#id").is(':checked');
+	  "teamName" : teamName,
       "teamNo" : teamNo,
       "fouls" : foul,
       "techFouls" : techFoul,
@@ -1815,12 +1847,16 @@ function submitForm(){
       "autonTimeScale" : autonTimeScale[0],
       "autonTimeSwitch" : autonTimeSwitch[0],
       "autonCountScale" : autonTimeScale.length,
-      "autonCountSwitch" : autonTimeSwitch.length.
-      "deliveredBlockCount" : deliveredBlockArray.length, //function for count
-	    "speed" : parseSpeed(pickedUpBlockArray, deliveredBlockArray),
+      "autonCountSwitch" : autonTimeSwitch.length,
+      "deliveredBlockCount" : blockCount(deliveredBlockArray), //function for count
+	  "speed" : parseSpeed(pickedUpBlockArray, deliveredBlockArray),
+	  "climbPerformance" : climb1,
+	  "climbAbility" : climb2,
+	  "comments" : comments,
     },
     success: function(){
       console.log("worked");
+	  //location.reload();
     }
   })
 }
