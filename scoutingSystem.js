@@ -31,6 +31,7 @@ var climbCount = 0;
 var distance;
 var crossedBaseline = 0;
 var comments = "_";
+var crossedBaseline = false;
 var climb1 = "";
 var climb2 = "";
 

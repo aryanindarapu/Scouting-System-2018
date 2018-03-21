@@ -35,9 +35,7 @@
 			)";
 	if ($conn->query($sqlB) === TRUE) {
 		echo "Table powerUpCompetition created successfully";
-	} else {
-		echo "Error creating table: " . $conn->error;
-	}*/
+	} */
 	ChromePhp::log("got here");
 	if(isset($_POST['teamNo'])&&isset($_POST['teamName']))
 	{
@@ -50,7 +48,6 @@
 		$autonPosition = $_POST['autonPosition'];
 		$crossedBaseline = $_POST['crossedBaseline'];
 		$autonTimeScale = $_POST['autonTimeScale'];
-		$autonTimeSwitch = $_POST['autonTimeSwitch'];
 		$autonCountScale = $_POST['autonCountScale'];
 		$autonCountSwitch = $_POST['autonCountSwitch'];
 		$deliveredBlockCount = $_POST['deliveredBlockCount'];
@@ -74,7 +71,7 @@
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-		ChromePhp::log($row['teamName'] . " " . $row['teamNo'] . " " . $row['fouls'] . " " . $row['techFouls'] . " " . $row['yelCards'] . " " . $row['redCards'] . " " . $row['autonPosition'] . " " . $row['crossedBaseline'] . " " . $row['autonTimeScale'] . " " . $row['autonCountScale'] . " " . $row['autonCountSwitch'] . " " . $row['deliveredBlockCount'] . " " . $row['speed'] . " " . $row['climbPerformance'] . " " . $row['climbAbility'] . " " . $row['comments']);
+			ChromePhp::log($row['teamName'] . " " . $row['teamNo'] . " " . $row['fouls'] . " " . $row['techFouls'] . " " . $row['yelCards'] . " " . $row['redCards'] . " " . $row['autonPosition'] . " " . $row['crossedBaseline'] . " " . $row['autonTimeScale'] . " " . $row['autonCountScale'] . " " . $row['autonCountSwitch'] . " " . $row['deliveredBlockCount'] . " " . $row['speed'] . " " . $row['climbPerformance'] . " " . $row['climbAbility'] . " " . $row['comments']);
 		}
 	} else {
 		//echo("<script>console.log('0 results');</script>");
