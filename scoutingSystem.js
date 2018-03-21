@@ -23,13 +23,16 @@ var autonTimeScale = [];
 var autonTimeSwitch = [];
 var timerStarted = false;
 var teamNo = "";
-var autonPosition;
+var autonPosition = "none";
 var teamName;
 var foul;
 var techFoul;
-var climbCount;
+var climbCount = 0;
 var distance;
-var crossedBaseline = false;
+var crossedBaseline = 0;
+var comments = "_";
+var climb1 = "";
+var climb2 = "";
 
 var confirmClick = function(){
 	document.getElementById("confirm").style.display = "block";
@@ -1283,6 +1286,8 @@ function teamColorTop() {
 function getTeamNo() {
 	teamNo = document.getElementById("teamNo").value;
 	document.getElementById("teamNoTop").innerHTML = teamNo;
+	teamName = document.getElementById("teamName").value;
+	comments = document.getElementById("comments").value;
 }
 
 function submitx() {
@@ -1299,6 +1304,7 @@ function submitx() {
 	
 	//Team Name
 	teamName = document.getElementById("teamName").value;
+	console.log("Name: " + teamName);
 	
 	
 	//Team Number
@@ -1319,26 +1325,25 @@ function submitx() {
 	
 	//Yellow Card
 	if (document.getElementById("yelCard").checked == false) {
-		yelCard = false;
+		yelCard = 0;
 	} else if (document.getElementById("yelCard").checked == true){
-		yelCard = true;
+		yelCard = 1;
 	}
 	
 	//Auton
 	var autonPosition = "none";
 	
-	
 	//TeleOp
 	
 	//Red Card
 	if (document.getElementById("redCard").checked == false) {
-		redCard = false;
+		redCard = 0;
 	} else if (document.getElementById("redCard").checked == true){
-		redCard = true;
+		redCard = 1;
 	}
 	
 	//Comments
-	var comments = document.getElementById("comment").value;
+	var comments = document.getElementById("comments").value;
 }
 
 var noClimb = function(){
@@ -1789,22 +1794,66 @@ function parseSpeed(pickup, deliver){
 				distance += 0;
 		}
 	}
-	return distance/150;
+	if(climbCount==0){
+		return distance/150;
+	}else{return distance/180;}
 }
 function crossBaseline(){
-  if(crossedBaseline==false){
-    crossedBaseline=true;
+  if(crossedBaseline==0){
+    crossedBaseline=1;
   }else{
-    crossedBaseline = false;
+    crossedBaseline = 0;
   }
 }
+function blockCount(array){
+	var num = 0;
+	for(var i = 0; i<array.length; i++){
+		if(array[i] === ("Dropped Block")){
+			num++;
+		}
+	}
+	return (array.length-num);
+}
+function climbSummary(){
+	climb1 = "_";
+	climb2 = "_";
+	if(document.getElementById("climb").checked == true){climb1="climb"};
+	if(document.getElementById("fail").checked == true){climb1="fail"};
+	if(document.getElementById("levitate").checked == true){climb1="levitate"};
+	if(document.getElementById("noAttempt").checked == true){climb1="noAttempt"};
+	
+	if(document.getElementById("single").checked == true){climb2="single"};
+	if(document.getElementById("double").checked == true){climb2="double"};
+	if(document.getElementById("triple").checked == true){climb2="triple"};
+	if(document.getElementById("cant").checked == true){climb2="cant"};
+}
+function autonFunction(name){
+	console.log(autonTimeScale.length + "length");
+	console.log(name==='scale');
+	if(name==="scale"){
+		if(autonTimeScale.length==0){
+			console.log("scale 30");
+			return 30;
+		}else{return autonTimeScale[0];}
+	}
+	if(name==="switch"){
+		if(autonTimeSwitch.length == 0){
+			console.log("switch 30");
+			return 30;
+		}else{return autonTimeSwitch[0];}
+	}
+}
 function submitForm(){
+	climbSummary();
+	submitx();
   console.log("ran");
+  console.log(autonTimeScale[0] + typeof autonTimeScale[0]);
   $.ajax({
     type: "POST",
     url: "submit.php",
     data: {
       //$("#id").is(':checked');
+	  "teamName" : teamName,
       "teamNo" : teamNo,
       "fouls" : foul,
       "techFouls" : techFoul,
@@ -1812,15 +1861,19 @@ function submitForm(){
       "redCards" : redCard,
       "autonPosition" : autonPosition,
       "crossedBaseline" : crossedBaseline,
-      "autonTimeScale" : autonTimeScale[0],
-      "autonTimeSwitch" : autonTimeSwitch[0],
+      "autonTimeScale" : autonFunction('switch'),
+      "autonTimeSwitch" : autonFunction('scale'),
       "autonCountScale" : autonTimeScale.length,
-      "autonCountSwitch" : autonTimeSwitch.length.
-      "deliveredBlockCount" : deliveredBlockArray.length, //function for count
-	    "speed" : parseSpeed(pickedUpBlockArray, deliveredBlockArray),
+      "autonCountSwitch" : autonTimeSwitch.length,
+      "deliveredBlockCount" : blockCount(deliveredBlockArray), //function for count
+	  "speed" : parseSpeed(pickedUpBlockArray, deliveredBlockArray),
+	  "climbPerformance" : climb1,
+	  "climbAbility" : climb2,
+	  "comments" : comments,
     },
     success: function(){
       console.log("worked");
+	  location.reload();
     }
   })
 }

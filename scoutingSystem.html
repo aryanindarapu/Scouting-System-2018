@@ -38,7 +38,7 @@
 				<div id = "Info" class = "tabcontent">
 					<div class = "infoTab" style="margin-top: 100px">
 						<h1>Info</h1>
-						<input id = "teamName" type = "text" placeholder = "Team Name"><br><br>
+						<input id = "teamName" type = "text" onkeyup = "getTeamNo()" placeholder = "Team Name"><br><br>
 						<input id = "teamNo" type = "text"  onkeyup = "getTeamNo()" onkeypress = "return event.charCode >= 48 && event.charCode <= 57" maxlength = "4" placeholder = "Team Number"><br><br>
 						<h3 style = "display: inline">Team Color:</h3>
 						<label class = "switch" onclick = "teamColorTop()">
@@ -142,44 +142,44 @@
 						<div style="margin-top: -10%; display: inline-block;">
 							<h2>Performance</h2>
 							<label class = "container">Successful Climb
-								<input type = "radio" name = "endGame">
-								<span class = "checkmark"></span>
+								<input id = "climb" type = "radio" name = "endGame">
+								<span class = "radio"></span>
 							</label>
 							<br>
 							<label class = "container">Failed Climb
-								<input type = "radio" name = "endGame">
-								<span class = "checkmark"></span>
+								<input id = "fail" type = "radio" name = "endGame">
+								<span class = "radio"></span>
 							</label>
 							<br>
 							<label class = "container">Levitate
-								<input type = "radio" name = "endGame">
-								<span class = "checkmark"></span>
+								<input id = "levitate" type = "radio" name = "endGame">
+								<span class = "radio"></span>
 							</label>
 							<br>
 							<label class = "container">No Attempt Climb/Levitate
-								<input type = "radio" name = "endGame">
-								<span class = "checkmark"></span>
+								<input id = "noAttempt" type = "radio" name = "endGame">
+								<span class = "radio"></span>
 							</label>
 						</div>
 						<div style="padding-left: 10%; display: inline-block">
 							<h2>Abilities</h2>
 							<label class = "container">Can't Climb
-								<input type = "radio" name = "endGameAb">
+								<input id = "cant" type = "radio" name = "endGameAb">
 								<span class = "radio"></span>
 							</label>
 							<br>
 							<label class = "container">Single Climb
-								<input type = "radio" name = "endGameAb">
+								<input id = "single" type = "radio" name = "endGameAb">
 								<span class = "radio"></span>
 							</label>
 							<br>
 							<label class = "container">Dual Climb
-								<input type = "radio" name = "endGameAb">
+								<input id = "double" type = "radio" name = "endGameAb">
 								<span class = "radio"></span>
 							</label>
 							<br>
 							<label class = "container">Triple Climb
-								<input type = "radio" name = "endGameAb">
+								<input id = "triple" type = "radio" name = "endGameAb">
 								<span class = "radio"></span>
 							</label>
 						</div>
@@ -194,7 +194,7 @@
 			<div id = "Submit" class = "tabcontent">
 				<div class="submitClass">
 					<h3>Submit</h3>
-					<textarea rows = "4" cols = "50" id = "comment" placeholder = "Add Comments..."></textarea><br>
+					<textarea rows = "4" cols = "50" id = "comments" onkeyup = "getTeamNo()" placeholder = "Add Comments..."></textarea><br>
 					<!--<input href = "submit.php?hello=true"type = "button" class = "submit" onclick = "submitx()" value = "Submit">-->
 					<input type = "button" class = "submit" onclick = "submitForm()" value = "Submit">
 				</div>
