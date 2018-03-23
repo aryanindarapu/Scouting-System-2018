@@ -1833,14 +1833,14 @@ function autonFunction(name){
 	console.log(name==='scale');
 	if(name==="scale"){
 		if(autonTimeScale.length==0){
-			console.log("scale 30");
-			return 30;
+			console.log("scale 0");
+			return 0;
 		}else{return autonTimeScale[0];}
 	}
 	if(name==="switch"){
 		if(autonTimeSwitch.length == 0){
-			console.log("switch 30");
-			return 30;
+			console.log("switch 0");
+			return 0;
 		}else{return autonTimeSwitch[0];}
 	}
 }
