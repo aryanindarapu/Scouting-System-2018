@@ -1,14 +1,14 @@
 <?php
 	$host = "localhost";
 	$user = "root";
-	$pass = "";
-	$dbname = "myDB";
+	$pass = "team868!";
+	$dbname = "techHounds";
 	$conn = new mysqli($host,$user,$pass, $dbname);
 	include 'ChromePhp.php';
 	if($conn->connect_errno) {
 		ChromePhp::log("Connection failed: " . $conn->connect_error);
 	}
-	/* $sql = "CREATE DATABASE myDB";
+	/* $sql = "CREATE DATABASE techHounds";
 	if ($conn->query($sql) === TRUE) {
 		echo "Database created successfully";
 	} else {

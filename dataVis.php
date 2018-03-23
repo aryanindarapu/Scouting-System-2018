@@ -17,8 +17,8 @@
 				$teamNumber = $_POST['teamNo'];
 				$host = "localhost";
 				$user = "root";
-				$pass = "";
-				$dbname = "myDB";
+				$pass = "team868!";
+				$dbname = "techHounds";
 				$conn = new mysqli($host,$user,$pass, $dbname);
 				$constant = 1;
 				if($conn->connect_errno) {
