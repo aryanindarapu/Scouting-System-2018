@@ -43,47 +43,76 @@
 				$climbPerformanceArray = array();
 				$commentsArray = array();
 				
+				$foulsAvg = 0;
+				$techFoulsAvg = 0;
+				$yelCardsAvg = 0;
+				$redCardsAvg = 0;
+				$autonPositionAvg = 0;
+				$crossedBaselineAvg = 0;
+				$autonTimeScaleAvg = 0;
+				$autonTimeSwitchAvg = 0;
+				$autonCountScaleAvg = 0;
+				$autonCountSwitchAvg = 0;
+				$deliveredBlockCountAvg = 0;
+				$speedAvg = 0;
+				$climbAbilityAvg = 0;
+				$climbPerformanceAvg = 0;
+				$commentsAvg = 0;
+				
 				if ($result->num_rows > 0) {
 					// The `$arrData` array holds the chart attributes and data
 					$foulsArray = array(
 						"chart" => array(
 						  "caption" => "Fouls",
 						  "showValues" => "0",
-						  "theme" => "fint"
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "5",
+						  "yAxisMinValue"=> "0",
+						  "trendValueFontSize"=> "10",
 						  )
 					   );
 
 					$foulsArray["data"] = array();
+					$foulsArray["trendlines"] = array();
 					
 					$techFoulsArray = array(
 						"chart" => array(
 						  "caption" => "Tech Fouls",
 						  "showValues" => "0",
-						  "theme" => "fint"
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "5",
+						  "yAxisMinValue"=> "0"
 						  )
 					   );
 
 					$techFoulsArray["data"] = array();
+					$techFoulsArray["trendlines"] = array();
 					
 					$yelCardsArray = array(
 						"chart" => array(
 						  "caption" => "Yellow Cards",
 						  "showValues" => "0",
-						  "theme" => "fint"
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "2",
+						  "yAxisMinValue"=> "0"
 						  )
 					   );
 
 					$yelCardsArray["data"] = array();
+					$yelCardsArray["trendlines"] = array();
 					
 					$redCardsArray = array(
 						"chart" => array(
 						  "caption" => "Red Cards",
 						  "showValues" => "0",
-						  "theme" => "fint"
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "1",
+						  "yAxisMinValue"=> "0"
 						  )
 					   );
 
 					$redCardsArray["data"] = array();
+					$redCardsArray["trendlines"] = array();
 					
 					$autonPositionArray = array(
 						"chart" => array(
@@ -94,66 +123,85 @@
 					   );
 
 					$autonPositionArray["data"] = array();
+					$autonPositionArray["trendlines"] = array();
 					
 					$crossedBaselineArray = array(
 						"chart" => array(
 						  "caption" => "Crossed Baseline",
 						  "showValues" => "0",
-						  "theme" => "fint"
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "1",
+						  "yAxisMinValue"=> "0"
 						  )
 					   );
 
 					$crossedBaselineArray["data"] = array();
+					$crossedBaselineArray["trendlines"] = array();
 					
 					$autonTimeScaleArray = array(
 						"chart" => array(
 						  "caption" => "Time left, Block on Scale Auton",
 						  "showValues" => "0",
-						  "theme" => "fint"
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "15",
+						  "yAxisMinValue"=> "0"
 						  )
 					   );
 
 					$autonTimeScaleArray["data"] = array();
+					$autonTimeScaleArray["trendlines"] = array();
 					
 					$autonTimeSwitchArray = array(
 						"chart" => array(
 						  "caption" => "Time left, Block on Switch Auton",
 						  "showValues" => "0",
-						  "theme" => "fint"
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "15",
+						  "yAxisMinValue"=> "0"
 						  )
 					   );
 
 					$autonTimeSwitchArray["data"] = array();
+					$autonTimeSwitchArray["trendlines"] = array();
 					
 					$autonCountScaleArray = array(
 						"chart" => array(
 						  "caption" => "Blocks on Scale Auton",
 						  "showValues" => "0",
-						  "theme" => "fint"
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "3",
+						  "yAxisMinValue"=> "0"
 						  )
 					   );
 
 					$autonCountScaleArray["data"] = array();
+					$autonCountScaleArray["trendlines"] = array();
 					
 					$autonCountSwitchArray = array(
 						"chart" => array(
 						  "caption" => "Blocks on Switch Auton",
 						  "showValues" => "0",
-						  "theme" => "fint"
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "3",
+						  "yAxisMinValue"=> "0"
 						  )
 					   );
 
 					$autonCountSwitchArray["data"] = array();
+					$autonCountSwitchArray["trendlines"] = array();
 					
 					$deliveredBlockCountArray = array(
 						"chart" => array(
 						  "caption" => "Blocks Delivered Teleop",
 						  "showValues" => "0",
-						  "theme" => "fint"
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "15",
+						  "yAxisMinValue"=> "0"
 						  )
 					   );
 
 					$deliveredBlockCountArray["data"] = array();
+					$deliveredBlockCountArray["trendlines"] = array();
 					
 					$speedArray = array(
 						"chart" => array(
@@ -162,7 +210,7 @@
 						  "theme" => "fint"
 						  )
 					   );
-
+					$speedArray["trendlines"] = array();
 					$speedArray["data"] = array();
 					
 					$climbAbilityArray = array(
@@ -206,61 +254,73 @@
 						  "value" => $row["fouls"]
 						  )
 					   );
+					   $foulsAvg = $foulsAvg + $row["fouls"];
 					   array_push($techFoulsArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["techFouls"]
 						  )
 					   );
+					   $techFoulsAvg = $techFoulsAvg + $row["techFouls"];
 					   array_push($yelCardsArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["yelCards"]
 						  )
 					   );
+					   $yelCardsAvg = $yelCardsAvg + $row["yelCards"];
 					   array_push($redCardsArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["redCards"]
 						  )
 					   );
+					   $redCardsAvg = $redCardsAvg + $row["redCards"];
 					   array_push($autonPositionArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["autonPosition"]
 						  )
 					   );
+					   $autonPositionAvg = $autonPositionAvg + $row["autonPosition"];
 					   array_push($crossedBaselineArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["crossedBaseline"]
 						  )
 					   );
+					   $crossedBaselineAvg = $crossedBaselineAvg + $row["crossedBaseline"];
 					   array_push($autonTimeSwitchArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["autonTimeSwitch"]
 						  )
 					   );
+					   $autonTimeSwitchAvg = $autonTimeSwitchAvg + $row["autonTimeSwitch"];
 					   array_push($autonTimeScaleArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["autonTimeScale"]
 						  )
 					   );
+					   $autonTimeScaleAvg = $autonTimeScaleAvg + $row["autonTimeScale"];
 					   array_push($autonCountScaleArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["autonCountScale"]
 						  )
 					   );
+					   $autonCountScaleAvg = $autonCountScaleAvg + $row["autonCountScale"];
 					   array_push($autonCountSwitchArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["autonCountSwitch"]
 						  )
 					   );
+					   $autonCountSwitchAvg = $autonCountSwitchAvg + $row["autonCountSwitch"];
 					   array_push($deliveredBlockCountArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["deliveredBlockCount"]
 						  )
 					   );
+					   $deliveredBlockCountAvg = $deliveredBlockCountAvg + $row["deliveredBlockCount"];
 					   array_push($speedArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["speed"]
 						  )
 					   );
+					   $speedAvg = $speedAvg + $row["speed"];
 					   array_push($climbPerformanceStarter["data"], $row["climbPerformance"]);
 					   array_push($climbAbilityStarter["data"], $row["climbAbility"]);
 					   array_push($commentsArray["data"], array(
@@ -270,6 +330,147 @@
 					   );
 					   $counter=$counter+1;
 					}
+					
+					$foulsAvg = $foulsAvg/($counter-1);
+					$techFoulsAvg = $techFoulsAvg/($counter-1);
+					$yelCardsAvg = $yelCardsAvg/($counter-1);
+					$redCardsAvg = $redCardsAvg/($counter-1);
+					$crossedBaselineAvg = $crossedBaselineAvg/($counter-1);
+					$autonTimeScaleAvg = $autonTimeScaleAvg/($counter-1);
+					$autonTimeSwitchAvg = $autonTimeSwitchAvg/($counter-1);
+					$autonCountScaleAvg = $autonCountScaleAvg/($counter-1);
+					$autonCountSwitchAvg = $autonCountSwitchAvg/($counter-1);
+					$deliveredBlockCountAvg = $deliveredBlockCountAvg/($counter-1);
+					$speedAvg = $speedAvg/($counter-1);
+					
+					ChromePhp::log("this is the data: " . $crossedBaselineAvg);
+					
+					array_push($foulsArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $foulsAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $foulsAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);array_push($techFoulsArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $techFoulsAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $techFoulsAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);array_push($yelCardsArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $yelCardsAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $yelCardsAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);array_push($redCardsArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $redCardsAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $redCardsAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);array_push($crossedBaselineArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $crossedBaselineAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $crossedBaselineAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);array_push($autonTimeScaleArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $autonTimeScaleAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $autonTimeScaleAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);array_push($autonTimeSwitchArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $autonTimeSwitchAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $autonTimeSwitchAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);array_push($autonCountScaleArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $autonCountScaleAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $autonCountScaleAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);array_push($autonCountSwitchArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $autonCountSwitchAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $autonCountSwitchAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);
+					array_push($deliveredBlockCountArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $deliveredBlockCountAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $deliveredBlockCountAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);
+					array_push($speedArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $speedAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $speedAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);
+					
+					
 					$climb = 0;
 					$fail = 0;
 					$levitate = 0;
@@ -340,10 +541,12 @@
 			$crossedBaselineChart = new FusionCharts("line", "chart5" , 600, 300, "chart-5", "json", $jsonCrossedBaseline);
 			$autonTimeScaleChart = new FusionCharts("line", "chart6" , 600, 300, "chart-6", "json", $jsonAutonTimeScale);
 			$autonTimeSwitchChart = new FusionCharts("line", "chart7" , 600, 300, "chart-7", "json", $jsonAutonTimeSwitch);
-			$deliveredBlockCountChart = new FusionCharts("line", "chart8" , 600, 300, "chart-8", "json", $jsonDeliveredBlockCount);
-			$speedChart = new FusionCharts("line", "chart9" , 600, 300, "chart-9", "json", $jsonSpeed);
-			$climbAbilityChart = new FusionCharts("pie2d", "chart10" , 600, 300, "chart-10", "json", $jsonClimbAbility);
-			$climbPerformanceChart = new FusionCharts("pie2d", "chart11" , 600, 300, "chart-11", "json", $jsonClimbPerformance);
+			$autonCountScaleChart = new FusionCharts("line", "chart8" , 600, 300, "chart-8", "json", $jsonAutonCountScale);
+			$autonCountSwitchChart = new FusionCharts("line", "chart9" , 600, 300, "chart-9", "json", $jsonAutonCountSwitch);
+			$deliveredBlockCountChart = new FusionCharts("line", "chart10" , 600, 300, "chart-10", "json", $jsonDeliveredBlockCount);
+			$speedChart = new FusionCharts("line", "chart11" , 600, 300, "chart-11", "json", $jsonSpeed);
+			$climbAbilityChart = new FusionCharts("pie2d", "chart12" , 600, 300, "chart-12", "json", $jsonClimbAbility);
+			$climbPerformanceChart = new FusionCharts("pie2d", "chart13" , 600, 300, "chart-13", "json", $jsonClimbPerformance);
 			
 
             // Render the chart
@@ -354,6 +557,8 @@
 			$crossedBaselineChart->render();
 			$autonTimeScaleChart->render();
 			$autonTimeSwitchChart->render();
+			$autonCountScaleChart->render();
+			$autonCountSwitchChart->render();
 			$deliveredBlockCountChart->render();
 			$speedChart->render();
 			$climbAbilityChart->render();
@@ -395,6 +600,10 @@
 			<div style = "display:flex; flex-direction:row">
 				<div id = "chart-10"></div>
 				<div id = "chart-11"></div>
+				<div id = "chart-12"></div>
+			</div>
+			<div style = "display:flex; flex-direction:row">
+				<div id = "chart-13"></div>
 			</div>
 		</div>
 	</body>

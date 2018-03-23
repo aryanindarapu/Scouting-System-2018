@@ -31,7 +31,6 @@ var climbCount = 0;
 var distance;
 var crossedBaseline = 0;
 var comments = "_";
-var crossedBaseline = false;
 var climb1 = "";
 var climb2 = "";
 
@@ -1292,6 +1291,8 @@ function getTeamNo() {
 }
 
 function submitx() {
+	crossBaseline();
+	//if(document.getElementById("crossB").checked==true){crossedBaseline=1;}else{crossedBaseline=0;}
 	//Check Statements
 	if (document.getElementById("teamName").value == "" | document.getElementById("teamNo").value == "") {
 		if (document.getElementById("teamName").value == "") {
@@ -1800,10 +1801,13 @@ function parseSpeed(pickup, deliver){
 	}else{return distance/180;}
 }
 function crossBaseline(){
+	console.log("got the change");
   if(crossedBaseline==0){
     crossedBaseline=1;
-  }else{
+	console.log("turned to 1");
+  }else if(crossedBaseline==1){
     crossedBaseline = 0;
+	console.log("turned to 0");
   }
 }
 function blockCount(array){
@@ -1846,6 +1850,7 @@ function autonFunction(name){
 }
 function submitForm(){
 	climbSummary();
+	crossBaseline();
 	submitx();
   console.log("ran");
   console.log(autonTimeScale[0] + typeof autonTimeScale[0]);
