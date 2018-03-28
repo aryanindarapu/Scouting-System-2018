@@ -1,14 +1,14 @@
 <?php
 	$host = "localhost";
 	$user = "root";
-	$pass = "";
-	$dbname = "myDB";
+	$pass = "team868!";
+	$dbname = "techHounds";
 	$conn = new mysqli($host,$user,$pass, $dbname);
 	include 'ChromePhp.php';
 	if($conn->connect_errno) {
 		ChromePhp::log("Connection failed: " . $conn->connect_error);
 	}
-	/* $sql = "CREATE DATABASE myDB";
+	/* $sql = "CREATE DATABASE techHounds";
 	if ($conn->query($sql) === TRUE) {
 		echo "Database created successfully";
 	} else {
@@ -48,6 +48,7 @@
 		$autonPosition = $_POST['autonPosition'];
 		$crossedBaseline = $_POST['crossedBaseline'];
 		$autonTimeScale = $_POST['autonTimeScale'];
+		$autonTimeSwitch = $_POST['autonTimeSwitch'];
 		$autonCountScale = $_POST['autonCountScale'];
 		$autonCountSwitch = $_POST['autonCountSwitch'];
 		$deliveredBlockCount = $_POST['deliveredBlockCount'];
@@ -56,7 +57,7 @@
 		$climbAbility = $_POST['climbAbility'];
 		$comments = $_POST['comments'];
 		ChromePhp::log("got here");
-		$query = "INSERT INTO powerUpCompetition(teamName, teamNo,fouls, techFouls, yelCards, redCards, autonPosition, crossedBaseline, autonTimeScale,autonTimeSwitch,autonCountScale,autonCountSwitch,deliveredBlockCount,speed,climbPerformance,climbAbility,comments) VALUES('$teamName', '$teamNo',$fouls, $techFouls, $yelCards, $redCards, '$autonPosition', $crossedBaseline, $autonTimeScale,$autonTimeSwitch,$autonCountScale,$autonCountSwitch,$deliveredBlockCount,$speed,'$climbPerformance','$climbAbility','$comments')";
+		$query = "INSERT INTO powerUpCompetition(teamName, teamNo, fouls, techFouls, yelCards, redCards, autonPosition, crossedBaseline, autonTimeScale,autonTimeSwitch,autonCountScale,autonCountSwitch,deliveredBlockCount,speed,climbPerformance,climbAbility,comments) VALUES('$teamName', '$teamNo',$fouls, $techFouls, $yelCards, $redCards, '$autonPosition', $crossedBaseline, $autonTimeScale,$autonTimeSwitch,$autonCountScale,$autonCountSwitch,$deliveredBlockCount,$speed,'$climbPerformance','$climbAbility','$comments')";
 		ChromePhp::log("idk if i got here");
 		if ($conn->query($query) === TRUE) {
 			ChromePhp::log("New record created successfully");

@@ -31,7 +31,6 @@ var climbCount = 0;
 var distance;
 var crossedBaseline = 0;
 var comments = "_";
-var crossedBaseline = false;
 var climb1 = "";
 var climb2 = "";
 
@@ -230,7 +229,7 @@ function dropTheBlock(){
 }
 
 function pickUpTheBlock(){
-	blockAcquired=false;
+	blockAcquired=true;
 	document.getElementById("blockImg").style.filter = "grayscale(0%)";
 	document.getElementById("blockImg").style.opacity = 1;
 	document.getElementById("pickUpBlock").style.display = "none";
@@ -247,11 +246,13 @@ function pickUpTheBlock(){
 }
 window.onload = hello;
 function showCoords(event) {
+	console.log("ran");
 	if(clickedMap==false){
 		x = event.clientX - $('#canvas').offset().left;
 		y = event.clientY - $('#canvas').offset().top;
 		coords = "X coords: " + x + ", Y coords: " + y;
 		document.getElementById("demo").innerHTML = coords;
+		console.log(x + " " + y);
 		hello();
 	}
 }
@@ -400,7 +401,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=60 && x<=115 && y >=80 && y<=120 && teamColorRed === true){ //Red Station
+			if(x>=60 && x<=115 && y >=80 && y<=120){ //Red Station
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -421,7 +422,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=490 && x<=540 && y >=130 && y<=170 && teamColorRed === false){ //Blue Station
+			if(x>=490 && x<=540 && y >=130 && y<=170){ //Blue Station
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -442,7 +443,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=150 && x<=185 && y >=110 && y<=140 && teamColorRed === true){ //Red Block Pile
+			if(x>=150 && x<=185 && y >=110 && y<=140){ //Red Block Pile
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -463,7 +464,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=420 && x<=455 && y >=110 && y<=140 && teamColorRed === false){ //Blue Block Pile
+			if(x>=420 && x<=455 && y >=110 && y<=140){ //Blue Block Pile
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -484,7 +485,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=220 && x<=240 && y >=70 && y<=180 && teamColorRed === true){ //Red 6 Blocks
+			if(x>=220 && x<=240 && y >=70 && y<=180){ //Red 6 Blocks
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -505,7 +506,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=375 && x<=390 && y >=70 && y<=180 && teamColorRed === false){ //Blue 6 Blocks
+			if(x>=375 && x<=390 && y >=70 && y<=180){ //Blue 6 Blocks
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -526,7 +527,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=60 && x<=120 && y >=5 && y<=40 && teamColorRed === false){ //Blue Portal Top
+			if(x>=60 && x<=120 && y >=5 && y<=40){ //Blue Portal Top
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -547,7 +548,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=60 && x<=119 && y >=208 && y<=245 && teamColorRed === false){ //Blue Portal Bottom
+			if(x>=60 && x<=119 && y >=208 && y<=245){ //Blue Portal Bottom
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -568,7 +569,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=491 && x<=550 && y >=205 && y<=247 && teamColorRed === true){//Red Portal Top
+			if(x>=491 && x<=550 && y >=205 && y<=247){//Red Portal Top
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -589,7 +590,7 @@ function hello(){
 				clickedMap = true;
 				setTimeout(confirmClick, 100);
 			}
-			if(x>=490 && x<=545 && y >=5 && y<=40 && teamColorRed === true){//Red Portal Bottom
+			if(x>=490 && x<=545 && y >=5 && y<=40){//Red Portal Bottom
 				// darken the image with a 50% black fill
 				ctx.save();
 				ctx.globalAlpha=.50;
@@ -723,6 +724,7 @@ function showCoords1(event) {
 	}
 }
 function hello1(){
+console.log("got to the good spot");
 
     var canvas1=document.getElementById("canvas1");
     var ctx1=canvas1.getContext("2d");
@@ -741,7 +743,7 @@ function hello1(){
 			// draw the image on the canvas
 			ctx1.drawImage(img1,0,0,cw1,ch1);
 
-			if(x1>=182 && x1<=215 && y1>=73 && y1<=103 && teamColorRed === true){ //Switch1 1
+			if(x1>=182 && x1<=215 && y1>=73 && y1<=103){ //Switch1 1
 				document.getElementById("modalButtonScaleYes").style.display = "none";
 				document.getElementById("modalButtonScaleNo").style.display = "none";
 				document.getElementById("modalButtonSwitchYes").style.display = "inline-block";
@@ -766,7 +768,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=180 && x1<=220 && y1>=146 && y1<=178 && teamColorRed === true){ //Switch1 2
+			if(x1>=180 && x1<=220 && y1>=146 && y1<=178){ //Switch1 2
 				document.getElementById("modalButtonScaleYes").style.display = "none";
 				document.getElementById("modalButtonScaleNo").style.display = "none";
 				document.getElementById("modalButtonSwitchYes").style.display = "inline-block";
@@ -841,7 +843,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=390 && x1<=425 && y1>=75 && y1<=105 && teamColorRed === false){ //Switch1 3
+			if(x1>=390 && x1<=425 && y1>=75 && y1<=105){ //Switch1 3
 				document.getElementById("modalButtonScaleYes").style.display = "none";
 				document.getElementById("modalButtonScaleNo").style.display = "none";
 				document.getElementById("modalButtonSwitchYes").style.display = "block";
@@ -866,7 +868,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=390 && x1<=425 && y1>=146 && y1<=178 && teamColorRed === false){ //Switch1 4
+			if(x1>=390 && x1<=425 && y1>=146 && y1<=178){ //Switch1 4
 				document.getElementById("modalButtonScaleYes").style.display = "none";
 				document.getElementById("modalButtonScaleNo").style.display = "none";
 				document.getElementById("modalButtonSwitchYes").style.display = "block";
@@ -891,7 +893,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=60 && x1<=115 && y1>=80 && y1<=120 && teamColorRed === true){ //Red Station
+			if(x1>=60 && x1<=115 && y1>=80 && y1<=120){ //Red Station
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -912,7 +914,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=490 && x1<=540 && y1>=130 && y1<=170 && teamColorRed === false){ //Blue Station
+			if(x1>=490 && x1<=540 && y1>=130 && y1<=170){ //Blue Station
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -933,7 +935,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=150 && x1<=185 && y1>=110 && y1<=140 && teamColorRed === true){ //Red Block Pile
+			if(x1>=150 && x1<=185 && y1>=110 && y1<=140){ //Red Block Pile
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -954,7 +956,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=420 && x1<=455 && y1>=110 && y1<=140 && teamColorRed === false){ //Blue Block Pile
+			if(x1>=420 && x1<=455 && y1>=110 && y1<=140){ //Blue Block Pile
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -975,7 +977,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=220 && x1<=240 && y1>=70 && y1<=180 && teamColorRed === true){ //Red 6 Blocks
+			if(x1>=220 && x1<=240 && y1>=70 && y1<=180){ //Red 6 Blocks
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -996,7 +998,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=375 && x1<=390 && y1>=70 && y1<=180 && teamColorRed === false){ //Blue 6 Blocks
+			if(x1>=375 && x1<=390 && y1>=70 && y1<=180){ //Blue 6 Blocks
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -1017,7 +1019,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=60 && x1<=120 && y1>=5 && y1<=40 && teamColorRed === true){ //Blue Portal Top
+			if(x1>=60 && x1<=120 && y1>=5 && y1<=40){ //Blue Portal Top
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -1038,7 +1040,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=60 && x1<=119 && y1>=208 && y1<=245 && teamColorRed === true){ //Blue Portal Bottom
+			if(x1>=60 && x1<=119 && y1>=208 && y1<=245){ //Blue Portal Bottom
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -1059,7 +1061,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=491 && x1<=550 && y1>=205 && y1<=247 && teamColorRed === false){//Red Portal Top
+			if(x1>=491 && x1<=550 && y1>=205 && y1<=247){//Red Portal Top
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -1080,7 +1082,7 @@ function hello1(){
 				clickedMap1 = true;
 				setTimeout(confirmClick1, 100);
 			}
-			if(x1>=490 && x1<=545 && y1>=5 && y1<=40 && teamColorRed === false){//Red Portal Bottom
+			if(x1>=490 && x1<=545 && y1>=5 && y1<=40){//Red Portal Bottom
 				// darken the image with a 50% black fill
 				ctx1.save();
 				ctx1.globalAlpha=.50;
@@ -1292,11 +1294,10 @@ function getTeamNo() {
 }
 
 function submitx() {
+	crossBaseline();
+	//if(document.getElementById("crossB").checked==true){crossedBaseline=1;}else{crossedBaseline=0;}
 	//Check Statements
 	if (document.getElementById("teamName").value == "" | document.getElementById("teamNo").value == "") {
-		if (document.getElementById("teamName").value == "") {
-			alert("Please Enter A Team Name");
-		}
 		if (document.getElementById("teamNo").value == "") {
 			alert("Please Enter A Team Number");
 		}
@@ -1800,10 +1801,13 @@ function parseSpeed(pickup, deliver){
 	}else{return distance/180;}
 }
 function crossBaseline(){
+	console.log("got the change");
   if(crossedBaseline==0){
     crossedBaseline=1;
-  }else{
+	console.log("turned to 1");
+  }else if(crossedBaseline==1){
     crossedBaseline = 0;
+	console.log("turned to 0");
   }
 }
 function blockCount(array){
@@ -1833,19 +1837,20 @@ function autonFunction(name){
 	console.log(name==='scale');
 	if(name==="scale"){
 		if(autonTimeScale.length==0){
-			console.log("scale 30");
-			return 30;
+			console.log("scale 0");
+			return 0;
 		}else{return autonTimeScale[0];}
 	}
 	if(name==="switch"){
 		if(autonTimeSwitch.length == 0){
-			console.log("switch 30");
-			return 30;
+			console.log("switch 0");
+			return 0;
 		}else{return autonTimeSwitch[0];}
 	}
 }
 function submitForm(){
 	climbSummary();
+	crossBaseline();
 	submitx();
   console.log("ran");
   console.log(autonTimeScale[0] + typeof autonTimeScale[0]);
@@ -1874,7 +1879,8 @@ function submitForm(){
     },
     success: function(){
       console.log("worked");
-	  location.reload();
+window.location.href = "scoutingSystem.html";
+	  //location.reload();
     }
   })
 }
