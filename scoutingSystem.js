@@ -1887,7 +1887,7 @@ function ajaxSubmit(){
     },
     success: function(){
       console.log("worked");
-		window.location.href = "scoutingSystem.html";
+	window.location.href = "scoutingSystem.html";
     }
   })
 }
