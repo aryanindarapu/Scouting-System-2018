@@ -30,9 +30,6 @@
 		<script src="jquery-3.2.1.min.js"></script>
 
 	</head>
-	
-		<image onclick = "tabLeft()" type = "button" src = "margin.png"/>
-		<image onclick = "tabRight()" type = "button" src = "margin.png" style = "float: right;"/>
 		<body onload = "hello(); hello1();" style = "margin: 0;">
 			<center>
 				<div id = "Info" class = "tabcontent">
@@ -52,19 +49,21 @@
 						including autonomous and teleoperated periods, defeats the boss and wins the game.
 						<br></br>
 					</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 				</div>
 			</center>
 
 			<div id = "Auton" class = "tabcontent">
 				<center>
-					<h1>Auton</h1>
-				</center>
-				<center>
-					<p id = "timer" style = "font-size: 30px; font-family: 'Press Start 2P'">0:15</p>
-					<input id = "startButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "startTimer()" type = "button" class = "timerButton"/>
-					<input id = "resetButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "resetTimer()" type = "button" class = "resetButton"/>
-				</center>
-				<h3 style = "text-align: center;">Crossed Baseline?</h3><br>
+					<!--<h1>Auton</h1>-->
+			</center>
+<div style = "display:flex; flex-direction: row">
+				<div style = "margin-left: 300px; margin-right: 30px">
+					<center><p id = "timer" style = "font-size:30px; font-family: 'Press Start 2P'">0:15</p></center></div>
+					<div><input style = "display: inline-block; margin-top: 20px; margin-right: 100px" id = "startButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "startTimer()" type = "button" class = "timerButton"/>
+					<input tyle = "display: inline-block; margin-top: 20px; margin-right: 100px" id = "resetButton" onmouseover = "timerHover()" onmouseout = "timerOut()" onclick = "resetTimer()" type = "button" class = "resetButton"/>
+				</div>
+				<div><h3 style = "text-align: center;">Crossed Baseline?</h3><br>
 				<center style = "margin-left: 15px;">
 					<h6 style = "display: inline; margin-right: 15px;">No</h6>
 					<label class = "switch">
@@ -72,8 +71,9 @@
 						<span onclick = "crossBaseline()" class = "sliderAuton"></span>
 					</label>
 					<h6 style = "display: inline; margin-left: 15px;">Yes</h6>
-				</center>
-				<br><br>
+				</center></div>
+</div>
+				<br>
 				<div style = "display: flex; flex-direction: row; margin-left: 12%;">
 					<div style = "display: flex; flex-direction: column; justify-content: space-between">
 						<button type = "button" class = "positionButtons" name = "Left">Position Left</button>
@@ -115,10 +115,10 @@
 				<div id = "TeleOp" class = "tabcontent">
 					<h1>TeleOp</h1>
 					<canvas id="canvas" onclick="showCoords(event)"></canvas><p id = "demo" style = "display: none"></p>
-					<p>Block in hand:</p>
-					<img src = "Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; filter:grayscale(100%)">
-					<br><button type = "button" id = "pickUpBlock" style = "margin-top: 20px; display: block" class = "modalButtonYes" onclick = "pickUpTheBlock()">Picked Up Block - Ground</button>
-					<br><button type = "button" id = "dropBlock" style = "margin-top: 20px; display: none" class = "modalButtonNo" onclick = "dropTheBlock()">Dropped/Lost Block</button>
+						<div style = "display: flex; flex-direction: row; margin-left: 350px"><div><p>Block in hand:</p>
+					<img src = "Block.png" id = "blockImg" style = "height: 100px; opacity:0.5; margin-right: 50px; filter:grayscale(100%)"></div>
+					<button type = "button" id = "pickUpBlock" style = "margin-top: 20px; display: block; height: 70px" class = "modalButtonYes" onclick = "pickUpTheBlock()">Picked Up Block - Ground</button>
+					<br><button type = "button" id = "dropBlock" style = "margin-top: 20px; display: none; height: 70px" class = "modalButtonNo" onclick = "dropTheBlock()">Dropped/Lost Block</button></div>
 					<div id = "confirm" style="display:none">
 						<!-- The Modal -->
 						<div id = "myModal" style = "padding-top: 430px;" class = "modal">
@@ -189,6 +189,7 @@
 					<h2 style = "font-size: 15px; width: 60%; margin-top: 50px">*If they continue collecting cubes instead of climbing, check this box and continue scouting in the teleop tab<h2>
 					<input class = "footerCheck" type = "checkbox" name = "noClimbing" style = "height: 30px; width: 30px; margin-top:0px;" id = "noClimbing" onclick = "noClimb()">
 				</center>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			</div>
 
 			<div id = "Submit" class = "tabcontent">
@@ -198,6 +199,7 @@
 					<!--<input href = "submit.php?hello=true"type = "button" class = "submit" onclick = "submitx()" value = "Submit">-->
 					<input type = "button" class = "submit" onclick = "submitForm()" value = "Submit">
 				</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 			</div>
 
 			<div class = "footer" id = "footer">

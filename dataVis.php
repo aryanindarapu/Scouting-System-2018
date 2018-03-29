@@ -17,14 +17,14 @@
 				$teamNumber = $_POST['teamNo'];
 				$host = "localhost";
 				$user = "root";
-				$pass = "";
-				$dbname = "myDB";
+				$pass = "team868!";
+				$dbname = "techHounds";
 				$conn = new mysqli($host,$user,$pass, $dbname);
 				$constant = 1;
 				if($conn->connect_errno) {
 					ChromePhp::log("Connection failed: " . $conn->connect_error);
 				}
-				$query = "SELECT * FROM powerUpCompetition WHERE teamNo='" . $teamNumber . "';";
+				$query = "SELECT * FROM powerUpCompetitionFinal WHERE teamNo='" . $teamNumber . "';";
 				$result = $conn->query($query);
 				
 				$foulsArray = array();
@@ -37,7 +37,9 @@
 				$autonTimeSwitchArray = array();
 				$autonCountScaleArray = array();
 				$autonCountSwitchArray = array();
-				$deliveredBlockCountArray = array();
+				$deliveredBlockScaleArray = array();
+				$deliveredBlockSwitchArray = array();
+				$deliveredBlockVaultArray = array();
 				$speedArray = array();
 				$climbAbilityArray = array();
 				$climbPerformanceArray = array();
@@ -53,7 +55,9 @@
 				$autonTimeSwitchAvg = 0;
 				$autonCountScaleAvg = 0;
 				$autonCountSwitchAvg = 0;
-				$deliveredBlockCountAvg = 0;
+				$deliveredBlockScaleAvg = 0;
+				$deliveredBlockSwitchAvg = 0;
+				$deliveredBlockVaultAvg = 0;
 				$speedAvg = 0;
 				$climbAbilityAvg = 0;
 				$climbPerformanceAvg = 0;
@@ -190,7 +194,7 @@
 					$autonCountSwitchArray["data"] = array();
 					$autonCountSwitchArray["trendlines"] = array();
 					
-					$deliveredBlockCountArray = array(
+					/* $deliveredBlockScaleArray = array(
 						"chart" => array(
 						  "caption" => "Blocks Delivered Teleop",
 						  "showValues" => "0",
@@ -198,10 +202,36 @@
 						  "yAxisMaxValue" => "15",
 						  "yAxisMinValue"=> "0"
 						  )
-					   );
+					   ); */
 
-					$deliveredBlockCountArray["data"] = array();
-					$deliveredBlockCountArray["trendlines"] = array();
+					$deliveredBlockScaleArray["data"] = array();
+					//$deliveredBlockScaleArray["trendlines"] = array();
+					
+					/* $deliveredBlockSwitchArray = array(
+						"chart" => array(
+						  "caption" => "Blocks Delivered Teleop",
+						  "showValues" => "0",
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "15",
+						  "yAxisMinValue"=> "0"
+						  )
+					   ); */
+
+					$deliveredBlockSwitchArray["data"] = array();
+					//$deliveredBlockSwitchArray["trendlines"] = array();
+					
+					/* $deliveredBlockVaultArray = array(
+						"chart" => array(
+						  "caption" => "Blocks Delivered Teleop",
+						  "showValues" => "0",
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "15",
+						  "yAxisMinValue"=> "0"
+						  )
+					   ); */
+
+					$deliveredBlockVaultArray["data"] = array();
+					//$deliveredBlockVaultArray["trendlines"] = array();
 					
 					$speedArray = array(
 						"chart" => array(
@@ -309,12 +339,22 @@
 						  )
 					   );
 					   $autonCountSwitchAvg = $autonCountSwitchAvg + $row["autonCountSwitch"];
-					   array_push($deliveredBlockCountArray["data"], array(
-						  "label" => $counter,
-						  "value" => $row["deliveredBlockCount"]
+					   array_push($deliveredBlockScaleArray["data"], array(
+						  //"label" => $counter,
+						  "value" => $row["deliveredBlockScale"]
 						  )
 					   );
-					   $deliveredBlockCountAvg = $deliveredBlockCountAvg + $row["deliveredBlockCount"];
+					   $deliveredBlockScaleAvg = $deliveredBlockScaleAvg + $row["deliveredBlockScale"];
+					   array_push($deliveredBlockSwitchArray["data"], array(
+						  "value" => $row["deliveredBlockSwitch"]
+						  )
+					   );
+					   $deliveredBlockSwitchAvg = $deliveredBlockSwitchAvg + $row["deliveredBlockSwitch"];
+					   array_push($deliveredBlockVaultArray["data"], array(
+						  "value" => $row["deliveredBlockVault"]
+						  )
+					   );
+					   $deliveredBlockVaultAvg = $deliveredBlockVaultAvg + $row["deliveredBlockVault"];
 					   array_push($speedArray["data"], array(
 						  "label" => $counter,
 						  "value" => $row["speed"]
@@ -340,8 +380,11 @@
 					$autonTimeSwitchAvg = $autonTimeSwitchAvg/($counter-1);
 					$autonCountScaleAvg = $autonCountScaleAvg/($counter-1);
 					$autonCountSwitchAvg = $autonCountSwitchAvg/($counter-1);
-					$deliveredBlockCountAvg = $deliveredBlockCountAvg/($counter-1);
+					$deliveredBlockScaleAvg = $deliveredBlockScaleAvg/($counter-1);
+					$deliveredBlockSwitchAvg = $deliveredBlockSwitchAvg/($counter-1);
+					$deliveredBlockVaultAvg = $deliveredBlockVaultAvg/($counter-1);
 					$speedAvg = $speedAvg/($counter-1);
+					ChromePhp::log($speedAvg . "this is the average important");
 					
 					ChromePhp::log("this is the data: " . $crossedBaselineAvg);
 					
@@ -445,18 +488,42 @@
 							)
 						)
 					);
-					array_push($deliveredBlockCountArray["trendlines"], array(
+					/* array_push($deliveredBlockScaleArray["trendlines"], array(
 							"line" => array(
 								"color"=> "#A9A9A9",
-								"startValue" => $deliveredBlockCountAvg,
+								"startValue" => $deliveredBlockScaleAvg,
 								"valueOnRight" => "1",
-								"displayValue" => "Average: " . $deliveredBlockCountAvg,
+								"displayValue" => "Average: " . $deliveredBlockScaleAvg,
 								"thickness"=> "4",
 								"alpha"=> "60",
 								"tooltext"=> "Average Value",
 							)
 						)
 					);
+					array_push($deliveredBlockSwitchArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $deliveredBlockSwitchAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $deliveredBlockSwitchAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					);
+					array_push($deliveredBlockVaultArray["trendlines"], array(
+							"line" => array(
+								"color"=> "#A9A9A9",
+								"startValue" => $deliveredBlockVaultAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average: " . $deliveredBlockVaultAvg,
+								"thickness"=> "4",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+							)
+						)
+					); */
 					array_push($speedArray["trendlines"], array(
 							"line" => array(
 								"color"=> "#A9A9A9",
@@ -524,13 +591,72 @@
 			$jsonAutonTimeSwitch = json_encode($autonTimeSwitchArray);
 			$jsonAutonCountScale = json_encode($autonCountScaleArray);
 			$jsonAutonCountSwitch = json_encode($autonCountSwitchArray);
-			$jsonDeliveredBlockCount = json_encode($deliveredBlockCountArray);
+			$jsonDeliveredBlockScale = json_encode($deliveredBlockScaleArray);
+			$jsonDeliveredBlockSwitch = json_encode($deliveredBlockSwitchArray);
+			$jsonDeliveredBlockVault = json_encode($deliveredBlockVaultArray);
 			$jsonSpeed = json_encode($speedArray);
 			$jsonClimbAbility = json_encode($climbAbilityArray);
 			$jsonClimbPerformance = json_encode($climbPerformanceArray);
 			$jsonComments = json_encode($commentsArray);
 			
-			ChromePhp::log($jsonClimbAbility);
+			$deliveredArray = array(
+				"chart" => array(
+						  "caption" => "Blocks Delivered Teleop",
+						  "showValues" => "0",
+						  "theme" => "fint",
+						  "yAxisMaxValue" => "10",
+						  "yAxisMinValue"=> "0"
+				),
+				"categories" => array(
+					"category" => $speedArray["data"]
+				),
+				"dataset" => array(
+					array(
+					"seriesname" => "Scale",
+					"data" => $deliveredBlockScaleArray["data"]),
+					array(
+					"seriesname" => "Switch",
+					"data" => $deliveredBlockSwitchArray["data"]),
+					array(
+					"seriesname" => "Vault",
+					"data" => $deliveredBlockVaultArray["data"])
+				),
+				"trendlines" => array(
+					"line" => array(
+								array(
+								"color"=> "#A9A9A9",
+								"startValue" => $deliveredBlockScaleAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average Scale : " . $deliveredBlockScaleAvg,
+								"thickness"=> "2",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+								),
+								array(
+								"color"=> "#A9A9A9",
+								"startValue" => $deliveredBlockSwitchAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average Switch: " . $deliveredBlockSwitchAvg,
+								"thickness"=> "2",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+								),
+								array(
+								"color"=> "#A9A9A9",
+								"startValue" => $deliveredBlockVaultAvg,
+								"valueOnRight" => "1",
+								"displayValue" => "Average Vault: " . $deliveredBlockVaultAvg,
+								"thickness"=> "2",
+								"alpha"=> "60",
+								"tooltext"=> "Average Value",
+								)
+							)
+				)
+			);
+			
+			$jsonDeliveredArray = json_encode($deliveredArray);
+			
+			ChromePhp::log($jsonDeliveredArray);
 
 			/*Create an object for the column chart using the FusionCharts PHP class constructor. Syntax for the constructor is ` FusionCharts("type of chart", "unique chart id", width of the chart, height of the chart, "div id to render the chart", "data format", "data source")`. Because we are using JSON data to render the chart, the data format will be `json`. The variable `$jsonEncodeData` holds all the JSON data for the chart, and will be passed as the value for the data source parameter of the constructor.*/
 
@@ -543,7 +669,7 @@
 			$autonTimeSwitchChart = new FusionCharts("line", "chart7" , 600, 300, "chart-7", "json", $jsonAutonTimeSwitch);
 			$autonCountScaleChart = new FusionCharts("line", "chart8" , 600, 300, "chart-8", "json", $jsonAutonCountScale);
 			$autonCountSwitchChart = new FusionCharts("line", "chart9" , 600, 300, "chart-9", "json", $jsonAutonCountSwitch);
-			$deliveredBlockCountChart = new FusionCharts("line", "chart10" , 600, 300, "chart-10", "json", $jsonDeliveredBlockCount);
+			$deliveredBlockCountChart = new FusionCharts("msline", "chart10" , 600, 300, "chart-10", "json", $jsonDeliveredArray);
 			$speedChart = new FusionCharts("line", "chart11" , 600, 300, "chart-11", "json", $jsonSpeed);
 			$climbAbilityChart = new FusionCharts("pie2d", "chart12" , 600, 300, "chart-12", "json", $jsonClimbAbility);
 			$climbPerformanceChart = new FusionCharts("pie2d", "chart13" , 600, 300, "chart-13", "json", $jsonClimbPerformance);
